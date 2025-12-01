@@ -14,7 +14,7 @@ export default function Navbar() {
         {/* Logo */}
         <div className="flex items-center gap-3">
           <Image
-            src="/Expert_logo.jpg"
+            src="/images/Expert_logo.jpg"
             alt="Experts Solutions"
             width={90}
             height={50}
