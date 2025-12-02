@@ -1,22 +1,20 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import {
   FaFacebookF,
   FaInstagram,
   FaLinkedinIn,
-  FaTwitter,
   FaYoutube,
   FaWhatsapp,
 } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-gray-100 pt-0">
+    <footer className="w-full bg-gray-100 pt-0 pb-10">
 
-      {/* ------------------------------------------------------ */}
-      {/* CTA SECTION INSIDE FOOTER */}
-      {/* ------------------------------------------------------ */}
+      {/* CTA */}
       <section className="w-full bg-[#0F2347] py-16 px-6">
         <div className="max-w-7xl mx-auto text-center text-white">
           <motion.h2
@@ -30,11 +28,11 @@ export default function Footer() {
             className="mt-3 text-gray-200 max-w-3xl mx-auto"
             whileHover={{ scale: 1.03 }}
           >
-            Let Experts Solutions be your partner in automation, taxation, and
-            digital transformation.
+            Let Experts Solutions be your partner in automation, taxation,
+            and digital transformation.
           </motion.p>
 
-          <div className="flex justify-center mt-8 gap-6">
+          <div className="flex justify-center mt-8 gap-6 flex-wrap">
             {["Contact Us", "Request a Demo", "Get a Quote"].map((x, i) => (
               <motion.button
                 key={i}
@@ -54,34 +52,34 @@ export default function Footer() {
         </div>
       </section>
 
-      {/* ------------------------------------------------------ */}
-      {/* CLASSIC FOOTER */}
-      {/* ------------------------------------------------------ */}
-      <div className="max-w-7xl mx-auto px-6 pt-12 grid grid-cols-1  md:grid-cols-4 gap-10 text-gray-700">
+      {/* MAIN FOOTER */}
+      <div className="max-w-7xl mx-auto px-6 pt-12 grid grid-cols-1 md:grid-cols-4 gap-10 text-gray-700 text-center md:text-left">
 
-        {/* Logo + About */}
-        <div>
-          <h3 className="text-xl font-bold text-[#A72028]">Experts Solutions</h3>
-          <p className="mt-3 text-sm text-gray-600">
-            A trusted partner for business automation, ERP, MIS, taxation,
-            cloud services & mobile app development.
-          </p>
+        {/* Logo */}
+        <div className="flex flex-col items-center md:items-start">
+          <Image
+            src="/images/Expert_logo.jpg"
+            alt="Experts Solutions Logo"
+            width={120}
+            height={120}
+            className="mb-4 rounded-xl"
+          />
         </div>
 
-        {/* Quick Links */}
-        <div>
-          <h4 className="font-semibold text-gray-900 mb-3">Quick Links</h4>
+        {/* Pages */}
+        <div className="flex flex-col items-center md:items-start">
+          <h4 className="font-semibold text-gray-900 mb-3">Pages</h4>
           <ul className="space-y-2 text-sm">
             <li><Link href="/">Home</Link></li>
             <li><Link href="/services">Services</Link></li>
             <li><Link href="/about">About</Link></li>
             <li><Link href="/blogs">Blog</Link></li>
-            <li><Link href="/admin">Admin</Link></li>
+            <li><Link href="/gallery">Gallery</Link></li>
           </ul>
         </div>
 
-        {/* Services */}
-        <div>
+        {/* Solutions */}
+        <div className="flex flex-col items-center md:items-start">
           <h4 className="font-semibold text-gray-900 mb-3">Solutions</h4>
           <ul className="space-y-2 text-sm">
             <li>ERP & Accounting</li>
@@ -93,7 +91,7 @@ export default function Footer() {
         </div>
 
         {/* Contact */}
-        <div>
+        <div className="flex flex-col items-center md:items-start">
           <h4 className="font-semibold text-gray-900 mb-3">Contact</h4>
           <ul className="space-y-2 text-sm">
             <li>Pune, Maharashtra, India</li>
@@ -103,44 +101,48 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Bottom Bar */}
-        {/* Bottom Section */}
-        <div className="w-full  pb-4 text-center text-sm text-gray-700">
-    <div className="max-w-7xl mx-auto mb-5 mt-2  flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
-      <p className="text-sm">
-        Developed by{" "}
-        <Link
-          href="https://www.goanny.com"
-          target="_blank"
-          className="text-blue-600 hover:underline font-semibold"
-        >
-          Goanny Technologies Pvt Ltd
-        </Link>
-      </p>
+      {/* BOTTOM BAR */}
+      <div className="w-full pt-4 text-center text-sm text-gray-700">
+        <div className="max-w-7xl mx-auto mb-5 mt-2 flex flex-col md:flex-row items-center justify-between gap-4 text-center">
 
-      <div className="flex flex-col items-center md:flex-row gap-2">
-        <span className="text-gray-600 font-semibold text-sm">Lets connect</span>
+          {/* Developer Credit */}
+          <p className="text-sm">
+            Developed by{" "}
+            <Link
+              href="https://www.goanny.com"
+              target="_blank"
+              className="text-blue-600 hover:underline font-semibold"
+            >
+              Goanny Technologies Pvt Ltd
+            </Link>
+          </p>
 
-        <div className="flex space-x-4 text-lg">
-          <Link href="https://www.facebook.com" target="_blank">
-            <FaFacebookF className="hover:text-blue-500 transition" />
-          </Link>
-          <Link href="https://www.linkedin.com" target="_blank">
-            <FaLinkedinIn className="hover:text-blue-500 transition" />
-          </Link>
-         <Link href="https://wa.me/919049002701" target="_blank">
-          <FaWhatsapp className="hover:text-blue-500 transition" />
-        </Link>
-          <Link href="https://www.youtube.com" target="_blank">
-            <FaYoutube className="hover:text-blue-500 transition" />
-          </Link>
-          <Link href="https://www.instagram.com" target="_blank">
-            <FaInstagram className="hover:text-pink-500 transition" />
-          </Link>
+          {/* Social Icons */}
+          <div className="flex flex-col items-center gap-2 md:flex-row">
+            <span className="text-gray-600 font-semibold text-sm">
+              Lets connect
+            </span>
+
+            <div className="flex space-x-4 text-lg">
+              <Link href="https://www.facebook.com" target="_blank">
+                <FaFacebookF className="hover:text-blue-500 transition" />
+              </Link>
+              <Link href="https://www.linkedin.com" target="_blank">
+                <FaLinkedinIn className="hover:text-blue-500 transition" />
+              </Link>
+              <Link href="https://wa.me/919049002701" target="_blank">
+                <FaWhatsapp className="hover:text-green-500 transition" />
+              </Link>
+              <Link href="https://www.youtube.com" target="_blank">
+                <FaYoutube className="hover:text-red-500 transition" />
+              </Link>
+              <Link href="https://www.instagram.com" target="_blank">
+                <FaInstagram className="hover:text-pink-500 transition" />
+              </Link>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-      
+
         © {new Date().getFullYear()} Experts Solutions — All rights reserved.
       </div>
     </footer>

@@ -11,7 +11,7 @@ export default function BlogsPage() {
       {/* ------------------------------------------------------ */}
       {/* HERO SECTION */}
       {/* ------------------------------------------------------ */}
-      <section className="w-full bg-gray-200 py-16 px-6 border-b border-gray-200">
+      <section className="w-full bg-gray-200 py-16 px-10 border-b border-gray-200">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           <motion.div
             initial={{ opacity: 0, x: -40 }}
@@ -19,7 +19,7 @@ export default function BlogsPage() {
             transition={{ duration: 0.8 }}
           >
             <motion.h1
-              className="text-4xl font-bold text-gray-900 leading-tight"
+              className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight"
               whileHover={{ scale: 1.02 }}
             >
               Insights That Empower.
@@ -28,7 +28,7 @@ export default function BlogsPage() {
             </motion.h1>
 
             <motion.p
-              className="mt-4 text-gray-600"
+              className="mt-4 text-gray-600 text-sm md:text-base"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.8 }}
@@ -49,7 +49,7 @@ export default function BlogsPage() {
               alt="Blog Insights"
               width={500}
               height={350}
-              className="rounded-2xl shadow-xl"
+              className="rounded-2xl shadow-xl object-cover"
             />
           </motion.div>
         </div>
@@ -58,58 +58,57 @@ export default function BlogsPage() {
       {/* ------------------------------------------------------ */}
       {/* BLOG INTRODUCTION */}
       {/* ------------------------------------------------------ */}
-      <section className="py-16 bg-gray-50 px-6">
+      <section className="py-16 bg-gray-50 px-15">
         <div className="max-w-6xl mx-auto">
           <motion.h2
-            className="text-3xl font-bold text-center text-[#A72028]"
+            className="text-2xl md:text-3xl font-bold text-center text-[#A72028]"
             whileHover={{ scale: 1.03 }}
           >
             Insights, Knowledge & Expert Guidance for Growing Businesses
           </motion.h2>
 
-          <p className="text-gray-600 mt-4 text-center ml-50 max-w-3xl">
+          <p className="text-gray-600 mt-4 text-center max-w-3xl mx-auto text-sm md:text-base">
             At Experts Solutions, we believe in educating and empowering MSMEs with
             the right knowledge to make smarter business decisions.
           </p>
 
-          <p className="text-gray-600 mt-4 text-center ml-50 max-w-3xl">
+          <p className="text-gray-600 mt-4 text-center max-w-3xl mx-auto text-sm md:text-base">
             From Tally tutorials to GST updates this is your go-to learning
             space to stay informed, compliant, and future-ready.
           </p>
         </div>
       </section>
-  {/* ------------------------------------------------------ */}
+
+      {/* ------------------------------------------------------ */}
       {/* CATEGORIES - PILL STYLE */}
       {/* ------------------------------------------------------ */}
-      <section className="py-16 bg-gray-100 px-6">
+      <section className="py-16 bg-gray-100 px-15">
         <div className="max-w-6xl mx-auto">
           <motion.h2
-            className="text-3xl font-bold text-center text-gray-900 mb-10"
+            className="text-2xl md:text-3xl font-bold text-center text-gray-900 mb-10"
             whileHover={{ scale: 1.03 }}
           >
             Blog Categories
           </motion.h2>
 
-          <div className="flex flex-wrap gap-5">
-
+          <div className="flex flex-wrap gap-4 justify-center md:justify-start">
             {[
               "Technology & Software",
               "Accounting & Finance",
               "GST, TDS & Taxation",
               "Business Growth & Automation",
               "MSME Compliance & Registrations",
-              "Productivity & Operational Efficiency",
+              
             ].map((cat, i) => (
               <motion.div
                 key={i}
                 whileHover={{ scale: 1.06 }}
-                className="px-6 py-3 bg-white shadow-md rounded-full flex items-center gap-3 border"
+                className="px-5 py-3 bg-white shadow-md rounded-full flex items-center gap-2 border text-sm md:text-base"
               >
                 <FaTag className="text-[#A72028]" />
                 <span className="font-medium text-gray-800">{cat}</span>
               </motion.div>
             ))}
-
           </div>
         </div>
       </section>
@@ -117,17 +116,16 @@ export default function BlogsPage() {
       {/* ------------------------------------------------------ */}
       {/* FEATURED ARTICLES - MODERN DESIGN */}
       {/* ------------------------------------------------------ */}
-      <section className="py-16 bg-gradient-to-br from-gray-100 to-gray-300 px-6">
+      <section className="py-16 bg-gradient-to-br from-gray-100 to-gray-300 px-15">
         <div className="max-w-6xl mx-auto">
           <motion.h2
-            className="text-3xl font-bold text-center text-gray-900 mb-8"
+            className="text-2xl md:text-3xl font-bold text-center text-gray-900 mb-8"
             whileHover={{ scale: 1.03 }}
           >
             Featured Articles
           </motion.h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
             {[
               "Why Every MSME Should Move to Cloud-Based Accounting Systems",
               "Latest GST Updates You Must Know Before Filing",
@@ -138,9 +136,9 @@ export default function BlogsPage() {
               <motion.div
                 key={i}
                 whileHover={{ scale: 1.05, y: -6 }}
-                className="rounded-3xl p-6 bg-white/60 backdrop-blur-xl shadow-lg border border-white/30 transition-all duration-300"
+                className="rounded-3xl p-5 md:p-6 bg-white/60 backdrop-blur-xl shadow-lg border border-white/30 transition-all duration-300"
               >
-                <h3 className="text-xl font-semibold text-[#A72028] leading-snug">
+                <h3 className="text-lg md:text-xl font-semibold text-[#A72028] leading-snug">
                   {title}
                 </h3>
 
@@ -149,30 +147,28 @@ export default function BlogsPage() {
                   automation and business decisions.
                 </p>
 
-                <button className="mt-4 text-[#A72028] font-medium flex items-center gap-2">
+                <button className="mt-4 text-[#A72028] font-medium flex items-center gap-2 text-sm md:text-base">
                   Read More <FaArrowRight />
                 </button>
               </motion.div>
             ))}
-
           </div>
         </div>
       </section>
 
       {/* ------------------------------------------------------ */}
-      {/* LATEST BLOGS – PREMIUM CARD STYLE */}
+      {/* LATEST BLOGS */}
       {/* ------------------------------------------------------ */}
-      <section className="py-16 bg-gray-50 px-6">
+      <section className="py-16 bg-gray-50 px-15">
         <div className="max-w-6xl mx-auto">
           <motion.h2
-            className="text-3xl font-bold text-center text-gray-900 mb-8"
+            className="text-2xl md:text-3xl font-bold text-center text-gray-900 mb-8"
             whileHover={{ scale: 1.03 }}
           >
             Latest Blogs
           </motion.h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
             {[
               "Step-by-Step Guide to Tally Prime for New Businesses",
               "Understanding TDS, GST, and PT Filing Deadlines for FY 2024–25",
@@ -183,10 +179,7 @@ export default function BlogsPage() {
             ].map((title, i) => (
               <motion.div
                 key={i}
-                whileHover={{
-                  scale: 1.05,
-                  y: -5,
-                }}
+                whileHover={{ scale: 1.05, y: -5 }}
                 className="rounded-3xl overflow-hidden shadow-xl bg-white hover:shadow-2xl transition-all duration-300"
               >
                 <Image
@@ -194,37 +187,38 @@ export default function BlogsPage() {
                   width={500}
                   height={250}
                   alt="Blog"
-                  className="w-full h-48 object-cover"
+                  className="w-full h-40 md:h-48 object-cover"
                 />
 
-                <div className="p-6">
-                  <h3 className="text-lg font-semibold text-[#A72028]">{title}</h3>
+                <div className="p-5 md:p-6">
+                  <h3 className="text-lg font-semibold text-[#A72028]">
+                    {title}
+                  </h3>
 
                   <p className="text-gray-600 text-sm mt-3">
                     A short overview to help readers understand what they will learn.
                   </p>
 
-                  <button className="mt-4 text-[#A72028] font-medium flex items-center gap-2">
+                  <button className="mt-4 text-[#A72028] font-medium flex items-center gap-2 text-sm md:text-base">
                     Read More <FaArrowRight />
                   </button>
                 </div>
               </motion.div>
             ))}
-
           </div>
         </div>
       </section>
 
-    
       {/* ------------------------------------------------------ */}
       {/* NEWS & UPDATES */}
       {/* ------------------------------------------------------ */}
-      <section className="py-16 bg-gray-50 px-6">
+      <section className="py-16 bg-gray-50 px-15">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl text-center font-bold text-gray-900 mb-8">News & Updates</h2>
+          <h2 className="text-2xl md:text-3xl text-center font-bold text-gray-900 mb-8">
+            News & Updates
+          </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-6">
             {[
               "Latest GST notifications",
               "Budget changes",
@@ -238,11 +232,10 @@ export default function BlogsPage() {
                 whileHover={{ scale: 1.05 }}
                 className="bg-white/70 backdrop-blur-xl p-5 rounded-2xl border shadow-sm flex items-center gap-4"
               >
-                <FaNewspaper className="text-[#A72028]  text-xl" />
-                <p className="text-gray-700 font-medium ">{update}</p>
+                <FaNewspaper className="text-[#A72028] text-xl" />
+                <p className="text-gray-700 font-medium">{update}</p>
               </motion.div>
             ))}
-
           </div>
         </div>
       </section>
@@ -250,24 +243,24 @@ export default function BlogsPage() {
       {/* ------------------------------------------------------ */}
       {/* SUBSCRIBE */}
       {/* ------------------------------------------------------ */}
-      <section className="py-20 bg-gradient-to-b from-gray-100 to-gray-300 px-6">
+      <section className="py-20 bg-gradient-to-b from-gray-100 to-gray-300 px-15">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-gray-900">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
             Stay Updated. Stay Compliant. Stay Ahead.
           </h2>
 
-          <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
+          <p className="text-gray-600 mt-4 max-w-2xl mx-auto text-sm md:text-base">
             Subscribe for free GST calendars, compliance reminders, software tips,
             industry news, and expert insights — delivered directly to your inbox.
           </p>
 
-          <div className="mt-6 flex justify-center">
+          <div className="mt-6 flex flex-col sm:flex-row justify-center gap-3">
             <input
               type="email"
               placeholder="Enter your email"
-              className="border p-3 rounded-l-full w-64 shadow-md"
+              className="border p-3 rounded-full w-full sm:w-64 shadow-md"
             />
-            <button className="bg-[#A72028] text-white px-6 py-3 rounded-r-full shadow-md">
+            <button className="bg-[#A72028] text-white px-6 py-3 rounded-full shadow-md w-full sm:w-auto">
               Subscribe Now
             </button>
           </div>

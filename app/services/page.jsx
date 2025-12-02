@@ -25,7 +25,7 @@ export default function AboutPage() {
               className="text-5xl font-bold text-center text-[#0A1A2F] leading-tight"
               whileHover={{ scale: 1.02 }}
             >
-              Our Services
+              Services
             </motion.h1>
 
             <motion.p
@@ -56,7 +56,7 @@ cost-effective business solutions.
 {/* ======================== SECTION 1 ======================== */}
 <section
   id="ecosystem"
-  className="min-h-screen flex items-center py-24"
+  className="min-h-screen flex items-center py-10"
   style={{ backgroundColor: "#f2f4f7" }}
 >
   <div className="container mx-auto px-6 lg:px-20">
@@ -72,14 +72,20 @@ cost-effective business solutions.
     >
 
       {/* IMAGE */}
-      <motion.img
-        initial={{ opacity: 0, scale: 0.95 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 0.3, duration: 0.6 }}
-        viewport={{ once: true }}
-        src="/image1.jpg"
-        className="lg:w-1/2 rounded-3xl shadow-xl object-cover h-[450px] hover:scale-[1.02] transition-all duration-300"
-      />
+   <motion.img
+  initial={{ opacity: 0, scale: 0.95 }}
+  whileInView={{ opacity: 1, scale: 1 }}
+  transition={{ delay: 0.3, duration: 0.6 }}
+  viewport={{ once: true }}
+  src="/about1.jpg"
+  className="
+    w-full lg:w-1/2 
+    h-60 lg:h-[450px] 
+    rounded-3xl shadow-xl object-cover 
+    hover:scale-[1.02] transition-all duration-300
+  "
+/>
+
 
       {/* CONTENT */}
       <motion.div
@@ -145,7 +151,7 @@ cost-effective business solutions.
 {/* -------------------------------------------------------- */}
 {/* SECTION 2 – ERP & Accounting */}
 {/* -------------------------------------------------------- */}
-<section className="min-h-screen flex items-center py-24" style={{ backgroundColor: "#f9fafb" }}>
+<section className="min-h-screen flex items-center py-10" style={{ backgroundColor: "#f9fafb" }}>
   <div className="container mx-auto px-6 lg:px-20">
 
     <motion.div
@@ -155,10 +161,15 @@ cost-effective business solutions.
       viewport={{ once: true }}
       className="bg-white/90 backdrop-blur-lg border border-[#19197026] rounded-3xl shadow-2xl p-10 flex flex-col lg:flex-row items-center gap-16"
     >
-      <motion.img
-        src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600"
-        className="lg:w-1/2 rounded-3xl shadow-xl object-cover h-[450px]"
-      />
+    <motion.img
+  src="/about2.jpg"
+  className="
+    w-full lg:w-1/2 
+    h-60 lg:h-[450px] 
+    rounded-3xl shadow-xl object-cover
+  "
+/>
+
 
       <motion.div className="lg:w-1/2">
         <h2 className="text-4xl font-extrabold text-center" style={{ color: "#191970" }}>
@@ -192,15 +203,20 @@ operational efficiency, and compliance management.
 {/* -------------------------------------------------------- */}
 {/* SECTION 3 – Tally Services */}
 {/* -------------------------------------------------------- */}
-<section className="min-h-screen flex items-center py-24" style={{ backgroundColor: "#f8f9fc" }}>
+<section className="min-h-screen flex items-center py-10" style={{ backgroundColor: "#f8f9fc" }}>
   <div className="container mx-auto px-6 lg:px-20">
 
     <motion.div className="bg-white/90 backdrop-blur-lg border border-[#19197026] rounded-3xl shadow-2xl p-10 flex flex-col lg:flex-row items-center gap-16">
 
-      <motion.img
-        src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1600"
-        className="lg:w-1/2 rounded-3xl shadow-xl object-cover h-[450px]"
-      />
+   <motion.img
+  src="/about3.jpg"
+  className="
+    w-full lg:w-1/2 
+    h-60 lg:h-[450px] 
+    rounded-3xl shadow-xl object-cover
+  "
+/>
+
 
       <div className="lg:w-1/2">
         <h2 className="text-4xl font-extrabold text-center" style={{ color: "#191970" }}>
@@ -236,15 +252,19 @@ license purchase to customization and integration.
 {/* -------------------------------------------------------- */}
 {/* SECTION 4 – Cloud Solutions */}
 {/* -------------------------------------------------------- */}
-<section className="min-h-screen flex items-center py-24" style={{ backgroundColor: "#eef1f5" }}>
+<section className="min-h-screen flex items-center py-10" style={{ backgroundColor: "#eef1f5" }}>
   <div className="container mx-auto px-6 lg:px-20">
 
     <motion.div className="bg-white/90 backdrop-blur-lg border border-[#19197026] rounded-3xl shadow-2xl p-10 flex flex-col lg:flex-row items-center gap-16">
+<img
+  src="/about4.jpg"
+  className="
+    w-full lg:w-1/2 
+    h-60 lg:h-[450px] 
+    rounded-3xl shadow-xl object-cover
+  "
+/>
 
-      <img
-        src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600"
-        className="lg:w-1/2 rounded-3xl shadow-xl object-cover h-[450px]"
-      />
 
       <div className="lg:w-1/2">
         <h2 className="text-4xl font-extrabold text-center">SOFTWARE SUPPORT, AMC & TRAINING</h2>
@@ -273,15 +293,20 @@ license purchase to customization and integration.
 {/* -------------------------------------------------------- */}
 {/* SECTION 5 – Mobile Apps */}
 {/* -------------------------------------------------------- */}
-<section className="min-h-screen flex items-center py-24" style={{ backgroundColor: "#f2f4f7" }}>
+<section className="min-h-screen flex items-center py-10" style={{ backgroundColor: "#f2f4f7" }}>
   <div className="container mx-auto px-6 lg:px-20">
 
     <motion.div className="bg-white/90 backdrop-blur-lg border border-[#19197026] rounded-3xl shadow-2xl p-10 flex flex-col lg:flex-row items-center gap-16">
 
-      <img
-        src="https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=1600"
-        className="lg:w-1/2 rounded-3xl shadow-xl object-cover h-[450px]"
-      />
+ <img
+  src="/about5.jpg"
+  className="
+    w-full lg:w-1/2 
+    h-60 lg:h-[450px] 
+    rounded-3xl shadow-xl object-cover
+  "
+/>
+
 
       <div className="lg:w-1/2">
         <h2 className="text-4xl font-extrabold text-center">Mobile Applications</h2>
@@ -306,15 +331,19 @@ license purchase to customization and integration.
 {/* -------------------------------------------------------- */}
 {/* SECTION 6 – CRM Solutions */}
 {/* -------------------------------------------------------- */}
-<section className="min-h-screen flex items-center py-24" style={{ backgroundColor: "#f9fafb" }}>
+<section className="min-h-screen flex items-center py-10" style={{ backgroundColor: "#f9fafb" }}>
   <div className="container mx-auto px-6 lg:px-20">
 
     <motion.div className="bg-white/90 backdrop-blur-lg border border-[#19197026] rounded-3xl shadow-2xl p-10 flex flex-col lg:flex-row items-center gap-16">
 
-      <img
-        src="https://images.unsplash.com/photo-1551033406-611cf9a28f67?q=80&w=1600"
-        className="lg:w-1/2 rounded-3xl shadow-xl object-cover h-[450px]"
-      />
+   <img
+  src="/about6.jpg"
+  className="
+    w-full lg:w-1/2 
+    h-60 lg:h-[450px] 
+    rounded-3xl shadow-xl object-cover
+  "
+/>
 
       <div className="lg:w-1/2">
         <h2 className="text-4xl font-extrabold text-center">CRM Solutions</h2>
@@ -337,15 +366,19 @@ license purchase to customization and integration.
 {/* -------------------------------------------------------- */}
 {/* SECTION 7 – Accounts & Taxation */}
 {/* -------------------------------------------------------- */}
-<section className="min-h-screen flex items-center py-24" style={{ backgroundColor: "#f8f9fc" }}>
+<section className="min-h-screen flex items-center py-10" style={{ backgroundColor: "#f8f9fc" }}>
   <div className="container mx-auto px-6 lg:px-20">
 
     <motion.div className="bg-white/90 backdrop-blur-lg border border-[#19197026] rounded-3xl shadow-2xl p-10 flex flex-col lg:flex-row items-center gap-16">
 
-      <img
-        src="https://images.unsplash.com/photo-1554224154-22dec7ec8818?q=80&w=1600"
-        className="lg:w-1/2 rounded-3xl shadow-xl object-cover h-[450px]"
-      />
+<img
+  src="/about7.jpg"
+  className="
+    w-full lg:w-1/2 
+    h-60 lg:h-[450px] 
+    rounded-3xl shadow-xl object-cover
+  "
+/>
 
       <div className="lg:w-1/2">
         <h2 className="text-4xl font-extrabold text-center">Accounts & Taxation</h2>
@@ -374,15 +407,20 @@ license purchase to customization and integration.
 {/* -------------------------------------------------------- */}
 {/* SECTION 8 – Payroll Solutions */}
 {/* -------------------------------------------------------- */}
-<section className="min-h-screen flex items-center py-24" style={{ backgroundColor: "#eef1f5" }}>
+<section className="min-h-screen flex items-center py-10" style={{ backgroundColor: "#eef1f5" }}>
   <div className="container mx-auto px-6 lg:px-20">
 
     <motion.div className="bg-white/90 backdrop-blur-lg border border-[#19197026] rounded-3xl shadow-2xl p-10 flex flex-col lg:flex-row items-center gap-16">
 
-      <img
-        src="https://images.unsplash.com/photo-1556742400-b5c4d8f3e39b?q=80&w=1600"
-        className="lg:w-1/2 rounded-3xl shadow-xl object-cover h-[450px]"
-      />
+<img
+  src="/about8.jpg"
+  className="
+    w-full lg:w-1/2 
+    h-60 lg:h-[450px] 
+    rounded-3xl shadow-xl object-cover
+  "
+/>
+
 
       <div className="lg:w-1/2">
         <h2 className="text-4xl font-extrabold text-center">Payroll & HRMS</h2>
@@ -407,15 +445,20 @@ license purchase to customization and integration.
 {/* -------------------------------------------------------- */}
 {/* SECTION 9 – Corporate Training */}
 {/* -------------------------------------------------------- */}
-<section className="min-h-screen flex items-center py-24" style={{ backgroundColor: "#f2f4f7" }}>
+<section className="min-h-screen flex items-center py-10" style={{ backgroundColor: "#f2f4f7" }}>
   <div className="container mx-auto px-6 lg:px-20">
 
     <motion.div className="bg-white/90 backdrop-blur-lg border border-[#19197026] rounded-3xl shadow-2xl p-10 flex flex-col lg:flex-row items-center gap-16">
 
-      <img
-        src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1600"
-        className="lg:w-1/2 rounded-3xl shadow-xl object-cover h-[450px]"
-      />
+   <img
+  src="/about9.jpg"
+  className="
+    w-full lg:w-1/2 
+    h-60 lg:h-[450px] 
+    rounded-3xl shadow-xl object-cover
+  "
+/>
+
 
       <div className="lg:w-1/2">
         <h2 className="text-4xl font-extrabold text-center">Corporate Training</h2>
@@ -444,15 +487,20 @@ license purchase to customization and integration.
 {/* -------------------------------------------------------- */}
 {/* SECTION 10 – AMC & Support */}
 {/* -------------------------------------------------------- */}
-<section className="min-h-screen flex items-center py-24" style={{ backgroundColor: "#f9fafb" }}>
+<section className="min-h-screen flex items-center py-10" style={{ backgroundColor: "#f9fafb" }}>
   <div className="container mx-auto px-6 lg:px-20">
 
     <motion.div className="bg-white/90 backdrop-blur-lg border border-[#19197026] rounded-3xl shadow-2xl p-10 flex flex-col lg:flex-row items-center gap-16">
 
-      <img
-        src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1600"
-        className="lg:w-1/2 rounded-3xl shadow-xl object-cover h-[450px]"
-      />
+<img
+  src="/about10.jpg"
+  className="
+    w-full lg:w-1/2 
+    h-60 lg:h-[450px] 
+    rounded-3xl shadow-xl object-cover
+  "
+/>
+
 
       <div className="lg:w-1/2">
         <h2 className="text-4xl font-extrabold text-center">Software AMC & Support</h2>

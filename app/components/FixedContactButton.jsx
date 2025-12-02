@@ -23,21 +23,22 @@ export default function FixedContactButton() {
   return (
     <>
       {/* FIXED BUTTON */}
-      <button
-        onClick={() => setOpen(!open)} 
-        className="fixed bottom-6 right-6 bg-[#8B1F2F] hover:bg-[#751925] text-white 
-                   p-4 rounded-full shadow-xl z-[9999] transition-all"
-      >
-        <Headphones size={26} />
-      </button>
+ <button
+  onClick={() => setOpen(!open)}
+  className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 bg-[#8B1F2F] 
+             hover:bg-[#751925] text-white p-3 sm:p-4 rounded-full 
+             shadow-xl z-40 transition-all"
+>
+  <Headphones size={24} className="sm:size-[26px]" />
+</button>
 
-      {/* CONTACT BOX */}
-      {open && (
-        <div
-          ref={boxRef}
-          className="fixed bottom-24 right-6 bg-white shadow-5xl border border-gray-200 
-                     rounded-xl p-5 w-60 z-[9999]"
-        >
+{open && (
+  <div
+    ref={boxRef}
+    className="fixed bottom-20 right-4 sm:right-6 bg-white shadow-2xl 
+               border border-gray-200 rounded-xl p-5 w-60 z-40"
+  >
+
           <p className="font-bold text-center text-lg text-[#8B1F2F] mb-3">Contact Us</p>
 
           {/* Phone */}

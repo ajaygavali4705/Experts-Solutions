@@ -30,25 +30,24 @@ export default function ImageSliderSection() {
     return () => clearInterval(interval);
   }, [current, isPaused]);
 
-  return (
-    <section className="w-full pb-16 bg-white">
-   
 
+  return (
+    <section className="w-full pb-16 bg-white overflow-x-hidden">
       <div
-        className="relative w-full max-w-8xl mx-auto overflow-hidden "
+        className="relative w-full max-w-7xl mx-auto overflow-hidden"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
       >
         {/* Slider Images */}
-        <div className="relative h-[300px] md:h-[450px] flex items-center justify-center">
+        <div className="relative h-[300px] md:h-[450px] w-full overflow-hidden">
           <AnimatePresence mode="wait">
             <motion.div
               key={current}
-              initial={{ opacity: 0, scale: 0.95 }}
+              initial={{ opacity: 0, scale: 0.98 }}
               animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.95 }}
+              exit={{ opacity: 0, scale: 0.98 }}
               transition={{ duration: 0.5 }}
-              className="absolute w-full h-full"
+              className="absolute inset-0 w-full h-full"
             >
               <Image
                 src={images[current]}
