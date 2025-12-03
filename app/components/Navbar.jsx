@@ -32,7 +32,7 @@ export default function Navbar() {
           <Link href="/admin">Admin</Link>
 
           <Link href="/contact">
-            <button className="bg-[#A72028] text-white px-4 py-2 rounded-md hover:bg-[#8f1c23]">
+            <button className="bg-[#191970] text-white px-4 py-2 rounded-md hover:bg-[#8f1c23]">
               Contact
             </button>
           </Link>

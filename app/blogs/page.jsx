@@ -11,7 +11,7 @@ export default function BlogsPage() {
       {/* ------------------------------------------------------ */}
       {/* HERO SECTION */}
       {/* ------------------------------------------------------ */}
-      <section className="w-full bg-gray-200 py-16 px-10 border-b border-gray-200">
+      <section className="w-full bg-[#8b1f2f] py-16 px-10 border-b border-gray-200">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           <motion.div
             initial={{ opacity: 0, x: -40 }}
@@ -19,7 +19,7 @@ export default function BlogsPage() {
             transition={{ duration: 0.8 }}
           >
             <motion.h1
-              className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight"
+              className="text-3xl md:text-4xl font-bold text-gray-100 leading-tight"
               whileHover={{ scale: 1.02 }}
             >
               Insights That Empower.
@@ -28,7 +28,7 @@ export default function BlogsPage() {
             </motion.h1>
 
             <motion.p
-              className="mt-4 text-gray-600 text-sm md:text-base"
+              className="mt-4 text-gray-100 text-sm md:text-base"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.8 }}

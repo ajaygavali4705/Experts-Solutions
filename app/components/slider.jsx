@@ -39,7 +39,7 @@ export default function ImageSliderSection() {
         onMouseLeave={() => setIsPaused(false)}
       >
         {/* Slider Images */}
-        <div className="relative h-[300px] md:h-[450px] w-full overflow-hidden">
+        <div className="relative h-[300px] md:h-[400px] w-full overflow-hidden">
           <AnimatePresence mode="wait">
             <motion.div
               key={current}
@@ -63,7 +63,7 @@ export default function ImageSliderSection() {
         {/* Left Button */}
         <button
           onClick={prevSlide}
-          className="absolute left-3 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white p-3 rounded-full"
+          className="absolute left-3 top-1/2 -translate-y-1/2  text-black p-3 rounded-full"
         >
           <ChevronLeft size={24} />
         </button>
@@ -71,7 +71,7 @@ export default function ImageSliderSection() {
         {/* Right Button */}
         <button
           onClick={nextSlide}
-          className="absolute right-3 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white p-3 rounded-full"
+          className="absolute right-3 top-1/2 -translate-y-1/2 text-black p-3 rounded-full"
         >
           <ChevronRight size={24} />
         </button>

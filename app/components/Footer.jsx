@@ -12,20 +12,20 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-gray-100 pt-0 pb-10">
+    <footer className="w-full bg-[#0F2347] pt-0 pb-10">
 
       {/* CTA */}
-      <section className="w-full bg-[#0F2347] py-16 px-6">
+      <section className="w-full bg-[#8b1f2f] py-16 px-6">
         <div className="max-w-7xl mx-auto text-center text-white">
           <motion.h2
-            className="text-3xl font-bold"
+            className="text-5xl font-bold"
             whileHover={{ scale: 1.03 }}
           >
             Ready to simplify business with technology?
           </motion.h2>
 
           <motion.p
-            className="mt-3 text-gray-200 max-w-3xl mx-auto"
+            className="mt-5 text-xl text-gray-200 max-w-4xl mx-auto"
             whileHover={{ scale: 1.03 }}
           >
             Let Experts Solutions be your partner in automation, taxation,
@@ -33,15 +33,14 @@ export default function Footer() {
           </motion.p>
 
           <div className="flex justify-center mt-8 gap-6 flex-wrap">
-            {["Contact Us", "Request a Demo", "Get a Quote"].map((x, i) => (
+            {["Request a Demo",].map((x, i) => (
               <motion.button
                 key={i}
                 whileHover={{ scale: 1.1, y: -3 }}
                 className={
                   i === 0
-                    ? "bg-white text-[#0F2347] px-6 py-2 rounded-md"
-                    : i === 1
-                    ? "bg-[#A72028] px-6 py-2 rounded-md"
+                    
+                    ? "bg-[#87CEEB] text-black font-bold px-6 py-2 rounded-md"
                     : "border border-white px-6 py-2 rounded-md"
                 }
               >
@@ -53,7 +52,7 @@ export default function Footer() {
       </section>
 
       {/* MAIN FOOTER */}
-      <div className="max-w-7xl mx-auto px-6 pt-12 grid grid-cols-1 md:grid-cols-4 gap-10 text-gray-700 text-center md:text-left">
+      <div className="max-w-7xl mx-auto px-6  pt-12 grid grid-cols-1 md:grid-cols-4 gap-10 text-gray-700 text-center md:text-left">
 
         {/* Logo */}
         <div className="flex flex-col items-center md:items-start">
@@ -68,8 +67,8 @@ export default function Footer() {
 
         {/* Pages */}
         <div className="flex flex-col items-center md:items-start">
-          <h4 className="font-semibold text-gray-900 mb-3">Pages</h4>
-          <ul className="space-y-2 text-sm">
+          <h4 className="font-semibold text-gray-100 mb-3">Pages</h4>
+          <ul className="space-y-2 text-white text-sm">
             <li><Link href="/">Home</Link></li>
             <li><Link href="/services">Services</Link></li>
             <li><Link href="/about">About</Link></li>
@@ -80,8 +79,8 @@ export default function Footer() {
 
         {/* Solutions */}
         <div className="flex flex-col items-center md:items-start">
-          <h4 className="font-semibold text-gray-900 mb-3">Solutions</h4>
-          <ul className="space-y-2 text-sm">
+          <h4 className="font-semibold text-gray-100 mb-3">Solutions</h4>
+          <ul className="space-y-2 text-white text-sm">
             <li>ERP & Accounting</li>
             <li>Tally Services</li>
             <li>Cloud Hosting</li>
@@ -92,8 +91,8 @@ export default function Footer() {
 
         {/* Contact */}
         <div className="flex flex-col items-center md:items-start">
-          <h4 className="font-semibold text-gray-900 mb-3">Contact</h4>
-          <ul className="space-y-2 text-sm">
+          <h4 className="font-semibold text-gray-100 mb-3">Contact</h4>
+          <ul className="space-y-2 text-white text-sm">
             <li>Pune, Maharashtra, India</li>
             <li>Email: info@experts.com</li>
             <li>Phone: +91 98765 43210</li>
@@ -102,11 +101,11 @@ export default function Footer() {
       </div>
 
       {/* BOTTOM BAR */}
-      <div className="w-full pt-4 text-center text-sm text-gray-700">
+      <div className="w-full pt-4 text-center text-sm text-gray-100">
         <div className="max-w-7xl mx-auto mb-5 mt-2 flex flex-col md:flex-row items-center justify-between gap-4 text-center">
 
           {/* Developer Credit */}
-          <p className="text-sm">
+          <p className="text-sm text-white">
             Developed by{" "}
             <Link
               href="https://www.goanny.com"
@@ -119,11 +118,11 @@ export default function Footer() {
 
           {/* Social Icons */}
           <div className="flex flex-col items-center gap-2 md:flex-row">
-            <span className="text-gray-600 font-semibold text-sm">
+            <span className="text-gray-100 font-semibold text-sm">
               Lets connect
             </span>
 
-            <div className="flex space-x-4 text-lg">
+            <div className="flex text-white space-x-4 text-lg">
               <Link href="https://www.facebook.com" target="_blank">
                 <FaFacebookF className="hover:text-blue-500 transition" />
               </Link>

@@ -478,12 +478,12 @@ function Navbar() {
 /* ---------------- Support Hero ---------------- */
 function SupportHero() {
   return (
-    <section id="support" className="w-full bg-gray-200 px-4 py-12 text-center">
+    <section id="support" className="w-full bg-[#8b1f2f] px-4 py-12 text-center">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-800 mb-4">
+        <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-100 mb-4">
           Were Here to Assist You Connect With Expert Solutions
         </h1>
-        <p className="text-gray-700 text-base sm:text-lg leading-relaxed mb-6">
+        <p className="text-gray-100 text-base sm:text-lg leading-relaxed mb-6">
           Whether you are exploring our ERP systems, taxation services, cloud hosting solutions,
           or need business consultation, our team is ready to guide you with professional support.
         </p>
@@ -491,13 +491,13 @@ function SupportHero() {
         <div className="flex flex-wrap justify-center gap-4">
           <a
             href="mailto:support@example.com"
-            className="px-6 py-3 rounded-full text-sm font-medium bg-red-600 text-white shadow-md hover:bg-red-700 transition"
+            className="px-6 py-3 rounded-md text-sm font-medium bg-[#87CEEB] text-black shadow-md hover:bg-[#87CEEB]transition"
           >
             Contact Support
           </a>
           <a
             href="#tax"
-            className="px-6 py-3 rounded-full text-sm font-medium bg-white text-pink-700 border border-pink-300 shadow-md hover:bg-pink-50 transition"
+            className="px-6 py-3 rounded-md text-sm font-medium bg-white text-pink-700 border border-pink-300 shadow-md hover:bg-pink-50 transition"
           >
             View Services
           </a>

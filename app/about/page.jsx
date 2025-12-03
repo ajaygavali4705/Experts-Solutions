@@ -40,7 +40,7 @@ export default function AboutPage() {
         {/* ---------------------- HERO SECTION ---------------------- */}
        <section
   id="hero"
-  className="min-h-full flex items-center px-6 md:px-16 lg:px-12 bg-white"
+  className="min-h-full flex items-center px-6 md:px-16 lg:px-12 bg-[#8b1f2f]"
 >
   <motion.div
     variants={fadeUp}
@@ -50,11 +50,11 @@ export default function AboutPage() {
     <motion.div variants={zoom} className="space-y-6">
       <h1
         className="text-3xl md:text-5xl text-center font-extrabold leading-tight tracking-tight"
-        style={{ color: "#191970" }}
+        style={{ color: "#ffffffff" }}
       >
         About Us
       </h1>
-      <div className="mt-4 prose text-justify max-w-none text-slate-700">
+      <div className="mt-4 prose text-center max-w-none text-gray-100">
         <p>
           Experts Solutions is a Technology & Innovation Company established in 2011, dedicated to helping Micro, Small, and Medium Enterprises
           (MSMEs) simplify their business operations through business automation, ERP software solutions, accounting systems, taxation consulting,
@@ -71,15 +71,15 @@ export default function AboutPage() {
       <div className="flex flex-wrap gap-4 mt-4  justify-center">
         <a
           href="#about-info"
-          className="group inline-flex items-center gap-3 px-7 py-3.5 rounded-xl font-semibold text-white bg-[#8B1F2F] shadow-lg shadow-[#8b1f2f50] 
-          transition-all duration-300 hover:scale-[1.06] hover:shadow-xl hover:shadow-[#8b1f2f80] active:scale-95"
+          className="group inline-flex items-center gap-3 px-7 py-3.5 rounded-xl font-semibold text-white bg-[#87CEEB] shadow-lg shadow-[#8b1f2f50] 
+          transition-all duration-300 hover:scale-[1.06] hover:shadow-xl  active:scale-95"
         >
           Learn More
           <span className="transition-all duration-300 group-hover:translate-x-1 text-xl">→</span>
         </a>
         <a
           href="#section8"
-          className="inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-white border border-slate-200 text-slate-800 font-medium shadow hover:scale-[1.02] transition"
+          className="inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-[#8b1f2f] border border-slate-200 text-white font-medium shadow hover:scale-[1.02] transition"
         >
           Contact Sales
         </a>
