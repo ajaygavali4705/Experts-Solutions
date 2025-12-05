@@ -38,73 +38,72 @@ export default function AboutPage() {
       <motion.div variants={container} initial="hidden" animate="show">
 
         {/* ---------------------- HERO SECTION ---------------------- */}
-       <section
+<section
   id="hero"
-  className="min-h-full flex items-center px-6 md:px-16 lg:px-12 bg-[#8b1f2f]"
+  className="min-h-screen flex items-center justify-center px-6 md:px-16 lg:px-12 bg-cover bg-center relative"
+  style={{
+    backgroundImage: "url('/bg-experts.jpg')",
+  }}
 >
-  <motion.div
-    variants={fadeUp}
-    className="max-w-7xl py-15 mx-auto w-full grid md:grid-cols-2 gap-12 items-center"
-  >
-    {/* Left: copy */}
-    <motion.div variants={zoom} className="space-y-6">
-      <h1
-        className="text-3xl md:text-5xl text-center font-extrabold leading-tight tracking-tight"
-        style={{ color: "#ffffffff" }}
+  {/* DARK OVERLAY */}
+  <div className="absolute inset-0 bg-[#8b1f2f90]"></div>
+
+
+
+  <div className="relative max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-1 gap-10 items-center">
+    <motion.div
+      initial={{ opacity: 0, x: -40 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.8 }}
+    >
+      <motion.h1
+        className="text-7xl font-bold text-center pt-20 text-white leading-tight"
+        whileHover={{ scale: 1.02 }}
       >
         About Us
-      </h1>
-      <div className="mt-4 prose text-center max-w-none text-gray-100">
-        <p>
-          Experts Solutions is a Technology & Innovation Company established in 2011, dedicated to helping Micro, Small, and Medium Enterprises
-          (MSMEs) simplify their business operations through business automation, ERP software solutions, accounting systems, taxation consulting,
-          cloud hosting, and customized digital platforms.
-        </p>
-        <p>
-          With a solid foundation in software expertise + taxation knowledge + IT infrastructure, we deliver solutions that strengthen business
-          performance, reduce operational complexity, and support long-term growth.
-        </p>
-       
-       
-        <p>Make technology simple, effective, and accessible to every business.</p>
-      </div>
-      <div className="flex flex-wrap gap-4 mt-4  justify-center">
-        <a
-          href="#about-info"
-          className="group inline-flex items-center gap-3 px-7 py-3.5 rounded-xl font-semibold text-white bg-[#87CEEB] shadow-lg shadow-[#8b1f2f50] 
-          transition-all duration-300 hover:scale-[1.06] hover:shadow-xl  active:scale-95"
-        >
-          Learn More
-          <span className="transition-all duration-300 group-hover:translate-x-1 text-xl">→</span>
-        </a>
-        <a
-          href="#section8"
-          className="inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-[#8b1f2f] border border-slate-200 text-white font-medium shadow hover:scale-[1.02] transition"
-        >
-          Contact Sales
-        </a>
-      </div>
+      </motion.h1>
+      <motion.p
+        className="text-xl text-center mt-5 font-semibold mx-3 text-gray-100"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ delay: 0.3, duration: 0.8 }}
+      >
+        Experts Solutions is a Technology & Innovation Company established in
+          2011, dedicated to helping Micro, Small, and Medium Enterprises (MSMEs)
+          simplify their business operations through business automation, ERP
+          software solutions, accounting systems, taxation consulting, cloud
+          hosting, and customized digital platforms. With a solid foundation in software expertise + taxation knowledge + IT
+          infrastructure, we deliver solutions that strengthen business
+          performance, reduce operational complexity, and support long-term
+          growth. Make technology simple, effective, and accessible to every business.
+      </motion.p>
     </motion.div>
 
-    {/* Right: hero image */}
-    <motion.div
-      variants={zoom}
-      className="relative rounded-3xl overflow-hidden  bg-white/30 "
-      data-aos="fade-left"
-    >
-      <div
-        className="absolute -right-10 -top-10 w-40 h-40 rounded-full blur-3xl"
-        style={{ background: "linear-gradient(90deg,#fb7185,#7c3aed)" }}
-      />
-      <img
-        src={images.hero}
-        alt="ERP"
-        className="w-full h-[420px] object-cover"
-        loading="lazy"
-      />
-    </motion.div>
-  </motion.div>
+    <div
+  className="
+    mt-6 
+    flex flex-col sm:flex-row 
+    gap-4 
+    w-full sm:w-auto
+    justify-center sm:justify-start   /* mobile center, desktop left */
+  "
+>
+  <motion.button
+    whileHover={{ scale: 1.07 }}
+    className="
+      bg-[#87CEEB] text-lg text-black font-bold px-5 mb-5 py-2.5 rounded-md
+      w-auto
+      mx-auto sm:mx-0      /* center on mobile, normal on desktop */
+      md:ml-140             /* apply margin only on desktop */
+    "
+  >
+    Learn More
+  </motion.button>
+</div>
+
+</div>
 </section>
+
 
 
         {/* ---------------------- ABOUT US INFO SECTION ---------------------- */}
@@ -116,14 +115,14 @@ export default function AboutPage() {
 
     {/* Section Title */}
     <h2
-      className="text-3xl md:text-4xl font-extrabold mb-6"
-      style={{ color: "#191970" }}
+      className="text-3xl md:text-5xl font-extrabold mb-6"
+      style={{ color: "#8b1f2f" }}
     >
       Why Choose Experts Solutions?
     </h2>
 
     {/* Section Description */}
-    <p className="text-slate-700 max-w-3xl mx-auto mb-12 text-lg">
+    <p className="text-slate-700 max-w-5xl mx-auto mb-12 text-lg">
       At Experts Solutions, we provide MSMEs with the right mix of technology, expertise, and support to grow and scale efficiently. Our solutions are
       tailor-made for business needs, blending innovation, compliance, and automation.
     </p>
@@ -143,9 +142,9 @@ export default function AboutPage() {
     <motion.div
       key={i}
       variants={zoom}
-      className="p-8 rounded-3xl shadow-xl bg-white/80 backdrop-blur-md border border-white/30 hover:scale-[1.05] transition-transform flex flex-col items-center text-center"
+      className="p-8 rounded-3xl shadow-2xl bg-white/80 backdrop-blur-md border border-white/30 hover:scale-[1.05] transition-transform flex flex-col items-center text-center"
     >
-      <div className={`w-20 h-20 mb-5 rounded-full flex items-center justify-center text-3xl text-white font-bold bg-gradient-to-r ${gradient} shadow-lg transition-all duration-300 group-hover:scale-110`}>
+      <div className={`w-20 h-20 mb-5 rounded-full flex items-center justify-center text-3xl text-white font-bold bg-[#8b1f2f] shadow-lg transition-all duration-300 group-hover:scale-110`}>
         {icon}
       </div>
 
@@ -166,7 +165,7 @@ export default function AboutPage() {
         {/* ---------------------- SECTION 2 — OUR JOURNEY ---------------------- */}
 <section
   id="section2"
-  className="min-h-screen py-20 px-6 md:px-12 lg:px-28 bg-gray-100 flex items-center"
+  className="min-h-screen py-20 px-6 md:px-12 lg:px-28 bg-[#87CEEB] flex items-center"
 >
   <motion.div
     variants={fadeUp}
@@ -177,7 +176,7 @@ export default function AboutPage() {
   >
     {/* SECTION TITLE */}
     <h2
-      className="text-center text-3xl md:text-4xl font-extrabold tracking-wide"
+      className="text-center text-3xl md:text-5xl font-extrabold tracking-wide"
       style={{ color: "#191970" }}
     >
       Our Journey & Commitment
@@ -236,19 +235,32 @@ export default function AboutPage() {
       </motion.div>
     </div>
 
-{/* CARD 3 – TIMELINE WITHOUT BOX */}
+
+
+
+
+  </motion.div>
+</section>
+
+<section id="section2"
+  className="py-10 px-6 md:px-12 lg:px-28 bg-gray-100 flex items-center">
+
+  {/* CARD 3 – TIMELINE WITHOUT BOX */}
 <div className="w-full mt-10 relative">
   <h3
-    className="text-4xl font-bold mb-10 text-center"
+    className="text-6xl font-bold mb-10 text-center"
     style={{ color: "#191970" }}
   >
     Milestones
   </h3>
+      <p className="text-slate-700 text-center max-w-5xl mx-auto mb-12 text-lg">
+    Over the years, Experts Solutions has consistently evolved, expanded, and strengthened its services to support thousands of MSMEs. Each milestone reflects our commitment to innovation, customer success, and continuous improvement. Our journey showcases how we have grown into a trusted partner for business automation and compliance.
+    </p>
 
   {/* CENTER CONNECTING LINE — ONLY BETWEEN CIRCLES */}
-  <div className="hidden md:block absolute top-[120px] left-1/2 transform -translate-x-1/2 w-[80%] h-[4px] bg-[#8B1F2F]/40 z-0"></div>
+  <div className="hidden md:block absolute top-[270px] left-1/2 transform -translate-x-1/2 w-[80%] h-[4px] bg-[#8B1F2F]/40 z-0"></div>
 
-  <div className="grid grid-cols-1 md:grid-cols-5 gap-5 place-items-center relative z-10">
+  <div className="grid grid-cols-1 font-bold md:grid-cols-5 gap-5 place-items-center relative z-10">
     {[
       ["2011", "Company founded & ERP services launched"],
       ["2015", "Expanded to Cloud Hosting & Accounting"],
@@ -275,19 +287,13 @@ export default function AboutPage() {
     ))}
   </div>
 </div>
-
-
-
-  </motion.div>
 </section>
-
-
         {/* ---------------------- SECTION 3 — SERVICES ---------------------- */}
        
        
    <section
   id="section3"
-  className="w-full py-16 px-6 md:px-12 lg:px-28 bg-gray-white"
+  className="w-full py-16 px-6 md:px-12 lg:px-28 bg-[#87CEEB]"
 >
   <motion.div
     variants={fadeUp}
@@ -297,11 +303,13 @@ export default function AboutPage() {
     className="w-full"
   >
     <h2
-      className="text-2xl md:text-4xl font-bold mb-10 text-center"
+      className="text-2xl md:text-5xl font-bold mb-10 text-center"
       style={{ color: "#191970" }}
     >
       Our Services
     </h2>
+    <p className="text-slate-700 text-center font-bold max-w-6xl mx-auto mb-12 text-lg">
+Our services are designed to simplify, automate, and strengthen every part of your business operations. From ERP and Tally solutions to cloud hosting, mobile applications, CRM systems, and taxation services, we offer everything under one trusted platform. We help businesses work smarter, stay compliant, and achieve sustainable growth.    </p>
 
     {/* GRID FOR 4 BOXES */}
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
@@ -354,11 +362,14 @@ export default function AboutPage() {
   >
     {/* SECTION TITLE */}
     <h2
-      className="text-center text-3xl md:text-4xl font-extrabold tracking-wide"
-      style={{ color: "#191970" }}
+      className="text-center text-3xl md:text-5xl font-extrabold tracking-wide"
+      style={{ color: "#8b1f2f" }}
     >
       Vision • Mission • Values
     </h2>
+ <p className="text-slate-700 text-center font-bold max-w-6xl mx-auto mb-12 text-lg">
+At Experts Solutions, our vision, mission, and values work together to empower businesses through simple, scalable, and smart digital transformation. We aim to deliver reliable software, cloud, and compliance solutions backed by integrity, transparency, and continuous innovation. Our commitment is to provide cost-effective services, exceptional support, and long-term value that helps clients grow with confidence.
+</p>
 
     {/* BOXES WRAPPER */}
     <div className="grid grid-cols-1 md:grid-cols-2 gap-10 place-items-center">
@@ -368,12 +379,12 @@ export default function AboutPage() {
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="p-10 w-full rounded-3xl bg-white/80 backdrop-blur-md border border-purple-100 shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300"
+        className="p-10 w-full rounded-3xl bg-[#8b1f2f] backdrop-blur-md border border-purple-100 shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300"
       >
-        <h4 className="text-2xl font-semibold" style={{ color: "#191970" }}>
+        <h4 className="text-4xl text-center font-bold" style={{ color: "#ffffffff" }}>
           Our Vision
         </h4>
-        <p className="mt-2 text-slate-700 leading-relaxed">
+        <p className="mt-2 text-white font-bold text-center leading-relaxed">
           To help businesses grow by providing simple, powerful, and technology-driven
           solutions that enhance productivity, compliance, and overall performance.
         </p>
@@ -384,12 +395,12 @@ export default function AboutPage() {
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="p-10 w-full rounded-3xl bg-white/80 backdrop-blur-md border border-purple-100 shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300"
+        className="p-10 w-full rounded-3xl bg-[#8b1f2f] backdrop-blur-md border border-purple-100 shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300"
       >
-        <h4 className="text-2xl font-semibold" style={{ color: "#191970" }}>
+        <h4 className="text-4xl text-center font-bold" style={{ color: "#ffffffff" }}>
           Our Mission
         </h4>
-        <p className="mt-2 text-slate-700 leading-relaxed">
+        <p className="mt-2 text-white font-bold text-center leading-relaxed">
           To deliver high-quality automation software, accounting solutions, and taxation
           services with integrity, transparency, and a strong commitment to client success.
         </p>
@@ -407,7 +418,7 @@ export default function AboutPage() {
     md:w-[70%]        /* Increased width */
     mx-auto 
     rounded-3xl 
-    bg-gradient-to-r from-white to-[#f3f3f3] 
+    bg-[#8b1f2f] 
     border 
     shadow-lg 
     hover:shadow-2xl 
@@ -417,17 +428,15 @@ export default function AboutPage() {
     text-center
   "
 >
-  <h4 className="text-2xl font-semibold mb-6" style={{ color: "#191970" }}>
+  <h4 className="text-4xl font-bold mb-6" style={{ color: "#ffffffff" }}>
     Our Core Values
   </h4>
 
   {/* 2-COLUMN LIST */}
-  <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-6 text-left mx-auto w-fit text-slate-700 leading-relaxed">
-    <div>✔ Integrity — Honesty & professional ethics.</div>
-    <div>✔ Quality — Best tools & services.</div>
-    <div>✔ Transparency — Clear communication.</div>
-    <div>✔ Innovation — Continuous improvement.</div>
-    <div>✔ Customer-first — Your growth is our priority.</div>
+  <div className="grid grid-cols-1 font-bold sm:grid-cols-1 gap-y-3 gap-x-6 text-left mx-auto w-fit text-white leading-relaxed">
+    <p className="mt-2 text-white font-bold text-center leading-relaxed">
+         Our core values reflect our commitment to integrity, transparency, and customer-first service. We continuously innovate to deliver reliable, modern solutions that simplify business operations. With a strong focus on quality, accountability, and teamwork, we ensure every client receives consistent support, professional excellence, and long-term value.
+        </p>
   </div>
 </motion.div>
 
@@ -443,23 +452,26 @@ export default function AboutPage() {
     {/* ---------------------- SECTION 6 — SOFTWARE PARTNERS ---------------------- */}
 <section
   id="section6"
-  className="py-24 px-6 md:px-12 lg:px-28 bg-gray-200"
+  className="py-24 px-6 md:px-12 lg:px-28 bg-[#87CEEB]"
 >
   <motion.div
     variants={fadeUp}
     initial="hidden"
     whileInView="show"
     viewport={{ once: true }}
-    className="max-w-7xl mx-auto space-y-14"
+    className="max-w-7xl mx-auto space-y-6"
   >
     
     {/* Section Title */}
     <h2
-      className="text-center text-3xl md:text-5xl font-extrabold tracking-wide"
+      className="text-center text-3xl md:text-5xl font-extrabold"
       style={{ color: "#191970" }}
     >
       SOFTWARE PARTNERS
     </h2>
+      <p className="text-gray-900 mb-10 font-bold text-lg text-center leading-relaxed">
+         We collaborate with leading software providers to offer trusted, high-performance solutions for accounting, ERP, payroll, CRM, and business automation. Our partnerships with top brands ensure reliability, accuracy, and long-term value for every client. Through these alliances, we deliver certified tools backed by expert implementation and support.
+        </p>
 
     {/* Cards */}
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 justify-center place-items-center">
@@ -498,57 +510,6 @@ export default function AboutPage() {
 </section>
 
 
-        {/* ---------------------- SECTION 7 — WHAT MAKES US DIFFERENT ---------------------- */}
-       <section
-  id="section7"
-  className="py-24 px-6 md:px-12 lg:px-28 bg-gray-50"
->
-  <motion.div variants={fadeUp} className="max-w-7xl mx-auto space-y-14">
-
-    {/* 🔹 Section Title */}
-    <h2
-      className="text-center text-3xl md:text-5xl font-extrabold tracking-wide"
-      style={{ color: "#191970" }}
-    >
-      WHAT MAKES US DIFFERENT
-    </h2>
-
-    {/* 🔹 Centered Feature Cards */}
-    <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 justify-center">
-      {[
-        ["Customized Solutions", "Tailored ERP, accounting & cloud solutions for your business."],
-        ["Trusted Expertise", "13+ years of experience with 3000+ clients."],
-        ["Client-Centric Approach", "Dedicated support & training for every client."],
-        ["Affordable & Scalable", "Solutions that grow with your business."],
-        ["Innovation & Quality", "High-quality tools & modern technology."],
-        ["Ethical & Transparent", "Integrity and accountability in all services."],
-      ].map(([title, desc], i) => (
-        <motion.div
-          key={i}
-          variants={zoom}
-          className="group p-8 text-center rounded-3xl bg-white/70 backdrop-blur-xl border border-[#e5cfff] shadow-lg hover:shadow-2xl hover:-translate-y-3 transition-all duration-300 flex flex-col items-center justify-center"
-        >
-
-          {/* Title */}
-          <h4
-            className="text-xl font-bold transition-colors duration-300 group-hover:text-purple-700"
-            style={{ color: "#191970" }}
-          >
-            {title}
-          </h4>
-
-          {/* Description */}
-          <p className="text-slate-600 mt-4 text-sm leading-relaxed max-w-[260px]">
-            {desc}
-          </p>
-
-          {/* Decorative Line */}
-          <div className="mt-5 w-20 h-1 rounded-full bg-gradient-to-r from-[#a56fff] to-[#d783ff] opacity-60 group-hover:opacity-100 transition-all"></div>
-        </motion.div>
-      ))}
-    </div>
-  </motion.div>
-</section>
 
         </motion.div>
     </div>

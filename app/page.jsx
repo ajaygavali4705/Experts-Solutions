@@ -19,63 +19,87 @@ export default function HomePage() {
       {/* ------------------------------------------------------ */}
       {/* HERO SECTION */}
       {/* ------------------------------------------------------ */}
-      <section className="w-full h-[650] bg-[#8b1f2f] py-40 px-4 sm:px-6 border-b border-gray-200">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <motion.h1
-              className="text-3xl sm:text-4xl  md:text-5xl text-center font-bold text-white leading-tight"
-              whileHover={{ scale: 1.02 }}
-            >
-              Technology Made Simple.
-              <br />
-              Growth Made Smarter
-            </motion.h1>
+<section className="w-full bg-[#8b1f2f] py-40 px-4 sm:px-6 border-b border-gray-200 
+  h-auto md:h-[650px]       /* mobile auto-height, desktop original height */
+">
+  <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-center">
 
-            <motion.p
-              className="mt-6 text-gray-50 text-center mb-6 text-lg sm:text-lg"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ delay: 0.3, duration: 0.8 }}
-            >
-              Experts Solutions empower MSMEs with powerful MIS, accounting,
-              taxation, and end-to-end digital solutions designed to simplify
-              operations and accelerate business growth.
-            </motion.p>
+    {/* LEFT CONTENT */}
+    <motion.div
+      initial={{ opacity: 0, x: -40 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.8 }}
+    >
+      <motion.h1
+        className="text-3xl sm:text-4xl md:text-5xl text-center font-bold text-white leading-tight"
+        whileHover={{ scale: 1.02 }}
+      >
+        Technology Made Simple.
+        <br />
+        Growth Made Smarter
+      </motion.h1>
 
-            <div className="mt-6 flex h-[60] flex-col sm:flex-row gap-4 w-full sm:w-auto">
-              <motion.button
-                whileHover={{ scale: 1.07 }}
-                className="bg-[#87CEEB] text-lg text-black ml-50  font-bold px-5 py-2.5 rounded-md w-full sm:w-auto"
-              >
-                Explore Our Solutions
-              </motion.button>
+      <motion.p
+        className="mt-6 text-gray-50 text-center mb-6 text-lg sm:text-lg"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ delay: 0.3, duration: 0.8 }}
+      >
+        Experts Solutions empower MSMEs with powerful MIS, accounting, taxation,
+        and digital solutions designed to simplify operations and accelerate growth.
+      </motion.p>
 
-              
-            </div>
+      {/* BUTTON FIX MOBILE ONLY */}
+      
+<div
+  className="
+    mt-6 
+    flex flex-col sm:flex-row 
+    gap-4 
+    w-full sm:w-auto
+    justify-center sm:justify-start   /* mobile center, desktop left */
+  "
+>
+  <motion.button
+    whileHover={{ scale: 1.07 }}
+    className="
+      bg-[#87CEEB] text-lg text-black font-bold px-5 py-2.5 rounded-md
+      w-auto
+      mx-auto sm:mx-0      /* center on mobile, normal on desktop */
+      md:ml-50             /* apply margin only on desktop */
+    "
+  >
+    Explore Our Solutions
+  </motion.button>
+</div>
 
-            
-          </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.85 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1 }}
-            className="flex justify-center"
-          >
-            <Image
-              src="/technology-image.webp"
-              alt="Technology Illustration"
-              width={500}
-              height={350}
-              className="w-full max-w-sm sm:max-w-md md:max-w-lg"
-            />
-          </motion.div>
-        </div>
-      </section>
+    </motion.div>
+
+    {/* RIGHT IMAGE FIXED MOBILE */}
+    <motion.div
+      initial={{ opacity: 0, scale: 0.85 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 1 }}
+      className="flex justify-center"
+    >
+      <Image
+        src="/technology-image.webp"
+        alt="Technology Illustration"
+        width={500}
+        height={350}
+        className="
+          w-64 mx-auto           /* perfect mobile size */
+          sm:w-full sm:max-w-md 
+          md:max-w-lg 
+        "
+      />
+    </motion.div>
+
+  </div>
+</section>
+
+
 
       {/* SLIDER */}
       <div className="w-full overflow-hidden">
@@ -83,124 +107,122 @@ export default function HomePage() {
       </div>
 
 <section className="pb-20 pt-10 px-4 bg-[#faddca]">
-  <h2 className="text-xl sm:text-5xl mt-10 text-center font-bold mx-10 text-[#8b1f2f] mb-4">
+  <h2 className="text-2xl sm:text-5xl mt-10 text-center font-bold mx-4 sm:mx-10 text-[#8b1f2f] mb-4 leading-snug">
     Helping businesses grow through smart digital transformation
   </h2>
 
-  <p className="max-w-6xl ml-35 text-gray-700 text-center leading-relaxed mb-6 text-lg sm:text-lg">
-    We empower businesses to modernize their operations with automation, cloud technology, and smart digital tools. Our solutions streamline processes, improve efficiency, and reduce manual dependency. With real-time insights and integrated systems, companies can scale faster, stay compliant, and make data-driven decisions with confidence.
+  <p className="max-w-6xl mx-auto text-gray-700 text-center leading-relaxed mb-6 text-base sm:text-lg px-2">
+    We empower businesses to modernize their operations with automation, cloud technology, 
+    and smart digital tools. Our solutions streamline processes, improve efficiency, and 
+    reduce manual dependency. With real-time insights and integrated systems, companies 
+    can scale faster, stay compliant, and make data-driven decisions with confidence.
   </p>
 
   <div className="max-w-6xl mt-16 mx-auto flex flex-col items-center relative">
 
     {/* CENTER CIRCLE */}
     <div className="relative flex items-center justify-center">
-      <div className="w-44 h-44 sm:w-56 sm:h-56 bg-white rounded-full shadow-xl flex items-center justify-center border-4 border-gray-200">
+      <div className="w-36 h-36 sm:w-56 sm:h-56 bg-white rounded-full shadow-xl flex items-center justify-center border-4 border-gray-200">
         <img
           src="/images/Expert_logo.jpg"
           alt="Logo"
-          className="w-24 sm:w-40 h-25 sm:h-30"
+          className="w-20 sm:w-40"
         />
       </div>
     </div>
 
-    {/* LEFT SIDE TEXT */}
-<div className="absolute left-0 top-1/2 -translate-y-1/2 hidden md:block">
-  <div className="space-y-6">
+    {/* DESKTOP LEFT TEXT */}
+    <div className="absolute left-0 top-1/2 -translate-y-1/2 hidden md:block">
+      <div className="space-y-6">
+        <div className="flex items-center">
+          <div className="text-right font-bold text-gray-700 w-72 pr-4">
+            Automating core business operations for faster, error-free workflows
+          </div>
+          <div className="flex items-center">
+            <div className="h-1 w-40 bg-gray-600"></div>
+            <FaArrowRight className="text-gray-600 text-xl -ml-1" />
+          </div>
+        </div>
 
-    {/* 1 */}
-    <div className="flex items-center">
-      <div className="text-right font-bold text-gray-700 w-78 pr-4">
+        <div className="flex items-center">
+          <div className="text-right font-bold text-gray-700 w-72 pr-4">
+            Enabling remote access with secure cloud platforms
+          </div>
+          <div className="flex items-center">
+            <div className="h-1 w-40 bg-gray-600"></div>
+            <FaArrowRight className="text-gray-600 text-xl -ml-1" />
+          </div>
+        </div>
+
+        <div className="flex items-center">
+          <div className="text-right font-bold text-gray-700 w-72 pr-4">
+            Integrating ERP, Tally, CRM, and mobile apps for seamless performance
+          </div>
+          <div className="flex items-center">
+            <div className="h-1 w-40 bg-gray-600"></div>
+            <FaArrowRight className="text-gray-600 text-xl -ml-1" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {/* DESKTOP RIGHT TEXT */}
+    <div className="absolute right-0 top-1/2 -translate-y-1/2 hidden md:block">
+      <div className="space-y-6">
+
+        <div className="flex items-center">
+          <div className="flex ml-4 items-center">
+            <FaArrowLeft className="text-gray-600 text-xl -mr-1" />
+            <div className="h-1 w-40 bg-gray-600"></div>
+          </div>
+          <div className="text-left font-bold text-gray-700 w-72 pl-4">
+            Improving decision-making with real-time data and analytics
+          </div>
+        </div>
+
+        <div className="flex items-center">
+          <div className="flex ml-9 items-center">
+            <FaArrowLeft className="text-gray-600 text-xl -mr-1" />
+            <div className="h-1 w-40 bg-gray-600"></div>
+          </div>
+          <div className="text-left font-bold text-gray-700 w-72 pl-4">
+            Reducing manual work and boosting operational efficiency
+          </div>
+        </div>
+
+        <div className="flex items-center">
+          <div className="flex ml-4 items-center">
+            <FaArrowLeft className="text-gray-600 text-xl -mr-1" />
+            <div className="h-1 w-40 bg-gray-600"></div>
+          </div>
+          <div className="text-left font-bold text-gray-700 w-64 pl-4">
+            Preparing MSMEs for long-term, scalable digital growth
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    {/* ✅ MOBILE VIEW FIXED */}
+    <div className="mt-10 md:hidden space-y-4 text-center text-gray-700 px-3">
+      <div className="bg-white p-3 rounded-xl shadow-md font-semibold">
         Automating core business operations for faster, error-free workflows
       </div>
-
-      {/* LINE + ARROW */}
-      <div className="flex items-center">
-        <div className="h-1 w-40 bg-gray-600"></div>
-        <FaArrowRight className="text-gray-600 text-xl -ml-1" />
-      </div>
-    </div>
-
-    {/* 2 */}
-    <div className="flex items-center">
-      <div className="text-right font-bold text-gray-700 w-72 pr-4">
+      <div className="bg-white p-3 rounded-xl shadow-md font-semibold">
         Enabling remote access with secure cloud platforms
       </div>
-
-      <div className="flex items-center">
-        <div className="h-1 w-40 bg-gray-600"></div>
-        <FaArrowRight className="text-gray-600 text-xl -ml-1" />
-      </div>
-    </div>
-
-    {/* 3 */}
-    <div className="flex items-center">
-      <div className="text-right font-bold text-gray-700 w-78 pr-4">
+      <div className="bg-white p-3 rounded-xl shadow-md font-semibold">
         Integrating ERP, Tally, CRM, and mobile apps for seamless performance
       </div>
-
-      <div className="flex items-center">
-        <div className="h-1 w-40 bg-gray-600"></div>
-        <FaArrowRight className="text-gray-600 text-xl -ml-1" />
-      </div>
-    </div>
-
-  </div>
-</div>
-{/* RIGHT SIDE TEXT */}
-<div className="absolute right-0 top-1/2 -translate-y-1/2 hidden md:block">
-  <div className="space-y-6">
-
-    {/* 4 */}
-    <div className="flex items-center">
-      {/* LONG LINE + ARROW TOUCHING CIRCLE */}
-      <div className="flex ml-4  items-center">
-        <FaArrowLeft className="text-gray-600 text-xl -mr-1" />
-        <div className="h-1 w-40 bg-gray-600"></div>
-      </div>
-
-      <div className="text-left font-bold text-gray-700 w-72 pl-4">
+      <div className="bg-white p-3 rounded-xl shadow-md font-semibold">
         Improving decision-making with real-time data and analytics
       </div>
-    </div>
-
-    {/* 5 */}
-    <div className="flex items-center">
-      <div className="flex ml-9 items-center">
-        <FaArrowLeft className="text-gray-600 text-xl -mr-1" />
-        <div className="h-1 w-40 bg-gray-600"></div>
-      </div>
-
-      <div className="text-left font-bold text-gray-700 w-72 pl-4">
+      <div className="bg-white p-3 rounded-xl shadow-md font-semibold">
         Reducing manual work and boosting operational efficiency
       </div>
-    </div>
-
-    {/* 6 */}
-    <div className="flex items-center">
-      <div className="flex ml-4  items-center">
-        <FaArrowLeft className="text-gray-600 text-xl -mr-1" />
-        <div className="h-1 w-40 bg-gray-600"></div>
-      </div>
-
-      <div className="text-left font-bold text-gray-700 w-64 pl-4">
+      <div className="bg-white p-3 rounded-xl shadow-md font-semibold">
         Preparing MSMEs for long-term, scalable digital growth
       </div>
-    </div>
-
-  </div>
-</div>
-
-  
-
-    {/* MOBILE VIEW */}
-    <div className="mt-10 md:hidden space-y-4 text-center text-gray-700">
-      <p>Automating core business operations for faster, error-free workflows</p>
-      <p>Enabling remote access with secure cloud platforms</p>
-      <p>Integrating ERP, Tally, CRM, and mobile apps for seamless performance</p>
-      <p>Improving decision-making with real-time data and analytics</p>
-      <p>Reducing manual work and boosting operational efficiency</p>
-      <p>Preparing MSMEs for long-term, scalable digital growth</p>
     </div>
 
   </div>

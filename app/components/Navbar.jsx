@@ -3,14 +3,15 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { HiMenu, HiX } from "react-icons/hi";
+import { FaChevronDown } from "react-icons/fa";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [serviceOpen, setServiceOpen] = useState(false);
 
   return (
-<nav className="w-full bg-white shadow-sm fixed top-0 left-0 z-50">
-  <div className="max-w-7xl mx-auto flex items-center justify-between py-3 px-6 w-full">
-
+    <nav className="w-full bg-white shadow-sm fixed top-0 left-0 z-50">
+      <div className="max-w-7xl mx-auto flex items-center justify-between py-3 px-6 w-full">
 
         {/* Logo */}
         <div className="flex items-center gap-3">
@@ -24,9 +25,53 @@ export default function Navbar() {
 
         {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-8 text-gray-700 font-medium">
+
           <Link href="/">Home</Link>
-          <Link href="/services">Services</Link>
           <Link href="/about">About us</Link>
+
+          {/* DESKTOP DROPDOWN */}
+          <div className="relative group cursor-pointer">
+            <div className="flex items-center gap-1">
+              <Link href="/services">Services</Link>
+            </div>
+
+            <div className="absolute top-full left-0 bg-white shadow-lg rounded-md p-4 
+              hidden group-hover:block w-72 z-50">
+
+              <Link href="/services#ecosystem" className="block py-2 hover:text-blue-700">
+                 Our Service Ecosystem
+              </Link>
+              <Link href="/services#erp" className="block py-2 hover:text-blue-700">
+                 ERP, Accounting & Software Solutions
+              </Link>
+              <Link href="/services#tally" className="block py-2 hover:text-blue-700">
+                Tally Solutions
+              </Link>
+              <Link href="/services#amc" className="block py-2 hover:text-blue-700">
+                 Software Support & AMC & Training
+              </Link>
+              <Link href="/services#mobile" className="block py-2 hover:text-blue-700">
+                 Mobile Applications
+              </Link>
+              <Link href="/services#crm" className="block py-2 hover:text-blue-700">
+                 CRM Solutions
+              </Link>
+              <Link href="/services#accounts" className="block py-2 hover:text-blue-700">
+                Accounts & Taxation
+              </Link>
+              <Link href="/services#payroll" className="block py-2 hover:text-blue-700">
+                Payroll & HRMS
+              </Link>
+              <Link href="/services#training" className="block py-2 hover:text-blue-700">
+                Corporate Training
+              </Link>
+              <Link href="/services#softwareamc" className="block py-2 hover:text-blue-700">
+                Software AMC & Support
+              </Link>
+
+            </div>
+          </div>
+
           <Link href="/blogs">Blogs</Link>
           <Link href="/gallery">Gallery</Link>
           <Link href="/admin">Admin</Link>
@@ -38,7 +83,7 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* Mobile Hamburger Icon */}
+        {/* Mobile Icon */}
         <button
           onClick={() => setOpen(!open)}
           className="md:hidden text-3xl text-gray-700"
@@ -47,65 +92,107 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Menu */}
-     {/* Mobile Menu */}
-{open && (
-  <div className="md:hidden bg-white text-center shadow-lg px-6 py-4 space-y-2 text-gray-700 font-medium">
+      {/* MOBILE MENU */}
+     {open && (
+  <div
+    className="
+      md:hidden 
+      bg-white 
+      text-center 
+      shadow-lg 
+      px-6 py-4 
+      space-y-2 
+      text-gray-700 
+      font-medium
+      max-h-[80vh]          /* make nav scrollable */
+      overflow-y-auto        /* enable vertical scroll */
+    "
+  >
 
-    <Link
-      href="/"
-      onClick={() => setOpen(false)}
-      className="block w-full py-2 border-b"
-    >
-      Home
-    </Link>
 
+          <Link href="/" onClick={() => setOpen(false)} className="block w-full py-2 border-b">
+            Home
+          </Link>
+
+          <Link href="/about" onClick={() => setOpen(false)} className="block w-full py-2 border-b">
+            About
+          </Link>
+
+          {/* MOBILE SERVICES DROPDOWN */}
+      {/* MOBILE SERVICES DROPDOWN */}
+<div>
+  <div
+    onClick={() => setServiceOpen(!serviceOpen)}
+    className="w-full flex justify-center items-center py-2 border-b cursor-pointer"
+  >
+    {/* Services text is clickable as link */}
     <Link
       href="/services"
       onClick={() => setOpen(false)}
-      className="block w-full py-2 border-b"
+      className="text-center w-full"
     >
       Services
     </Link>
-
-    <Link
-      href="/about"
-      onClick={() => setOpen(false)}
-      className="block w-full py-2 border-b"
-    >
-      About
-    </Link>
-
-    <Link
-      href="/blogs"
-      onClick={() => setOpen(false)}
-      className="block w-full py-2 border-b"
-    >
-      Blogs
-    </Link>
-   <Link
-      href="/gallery"
-      onClick={() => setOpen(false)}
-      className="block w-full py-2 border-b"
-    >
-      Gallery
-    </Link>
-    <Link
-      href="/admin"
-      onClick={() => setOpen(false)}
-      className="block w-full py-2 border-b"
-    >
-      Admin
-    </Link>
-
-    <Link href="/contact" onClick={() => setOpen(false)}>
-      <button className="w-full bg-[#A72028] text-white px-4 py-3 rounded-md hover:bg-[#8f1c23] mt-2">
-        Contact
-      </button>
-    </Link>
   </div>
-)}
 
+  {serviceOpen && (
+    <div
+      className="
+        mt-2 bg-gray-100 rounded-md p-2 text-left
+        max-h-[50vh] overflow-y-auto
+      "
+    >
+      <Link href="/services#ecosystem" onClick={() => setOpen(false)} className="block py-2">
+        Our Service Ecosystem
+      </Link>
+      <Link href="/services#erp" onClick={() => setOpen(false)} className="block py-2">
+        ERP, Accounting & Software Solutions
+      </Link>
+      <Link href="/services#tally" onClick={() => setOpen(false)} className="block py-2">
+        Tally Solutions
+      </Link>
+      <Link href="/services#amc" onClick={() => setOpen(false)} className="block py-2">
+        Software Support & AMC & Training
+      </Link>
+      <Link href="/services#mobile" onClick={() => setOpen(false)} className="block py-2">
+        Mobile Applications
+      </Link>
+      <Link href="/services#crm" onClick={() => setOpen(false)} className="block py-2">
+        CRM Solutions
+      </Link>
+      <Link href="/services#accounts" onClick={() => setOpen(false)} className="block py-2">
+        Accounts & Taxation
+      </Link>
+      <Link href="/services#payroll" onClick={() => setOpen(false)} className="block py-2">
+        Payroll & HRMS
+      </Link>
+      <Link href="/services#training" onClick={() => setOpen(false)} className="block py-2">
+        Corporate Training
+      </Link>
+      <Link href="/services#softwareamc" onClick={() => setOpen(false)} className="block py-2">
+        Software AMC & Support
+      </Link>
+    </div>
+  )}
+</div>
+
+          <Link href="/blogs" onClick={() => setOpen(false)} className="block w-full py-2 border-b">
+            Blogs
+          </Link>
+          <Link href="/gallery" onClick={() => setOpen(false)} className="block w-full py-2 border-b">
+            Gallery
+          </Link>
+          <Link href="/admin" onClick={() => setOpen(false)} className="block w-full py-2 border-b">
+            Admin
+          </Link>
+
+          <Link href="/contact" onClick={() => setOpen(false)}>
+            <button className="w-full bg-[#A72028] text-white px-4 py-3 rounded-md hover:bg-[#8f1c23] mt-2">
+              Contact
+            </button>
+          </Link>
+        </div>
+      )}
     </nav>
   );
 }

@@ -53,8 +53,10 @@ export default function ImageSliderSection() {
                 src={images[current]}
                 alt="Slider Image"
                 fill
-                className="object-cover"
-                priority
+className="
+  object-contain        /* mobile – show full image */
+  sm:object-cover       /* tablet & desktop – keep original layout */
+"                priority
               />
             </motion.div>
           </AnimatePresence>
