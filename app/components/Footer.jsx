@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
@@ -11,16 +12,16 @@ import {
 } from "react-icons/fa";
 
 export default function Footer() {
+  const [openPages, setOpenPages] = useState(false);
+  const [openSolutions, setOpenSolutions] = useState(false);
+
   return (
     <footer className="w-full bg-[#0F2347] pt-0 pb-10">
 
       {/* CTA */}
       <section className="w-full bg-[#8b1f2f] py-16 px-6">
         <div className="max-w-7xl mx-auto text-center text-white">
-          <motion.h2
-            className="text-5xl font-bold"
-            whileHover={{ scale: 1.03 }}
-          >
+          <motion.h2 className="text-5xl font-bold" whileHover={{ scale: 1.03 }}>
             Ready to simplify business with technology?
           </motion.h2>
 
@@ -33,26 +34,18 @@ export default function Footer() {
           </motion.p>
 
           <div className="flex justify-center mt-8 gap-6 flex-wrap">
-            {["Request a Demo",].map((x, i) => (
-              <motion.button
-                key={i}
-                whileHover={{ scale: 1.1, y: -3 }}
-                className={
-                  i === 0
-                    
-                    ? "bg-[#87CEEB] text-black font-bold px-6 py-2 rounded-md"
-                    : "border border-white px-6 py-2 rounded-md"
-                }
-              >
-                {x}
-              </motion.button>
-            ))}
+            <motion.button
+              whileHover={{ scale: 1.1, y: -3 }}
+              className="bg-[#87CEEB] text-black font-bold px-6 py-2 rounded-md"
+            >
+              Request a Demo
+            </motion.button>
           </div>
         </div>
       </section>
 
-      {/* MAIN FOOTER */}
-      <div className="max-w-7xl mx-auto px-6  pt-12 grid grid-cols-1 md:grid-cols-4 gap-10 text-gray-700 text-center md:text-left">
+      {/* DESKTOP FOOTER */}
+      <div className="max-w-7xl mx-auto px-6 pt-12 hidden md:grid md:grid-cols-4 gap-10 text-gray-700 text-center md:text-left">
 
         {/* Logo */}
         <div className="flex flex-col items-center md:items-start">
@@ -100,11 +93,68 @@ export default function Footer() {
         </div>
       </div>
 
+      {/* MOBILE FOOTER */}
+      <div className="md:hidden px-6 pt-12 text-center text-white space-y-6">
+
+        {/* Logo */}
+        <div className="flex flex-col items-center">
+          <Image
+            src="/images/Expert_logo.jpg"
+            alt="Experts Solutions Logo"
+            width={120}
+            height={120}
+            className="mb-4 rounded-xl"
+          />
+        </div>
+
+        {/* PAGES BUTTON */}
+        <button
+          onClick={() => setOpenPages(!openPages)}
+          className="w-full py-3 bg-[#8b1f2f] text-white rounded-md font-semibold"
+        >
+          Pages
+        </button>
+
+        {openPages && (
+          <div className="bg-[#102b55] p-4 rounded-md space-y-3">
+            <Link href="/" className="block">Home</Link>
+            <Link href="/services" className="block">Services</Link>
+            <Link href="/about" className="block">About</Link>
+            <Link href="/blogs" className="block">Blogs</Link>
+            <Link href="/gallery" className="block">Gallery</Link>
+          </div>
+        )}
+
+        {/* SOLUTIONS BUTTON */}
+        <button
+          onClick={() => setOpenSolutions(!openSolutions)}
+          className="w-full py-3 bg-[#8b1f2f] mx-w-2xl text-white rounded-md font-semibold"
+        >
+          Solutions
+        </button>
+
+        {openSolutions && (
+          <div className="bg-[#102b55] p-4 rounded-md space-y-3">
+            <p>ERP & Accounting</p>
+            <p>Tally Services</p>
+            <p>Cloud Hosting</p>
+            <p>Mobile Apps</p>
+            <p>CRM Solutions</p>
+          </div>
+        )}
+
+        {/* CONTACT */}
+        <div className="text-center space-y-2 pt-4">
+          <p>Pune, Maharashtra, India</p>
+          <p>Email: info@experts.com</p>
+          <p>Phone: +91 98765 43210</p>
+        </div>
+      </div>
+
       {/* BOTTOM BAR */}
       <div className="w-full pt-4 text-center text-sm text-gray-100">
         <div className="max-w-7xl mx-auto mb-5 mt-2 flex flex-col md:flex-row items-center justify-between gap-4 text-center">
 
-          {/* Developer Credit */}
           <p className="text-sm text-white">
             Developed by{" "}
             <Link
@@ -124,19 +174,19 @@ export default function Footer() {
 
             <div className="flex text-white space-x-4 text-lg">
               <Link href="https://www.facebook.com" target="_blank">
-                <FaFacebookF className="hover:text-blue-500 transition" />
+                <FaFacebookF />
               </Link>
               <Link href="https://www.linkedin.com" target="_blank">
-                <FaLinkedinIn className="hover:text-blue-500 transition" />
+                <FaLinkedinIn />
               </Link>
               <Link href="https://wa.me/919049002701" target="_blank">
-                <FaWhatsapp className="hover:text-green-500 transition" />
+                <FaWhatsapp />
               </Link>
               <Link href="https://www.youtube.com" target="_blank">
-                <FaYoutube className="hover:text-red-500 transition" />
+                <FaYoutube />
               </Link>
               <Link href="https://www.instagram.com" target="_blank">
-                <FaInstagram className="hover:text-pink-500 transition" />
+                <FaInstagram />
               </Link>
             </div>
           </div>
