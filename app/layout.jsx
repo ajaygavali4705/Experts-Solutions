@@ -12,13 +12,16 @@ export default function ClientWrapper({ children }) {
   const isAdminRoute = pathname.startsWith("/admin/home");
 
   return (
-    <>
-      {!isAdminRoute && <Navbar />}
-      {!isAdminRoute && <FixedContactButton />}
+    <html lang="en">
+      <head />
+      <body>
+        {!isAdminRoute && <Navbar />}
+        {!isAdminRoute && <FixedContactButton />}
 
-      <main className="pt-18">{children}</main>
+        <main className="pt-18">{children}</main>
 
-      {!isAdminRoute && <Footer />}
-    </>
+        {!isAdminRoute && <Footer />}
+      </body>
+    </html>
   );
 }
