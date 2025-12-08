@@ -128,7 +128,7 @@ export default function Footer() {
         {/* SOLUTIONS BUTTON */}
         <button
           onClick={() => setOpenSolutions(!openSolutions)}
-          className="w-full py-3 bg-[#8b1f2f] text-white rounded-md font-semibold"
+          className="w-full py-3 bg-[#8b1f2f] mx-w-2xl text-white rounded-md font-semibold"
         >
           Solutions
         </button>

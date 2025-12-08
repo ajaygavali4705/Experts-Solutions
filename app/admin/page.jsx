@@ -12,16 +12,21 @@ export default function AdminPage() {
   const TEMP_USER = "admin@1234";
   const TEMP_PASS = "Admin@1234";
 
- const handleLogin = () => {
+const handleLogin = () => {
   if (username === TEMP_USER && password === TEMP_PASS) {
- document.cookie =
- "adminLoggedIn=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT;";
-router.replace("/admin");
 
+    // SET cookie (correct)
+    document.cookie = "adminLoggedIn=true; path=/;";
+
+    // Optional: store in localStorage if needed
+    localStorage.setItem("adminLoggedIn", "true");
+
+    router.replace("/admin/home");  // or /admin
   } else {
     setError("Invalid Username or Password");
   }
 };
+
 
 
   return (

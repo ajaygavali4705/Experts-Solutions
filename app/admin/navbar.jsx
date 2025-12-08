@@ -1,35 +1,93 @@
 "use client";
-
+import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
+import { HiMenu, HiX } from "react-icons/hi";
+import { FaChevronDown } from "react-icons/fa";
 
 export default function AdminNavbar({ onLogout }) {
+  const [open, setOpen] = useState(false);
+  const [serviceOpen, setServiceOpen] = useState(false);
+
   return (
-    <nav className="w-full bg-[#A72028] text-white shadow-md">
-      <div className="max-w-7xl mx-auto flex items-center justify-between py-3 px-6">
+    <nav className="w-full bg-white shadow-sm fixed top-0 left-0 z-50">
+      <div className="max-w-7xl mx-auto flex items-center justify-between py-3 px-6 w-full">
 
-        <h2 className="text-xl font-semibold">Admin Panel</h2>
+        {/* Logo */}
+        <div className="flex items-center gap-3">
+          <Image
+            src="/images/Expert_logo.jpg"
+            alt="Experts Solutions"
+            width={90}
+            height={50}
+          />
+        </div>
 
-        <div className="flex items-center gap-6 text-white font-medium">
-          <Link href="/admin" className="hover:text-gray-200">
-            Home
-          </Link>
+        {/* Desktop Links */}
+        <div className="hidden md:flex items-center gap-8 text-gray-700 font-medium">
 
-          <Link href="/admin/about" className="hover:text-gray-200">
-            About
-          </Link>
+          <Link href="/">Updates</Link>
+          <Link href="/about">Partners</Link>
+          <Link href="/blogs">Blogs</Link>
+          <Link href="/gallery">Gallery</Link>
 
-          <Link href="/admin/blocks" className="hover:text-gray-200">
-            Blocks
-          </Link>
-
-          <button
+           <button
             onClick={onLogout}
-            className="bg-white text-[#A72028] px-4 py-1 rounded hover:bg-gray-200"
+            className="bg-[#8B1F2F] text-white px-4 py-1 rounded hover:bg-[#8B1F2F]/90 transition"
           >
             Logout
           </button>
         </div>
+
+        {/* Mobile Icon */}
+        <button
+          onClick={() => setOpen(!open)}
+          className="md:hidden text-3xl text-gray-700"
+        >
+          {open ? <HiX /> : <HiMenu />}
+        </button>
       </div>
+
+      {/* MOBILE MENU */}
+     {open && (
+  <div
+    className="
+      md:hidden 
+      bg-white 
+      text-center 
+      shadow-lg 
+      px-6 py-4 
+      space-y-2 
+      text-gray-700 
+      font-medium
+      max-h-[80vh]          /* make nav scrollable */
+      overflow-y-auto        /* enable vertical scroll */
+    "
+  >
+
+
+          <Link href="/" onClick={() => setOpen(false)} className="block w-full py-2 border-b">
+            Home
+          </Link>
+
+          <Link href="/about" onClick={() => setOpen(false)} className="block w-full py-2 border-b">
+            About
+          </Link>
+
+      
+
+          <Link href="/blogs" onClick={() => setOpen(false)} className="block w-full py-2 border-b">
+            Blogs
+          </Link>
+          <Link href="/gallery" onClick={() => setOpen(false)} className="block w-full py-2 border-b">
+            Gallery
+          </Link>
+          <Link href="/admin" onClick={() => setOpen(false)} className="block w-full py-2 border-b">
+            Admin
+          </Link>
+
+        </div>
+      )}
     </nav>
   );
 }

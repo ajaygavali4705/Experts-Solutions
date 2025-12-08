@@ -1,25 +1,24 @@
+"use client";
+
 import "./globals.css";
+import { usePathname } from "next/navigation";
+
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import FixedContactButton from "./components/FixedContactButton";
 
+export default function ClientWrapper({ children }) {
+  const pathname = usePathname();
+  const isAdminRoute = pathname.startsWith("/admin/home");
 
-
-export const metadata = {
-  title: "Expert Solutions",
-  description: "Expert Solutions",
-};
-
-export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-<body className="font-sans bg-gray-50 text-gray-900 overflow-x-hidden">
-        <Navbar />
-         <FixedContactButton />
-        <main className="pt-18">{children}</main>
-        <Footer />
-     
-      </body>
-    </html>
+    <>
+      {!isAdminRoute && <Navbar />}
+      {!isAdminRoute && <FixedContactButton />}
+
+      <main className="pt-18">{children}</main>
+
+      {!isAdminRoute && <Footer />}
+    </>
   );
 }
