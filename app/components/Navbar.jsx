@@ -157,6 +157,9 @@ export default function Navbar() {
           <Link href="/admin" onClick={() => setOpen(false)} className="block w-full py-2 border-b">
             Admin
           </Link>
+          <Link href="/product" onClick={() => setOpen(false)} className="block w-full py-2 border-b">
+           Product
+          </Link>
 
           <Link href="/contact" onClick={() => setOpen(false)}>
             <button className="w-full bg-[#A72028] text-white px-4 py-3 rounded-md hover:bg-[#8f1c23] mt-2">
