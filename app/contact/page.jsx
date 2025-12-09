@@ -325,6 +325,10 @@ export default function Page() {
               placeholder="you@example.com"
               className="w-full px-3 py-2 border rounded-lg bg-white"
             />
+                 <input
+              placeholder="Phone Number"
+              className="w-full px-3 py-2 border rounded-lg bg-white"
+            />
 
             <select className="w-full px-3 py-2 border rounded-lg bg-white">
               {services.slice(0, 4).map((s) => (

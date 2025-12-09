@@ -9,7 +9,8 @@ import FixedContactButton from "./components/FixedContactButton";
 
 export default function ClientWrapper({ children }) {
   const pathname = usePathname();
-  const isAdminRoute = pathname.startsWith("/admin/home");
+  const isAdminRoute = pathname.startsWith("/admin/");
+ 
 
   return (
     <html lang="en">

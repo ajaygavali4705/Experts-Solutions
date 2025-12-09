@@ -61,14 +61,16 @@ export default function AdminHome() {
         <div className="flex justify-between items-center mb-6 w-[70%] mx-auto">
           <div>
             <h1 className="text-3xl font-bold">Slider Image Management</h1>
-            
+            <p className="text-gray-600 mt-1">
+              Add or remove slider images for the homepage.
+            </p>
           </div>
 
           <button
             onClick={() => setShowUploader(!showUploader)}
-            className="bg-[#87CEEB] text-white px-5 py-2 rounded-lg shadow hover:bg-[#87CEEB]/90 transition"
+            className="bg-blue-600 text-white px-5 py-2 rounded-lg shadow hover:bg-blue-700 transition"
           >
-            + Image
+            + Add Image
           </button>
         </div>
 
@@ -106,7 +108,7 @@ export default function AdminHome() {
         <div className="overflow-x-auto bg-white rounded-xl shadow-xl border w-[70%] mx-auto">
           <table className="min-w-full border-collapse">
             <thead>
-              <tr className="bg-[#8B1F2F] text-white">
+              <tr className="bg-gradient-to-r from-blue-600 to-blue-400 text-white">
                 <th className="px-4 py-3 text-left">ID</th>
                 <th className="px-4 py-3 text-left">Preview</th>
                 <th className="px-4 py-3 text-left">Image Name</th>
@@ -157,24 +159,23 @@ export default function AdminHome() {
       </div>
 
       {/* IMAGE VIEW MODAL */}
-     {viewImage && (
-  <div className="fixed inset-0 bg-black/40 backdrop-blur-md flex items-center justify-center z-50">
-    <div className="bg-white p-4 rounded-lg shadow-xl relative max-w-[80%] max-h-[80%]">
-      <button
-        onClick={() => setViewImage(null)}
-        className="absolute top-2 right-2 bg-red-600 text-white rounded-full p-1"
-      >
-        <X size={18} />
-      </button>
+      {viewImage && (
+        <div className="fixed inset-0 bg-blur-sm bg-opacity-70 flex items-center justify-center z-50">
+          <div className="bg-white p-4 rounded-lg shadow-xl relative max-w-[80%] max-h-[80%]">
+            <button
+              onClick={() => setViewImage(null)}
+              className="absolute top-2 right-2 bg-red-600 text-white rounded-full p-1"
+            >
+              <X size={18} />
+            </button>
 
-      <img
-        src={viewImage}
-        className="max-w-full max-h-[75vh] object-contain rounded"
-      />
-    </div>
-  </div>
-)}
-
+            <img
+              src={viewImage}
+              className="max-w-full max-h-[75vh] object-contain rounded"
+            />
+          </div>
+        </div>
+      )}
     </>
   );
 }

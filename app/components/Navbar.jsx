@@ -39,45 +39,31 @@ export default function Navbar() {
               hidden group-hover:block w-72 z-50">
 
               <Link href="/services#ecosystem" className="block py-2 hover:text-blue-700">
-                 Our Service Ecosystem
+                 Software AMC & other
               </Link>
               <Link href="/services#erp" className="block py-2 hover:text-blue-700">
-                 ERP, Accounting & Software Solutions
-              </Link>
-              <Link href="/services#tally" className="block py-2 hover:text-blue-700">
-                Tally Solutions
-              </Link>
-              <Link href="/services#amc" className="block py-2 hover:text-blue-700">
-                 Software Support & AMC & Training
-              </Link>
-              <Link href="/services#mobile" className="block py-2 hover:text-blue-700">
-                 Mobile Applications
-              </Link>
-              <Link href="/services#crm" className="block py-2 hover:text-blue-700">
-                 CRM Solutions
-              </Link>
-              <Link href="/services#accounts" className="block py-2 hover:text-blue-700">
-                Accounts & Taxation
-              </Link>
-              <Link href="/services#payroll" className="block py-2 hover:text-blue-700">
-                Payroll & HRMS
-              </Link>
-              <Link href="/services#training" className="block py-2 hover:text-blue-700">
                 Corporate Training
               </Link>
-              <Link href="/services#softwareamc" className="block py-2 hover:text-blue-700">
-                Software AMC & Support
+              <Link href="/services#tally" className="block py-2 hover:text-blue-700">
+                Implementation
               </Link>
+              <Link href="/services#amc" className="block py-2 hover:text-blue-700">
+                 Integration 
+              </Link>
+              <Link href="/services#mobile" className="block py-2 hover:text-blue-700">
+                Customisation
+              </Link>
+             
 
             </div>
           </div>
-
+          <Link href="/product">Product</Link>
           <Link href="/blogs">Blogs</Link>
           <Link href="/gallery">Gallery</Link>
           <Link href="/admin">Admin</Link>
 
           <Link href="/contact">
-            <button className="bg-[#191970] text-white px-4 py-2 rounded-md hover:bg-[#8f1c23]">
+            <button className="bg-[#191970] text-white px-4 py-2 rounded-md hover:bg-[#191970]">
               Contact
             </button>
           </Link>
@@ -143,35 +129,21 @@ export default function Navbar() {
       "
     >
       <Link href="/services#ecosystem" onClick={() => setOpen(false)} className="block py-2">
-        Our Service Ecosystem
+                 Software AMC & other
       </Link>
       <Link href="/services#erp" onClick={() => setOpen(false)} className="block py-2">
-        ERP, Accounting & Software Solutions
+                Corporate Training
       </Link>
       <Link href="/services#tally" onClick={() => setOpen(false)} className="block py-2">
-        Tally Solutions
+                Implementation
       </Link>
       <Link href="/services#amc" onClick={() => setOpen(false)} className="block py-2">
-        Software Support & AMC & Training
+                 Integration 
       </Link>
       <Link href="/services#mobile" onClick={() => setOpen(false)} className="block py-2">
-        Mobile Applications
+                Customisation
       </Link>
-      <Link href="/services#crm" onClick={() => setOpen(false)} className="block py-2">
-        CRM Solutions
-      </Link>
-      <Link href="/services#accounts" onClick={() => setOpen(false)} className="block py-2">
-        Accounts & Taxation
-      </Link>
-      <Link href="/services#payroll" onClick={() => setOpen(false)} className="block py-2">
-        Payroll & HRMS
-      </Link>
-      <Link href="/services#training" onClick={() => setOpen(false)} className="block py-2">
-        Corporate Training
-      </Link>
-      <Link href="/services#softwareamc" onClick={() => setOpen(false)} className="block py-2">
-        Software AMC & Support
-      </Link>
+    
     </div>
   )}
 </div>

@@ -12,6 +12,11 @@ import {
   FaBuffer,
 } from "react-icons/fa";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa"
+const container = { hidden: { opacity: 0 }, show: { opacity: 1, transition: { staggerChildren: 0.12 } } };
+const fadeUp = { hidden: { opacity: 0, y: 28 }, show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } } };
+const zoom = { hidden: { opacity: 0, scale: 0.98 }, show: { opacity: 1, scale: 1, transition: { duration: 0.45 } } };
+
+
 
 export default function HomePage() {
   return (
@@ -45,8 +50,8 @@ export default function HomePage() {
         whileInView={{ opacity: 1 }}
         transition={{ delay: 0.3, duration: 0.8 }}
       >
-        Experts Solutions empower MSMEs with powerful MIS, accounting, taxation,
-        and digital solutions designed to simplify operations and accelerate growth.
+        Experts Solutions empower SMEs and MSMEs with powerful MIS, accounting, taxation,
+        and Business Software solutions designed to simplify operations and accelerate growth.
       </motion.p>
 
       {/* BUTTON FIX MOBILE ONLY */}
@@ -108,12 +113,12 @@ export default function HomePage() {
 
 <section className="pb-20 pt-10 px-4 bg-[#faddca]">
   <h2 className="text-2xl sm:text-5xl mt-10 text-center font-bold mx-4 sm:mx-10 text-[#8b1f2f] mb-4 leading-snug">
-    Helping businesses grow through smart digital transformation
+    Helping businesses grow through smart Automation transformation
   </h2>
 
   <p className="max-w-6xl mx-auto text-gray-700 text-center leading-relaxed mb-6 text-base sm:text-lg px-2">
     We empower businesses to modernize their operations with automation, cloud technology, 
-    and smart digital tools. Our solutions streamline processes, improve efficiency, and 
+    and smart Software tools. Our solutions streamline processes, improve efficiency, and 
     reduce manual dependency. With real-time insights and integrated systems, companies 
     can scale faster, stay compliant, and make data-driven decisions with confidence.
   </p>
@@ -156,7 +161,7 @@ export default function HomePage() {
 
         <div className="flex items-center">
           <div className="text-right font-bold text-gray-700 w-72 pr-4">
-            Integrating ERP, Tally, CRM, and mobile apps for seamless performance
+            Integrating ERP, Tally, CRM, HRMS and mobile apps for seamless performance
           </div>
           <div className="flex items-center">
             <div className="h-1 w-40 bg-gray-600"></div>
@@ -191,12 +196,12 @@ export default function HomePage() {
         </div>
 
         <div className="flex items-center">
-          <div className="flex ml-4 items-center">
+          <div className="flex ml-5 items-center">
             <FaArrowLeft className="text-gray-600 text-xl -mr-1" />
             <div className="h-1 w-40 bg-gray-600"></div>
           </div>
           <div className="text-left font-bold text-gray-700 w-64 pl-4">
-            Preparing MSMEs for long-term, scalable digital growth
+            Preparing SMEs and MSMEs for long-term, scalable digital growth
           </div>
         </div>
 
@@ -212,7 +217,7 @@ export default function HomePage() {
         Enabling remote access with secure cloud platforms
       </div>
       <div className="bg-white p-3 rounded-xl shadow-md font-semibold">
-        Integrating ERP, Tally, CRM, and mobile apps for seamless performance
+        Integrating ERP, Tally, CRM, HRMS and mobile apps for seamless performance
       </div>
       <div className="bg-white p-3 rounded-xl shadow-md font-semibold">
         Improving decision-making with real-time data and analytics
@@ -242,8 +247,7 @@ export default function HomePage() {
             Our Core Solutions for Business Automation
           </motion.h2>
           <p className="text-gray-600 mt-6 leading-relaxed mb-6 text-lg sm:text-xl font-bold">
-     We deliver smart, integrated solutions that simplify accounting, taxation, operations, and reporting. Our automation systems help MSMEs work faster, reduce manual effort, and make data-driven business decisions.
-    </p>
+Exports solution is a technology and innovation company offering complete business automation ERP software taxation consulting cloud hosting and mobile app solutions    </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
             {[
               {
@@ -301,39 +305,19 @@ export default function HomePage() {
             ))}
           </div>
 
-          <motion.button
-            whileHover={{ scale: 1.07 }}
-            className="mt-10 bg-[#A72028] text-white px-6 py-3 rounded-md shadow-sm hover:bg-[#8f1c23]"
-          >
-            See All Services
-          </motion.button>
+        
         </div>
       </section>
 
-      {/* ------------------------------------------------------ */}
+
+{/* ------------------------------------------------------ */}
       {/* COMPANY SNAPSHOT */}
       {/* ------------------------------------------------------ */}
       <section className="w-full bg-[#fffff] py-14 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto">
-          <motion.h2
-            className="text-3xl sm:text-5xl font-bold text-center text-[#8b1f2f] mb-4"
-            whileHover={{ scale: 1.03 }}
-          >
-            Company Snapshot
-          </motion.h2>
+        
 
-          <motion.p
-            className="text-gray-600 text-center max-w-4xl mx-auto text-lg font-semibold sm:text-base"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
-          >
-            Experts Solutions is a Technology & Innovation Company offering
-            complete business automation, ERP software, taxation consulting,
-            cloud hosting, and mobile app solutions.
-          </motion.p>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 sm:gap-6 mt-10">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6 mt-10">
   {[
     {
       num: "13+ Years",
@@ -341,9 +325,8 @@ export default function HomePage() {
       bg: "bg-[#8b1f2f] text-white",
     },
     { num: "3000+", text: "Served", bg: "bg-[#8b1f2f] text-white" },
-    { num: "Trusted", text: "Tally 3 Star Partner", bg: "bg-[#8b1f2f] text-white" },
-    { num: "MSME", text: "Automation Specialists", bg: "bg-[#8b1f2f] text-white" },
-    { num: "Team", text: "Strong Expert Team", bg: "bg-[#8b1f2f] text-white" },
+    { num: "Trusted", text: "Tally 3 Star Partner, ERP Partner", bg: "bg-[#8b1f2f] text-white" },
+    { num: "SMEs & MSME", text: "Automation Specialists", bg: "bg-[#8b1f2f] text-white" },
   ].map((item, i) => (
     <motion.div
       key={i}
@@ -353,8 +336,8 @@ export default function HomePage() {
       }}
       className={`${item.bg} p-6 rounded-xl text-center hover:bg-white hover:text-black`}
     >
-      <p className="text-lg sm:text-2xl font-bold">{item.num}</p>
-      <p className="text-xs sm:text-sm">{item.text}</p>
+      <p className="text-lg sm:text-3xl font-bold">{item.num}</p>
+      <p className="text-xs sm:text-lg">{item.text}</p>
     </motion.div>
   ))}
 </div>
@@ -362,6 +345,71 @@ export default function HomePage() {
         </div>
       </section>
 
+
+
+   {/* ---------------------- SECTION 6 — SOFTWARE PARTNERS ---------------------- */}
+<section
+  id="section6"
+  className="py-24 px-6 md:px-12 lg:px-28 bg-[#87CEEB]"
+>
+  <motion.div
+    variants={fadeUp}
+    initial="hidden"
+    whileInView="show"
+    viewport={{ once: true }}
+    className="max-w-7xl mx-auto space-y-6"
+  >
+    
+    {/* Section Title */}
+    <h2
+      className="text-center text-3xl md:text-5xl font-extrabold"
+      style={{ color: "#191970" }}
+    >
+      Certified Partners
+    </h2>
+      <p className="text-gray-900 mb-10 font-bold text-lg text-center leading-relaxed">
+         We collaborate with leading software providers to offer trusted, high-performance solutions for accounting, ERP, payroll, CRM, and business automation. Our partnerships with top brands ensure reliability, accuracy, and long-term value for every client. Through these alliances, we deliver certified tools backed by expert implementation and support.
+        </p>
+
+    {/* Cards */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 justify-center place-items-center">
+      {[
+        ["Tally Prime 3 star", "/image10.png"],
+        ["tresatech", "/image7.jpg"],
+        ["Biz Analyst", "/image11.png"],
+        ["Cred Flow", "/image1.jpeg"],
+      ].map(([name, img], i) => (
+        <motion.div
+          key={i}
+          variants={zoom}
+          className="group w-[260px] h-[320px] p-8 rounded-3xl bg-white/80 backdrop-blur-xl border border-purple-200 shadow-lg hover:shadow-xl hover:shadow-purple-300/40 hover:-translate-y-4 hover:scale-[1.04] transition-all duration-300 flex flex-col items-center justify-center text-center"
+        >
+          
+          {/* Logo */}
+          <div className="w-36 h-36 flex items-center justify-center rounded-2xl bg-white shadow-inner overflow-hidden">
+            <img
+              src={img}
+              alt={name}
+              className="w-full h-full object-contain transition-all duration-300 group-hover:scale-110"
+            />
+          </div>
+
+          {/* Title */}
+          <span
+            className="mt-6 text-lg md:text-xl font-semibold tracking-wide"
+            style={{ color: "#191970" }}
+          >
+            {name}
+          </span>
+        </motion.div>
+      ))}
+    </div>
+  </motion.div>
+</section>
+
+
+
+      
 
     </>
   );

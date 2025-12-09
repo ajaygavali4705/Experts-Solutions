@@ -156,7 +156,7 @@ export default function AboutPage() {
                 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center"
                 style={{ color: "#191970" }}
               >
-                Our Service Ecosystem
+               Software AMC & Other
               </h2>
 
               <p
@@ -208,7 +208,7 @@ export default function AboutPage() {
 
             <div className="lg:w-1/2">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center" style={{ color: "#191970" }}>
-                ERP, Accounting & Software Solutions
+                Corporate Training
               </h2>
 
               <p className="mt-4 text-center text-base sm:text-lg" style={{ color: "#191970" }}>
@@ -265,7 +265,7 @@ export default function AboutPage() {
                 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center"
                 style={{ color: "#191970" }}
               >
-                Tally Solutions
+                Implementation 
               </h2>
 
               <p
@@ -315,7 +315,7 @@ export default function AboutPage() {
 
             <div className="lg:w-1/2">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center" style={{ color: "#191970" }}>
-                Software Support & AMC & Training
+                Integration 
               </h2>
 
            
@@ -372,7 +372,7 @@ export default function AboutPage() {
                 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center"
                 style={{ color: "#191970" }}
               >
-                                Mobile Applications
+                              Customisation
 
               </h2>
 
@@ -402,264 +402,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-       {/* -------------------------------------------------------- */}
-      {/* SECTION 6 – CRM Solutions */}
-      {/* -------------------------------------------------------- */}
-      <section 
-      id="crm"
-      className="min-h-screen flex items-center py-10 bg-[#87CEEB]">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-20">
-          <motion.div className="bg-white/90 backdrop-blur-lg rounded-3xl p-6 sm:p-10 flex flex-col lg:flex-row items-center gap-10">
-            <motion.img
-              src="/about6.jpg"
-              className="w-full lg:w-1/2 h-52 sm:h-60 md:h-72 lg:h-[450px] rounded-3xl object-cover"
-            />
-
-            <div className="lg:w-1/2">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center" style={{ color: "#191970" }}>
-                 CRM Solutions
-              </h2>
-
-              <ul className="mt-6 space-y-3 mx-auto lg:ml-42 w-fit">
-                {[
-                  "ERP with CRM",
-                  "CRM Standalone",
-                  "CRM Systems",
-                  "Follow-ups",
-                  "Client Management",
-                ].map((x, i) => (
-                  <li key={i} className="text-base sm:text-lg font-medium flex items-center gap-3">
-                    ✔ {x}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-
-
-    
-  {/* -------------------------------------------------------- */}
-      {/* SECTION 7 – Accounts & Taxation */}
-      {/* -------------------------------------------------------- */}
-      <section
-        id="accounts"
-        className="min-h-screen flex items-center py-10 bg-[#f2f4f7]"
-      >
-        <div className="container mx-auto px-4 sm:px-6 lg:px-20">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="bg-white/90 backdrop-blur-lg border border-[#19197026] rounded-3xl shadow-2xl 
-              p-6 sm:p-10 
-              flex flex-col lg:flex-row items-center gap-10"
-          >
-            {/* IMAGE */}
-            <motion.img
-              src="/about7.jpg"
-              className="
-                w-full lg:w-1/2 
-                h-52 sm:h-60 md:h-72 lg:h-[450px] 
-                rounded-3xl shadow-xl object-cover 
-              "
-            />
-
-            {/* CONTENT */}
-            <motion.div className="lg:w-1/2">
-              <h2
-                className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center"
-                style={{ color: "#191970" }}
-              >
-              Accounts & Taxation
-
-              </h2>
-
-        
-
-              {/* FIXED LIST — now centered on mobile */}
-              <ul className="mt-6 space-y-3 mx-auto lg:ml-30 w-fit">
-                {[
-                 "Bookkeeping & Finalization",
-                  "GST Filings",
-                  "TDS / PT / IT Filings",
-                  "ROC / PAN / TAN / EXIM Registrations",
-                  "Trust / NGO / Partnership / Pvt Ltd Registrations",
-                ].map((item, index) => (
-                  <motion.li
-                    key={index}
-                    className="flex items-center gap-3 text-base sm:text-lg font-medium"
-                    style={{ color: "#191970" }}
-                  >
-                    <span className="text-xl">✔</span> {item}
-                  </motion.li>
-                ))}
-              </ul>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
-
-  {/* -------------------------------------------------------- */}
-      {/* SECTION 8 – Payroll Solutions */}
-      {/* -------------------------------------------------------- */}
-{/* ============= SECTION 8 (Payroll & HRMS) ============= */}
-<section
-  id="payroll"
-  className="min-h-screen flex items-center py-10 bg-[#87CEEB]"
->
-  <div className="container mx-auto px-4 sm:px-6 lg:px-20">
-    <motion.div
-      className="bg-white/90 backdrop-blur-lg rounded-3xl p-6 sm:p-10 flex flex-col lg:flex-row items-center gap-10"
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7 }}
-    >
-      <motion.img
-        src="/about8.jpg"
-        className="w-full lg:w-1/2 h-52 sm:h-60 md:h-72 lg:h-[450px] object-cover rounded-3xl shadow-xl"
-      />
-
-      <div className="lg:w-1/2">
-        <h2
-          className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center"
-          style={{ color: "#191970" }}
-        >
-          Payroll & HRMS
-        </h2>
-
-        <p
-          className="mt-4 text-center text-base sm:text-lg"
-          style={{ color: "#191970" }}
-        >
-          Automate payroll, attendance, compliance, and HR workflows with
-          secure and efficient HRMS solutions.
-        </p>
-
-        <ul className="mt-6 space-y-3 mx-auto w-fit">
-          {[
-            "Payroll Processing Software",
-            "Biometric Attendance Integration",
-            "Employee Self-Service Portal",
-            "Salary Slip & PF/ESI Reports",
-            "HR Document Automation",
-          ].map((item, index) => (
-            <li
-              key={index}
-              className="flex items-center gap-3 text-base sm:text-lg font-medium"
-              style={{ color: "#191970" }}
-            >
-              ✔ {item}
-            </li>
-          ))}
-        </ul>
-      </div>
-    </motion.div>
-  </div>
-</section>
-
-
-
-
-      {/* -------------------------------------------------------- */}
-      {/* SECTION 9 – Corporate Training */}
-      {/* -------------------------------------------------------- */}
-      <section
-        id="training"
-        className="min-h-screen flex items-center py-10 bg-[#f2f4f7]"
-      >
-        <div className="container mx-auto px-4 sm:px-6 lg:px-20">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="bg-white/90 backdrop-blur-lg border border-[#19197026] rounded-3xl shadow-2xl 
-              p-6 sm:p-10 
-              flex flex-col lg:flex-row items-center gap-10"
-          >
-            {/* IMAGE */}
-            <motion.img
-              src="/about9.jpg"
-              className="
-                w-full lg:w-1/2 
-                h-52 sm:h-60 md:h-72 lg:h-[450px] 
-                rounded-3xl shadow-xl object-cover 
-              "
-            />
-
-            {/* CONTENT */}
-            <motion.div className="lg:w-1/2">
-              <h2
-                className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center"
-                style={{ color: "#191970" }}
-              >
-                Corporate Training
-
-              </h2>
-
-        
-
-              {/* FIXED LIST — now centered on mobile */}
-              <ul className="mt-6 space-y-3 mx-auto lg:ml-33 w-fit">
-                {[
-                  "ERP Training",
-                  "Tally Training",
-                  "Accounting Workshops",
-                  "HR & Payroll Training",
-                  "Custom Corporate Programs",
-                ].map((item, index) => (
-                  <motion.li
-                    key={index}
-                    className="flex items-center gap-3 text-base sm:text-lg font-medium"
-                    style={{ color: "#191970" }}
-                  >
-                    <span className="text-xl">✔</span> {item}
-                  </motion.li>
-                ))}
-              </ul>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
-
-   {/* -------------------------------------------------------- */}
-      {/* SECTION 10 – AMC & Support */}
-      {/* -------------------------------------------------------- */}
-      <section 
-      id="softwareamc"
-      className="min-h-screen flex items-center py-10 bg-[#87CEEB]">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-20">
-          <motion.div className="bg-white/90 backdrop-blur-lg rounded-3xl p-6 sm:p-10 flex flex-col lg:flex-row items-center gap-10">
-            <motion.img
-              src="/about11.jpg"
-              className="w-full lg:w-1/2 h-52 sm:h-60 md:h-72 lg:h-[450px] rounded-3xl object-cover"
-            />
-
-            <div className="lg:w-1/2">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center" style={{ color: "#191970" }}>
-                Software AMC & Support
-              </h2>
-
-              <ul className="mt-6 space-y-3 mx-auto lg:ml-20 w-fit">
-                {[
-                  "Payroll Automation",
-                  "Attendance App",
-                  "Salary Calculation",
-                  "PF / ESIC Reports",
-                  "Employee Management",
-                ].map((x, i) => (
-                  <li key={i} className="text-base sm:text-lg font-medium flex items-center gap-3">
-                    ✔ {x}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
+      
 
 
 

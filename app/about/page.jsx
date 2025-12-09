@@ -5,6 +5,7 @@ import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { motion } from "framer-motion";
+import EmployeeSlider from "../components/EmployeeSlider";
 import { FaCheckCircle, FaTools, FaHandshake, FaRocket, FaLock, FaBullseye } from "react-icons/fa";
 
 
@@ -48,62 +49,64 @@ export default function AboutPage() {
   {/* DARK OVERLAY */}
   <div className="absolute inset-0 bg-[#8b1f2f90]"></div>
 
-
-
   <div className="relative max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-1 gap-10 items-center">
     <motion.div
       initial={{ opacity: 0, x: -40 }}
       whileInView={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.8 }}
     >
+      {/* MOBILE SMALL → DESKTOP LARGE */}
       <motion.h1
-        className="text-7xl font-bold text-center pt-20 text-white leading-tight"
+        className="text-4xl sm:text-5xl md:text-7xl font-bold text-center pt-20 text-white leading-tight"
         whileHover={{ scale: 1.02 }}
       >
         About Us
       </motion.h1>
+
+      {/* MOBILE SMALLER PARAGRAPH */}
       <motion.p
-        className="text-xl text-center mt-5 font-semibold mx-3 text-gray-100"
+        className="text-base sm:text-lg md:text-xl text-center mt-5 font-semibold mx-3 text-gray-100"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ delay: 0.3, duration: 0.8 }}
       >
         Experts Solutions is a Technology & Innovation Company established in
-          2011, dedicated to helping Micro, Small, and Medium Enterprises (MSMEs)
-          simplify their business operations through business automation, ERP
-          software solutions, accounting systems, taxation consulting, cloud
-          hosting, and customized digital platforms. With a solid foundation in software expertise + taxation knowledge + IT
-          infrastructure, we deliver solutions that strengthen business
-          performance, reduce operational complexity, and support long-term
-          growth. Make technology simple, effective, and accessible to every business.
+        2011, dedicated to helping Micro, Small, and Medium Enterprises (MSMEs)
+        simplify their business operations through business automation, ERP
+        software solutions, accounting systems, taxation consulting, cloud
+        hosting, and customized Software Modules. With a solid foundation in software expertise + taxation knowledge + IT
+        infrastructure, we deliver solutions that strengthen business
+        performance, reduce operational complexity, and support long-term
+        growth. Make technology simple, effective, and accessible to every business.
       </motion.p>
     </motion.div>
 
     <div
-  className="
-    mt-6 
-    flex flex-col sm:flex-row 
-    gap-4 
-    w-full sm:w-auto
-    justify-center sm:justify-start   /* mobile center, desktop left */
-  "
->
-  <motion.button
-    whileHover={{ scale: 1.07 }}
-    className="
-      bg-[#87CEEB] text-lg text-black font-bold px-5 mb-5 py-2.5 rounded-md
-      w-auto
-      mx-auto sm:mx-0      /* center on mobile, normal on desktop */
-      md:ml-140             /* apply margin only on desktop */
-    "
-  >
-    Learn More
-  </motion.button>
-</div>
-
-</div>
+      className="
+        mt-6 
+        flex flex-col sm:flex-row 
+        gap-4 
+        w-full sm:w-auto
+        justify-center sm:justify-start
+      "
+    >
+      <motion.button
+        whileHover={{ scale: 1.07 }}
+        className="
+          bg-[#87CEEB] text-lg text-black font-bold px-5 mb-5 py-2.5 rounded-md
+          w-auto
+          mx-auto sm:mx-0
+          md:ml-140
+        "
+      >
+        Learn More
+      </motion.button>
+    </div>
+  </div>
 </section>
 
+
+      {/* <EmployeeSlider /> */}
 
 
         {/* ---------------------- ABOUT US INFO SECTION ---------------------- */}
@@ -197,12 +200,12 @@ export default function AboutPage() {
         />
         <div className="p-8">
           <h3
-            className="text-2xl text-center font-bold mb-4"
+            className="text-3xl text-center font-bold mb-4"
             style={{ color: "#191970" }}
           >
             How It Started
           </h3>
-          <p className="text-slate-700 leading-relaxed">
+          <p className="text-slate-700 text-lg text-center leading-relaxed">
             Since 2011, Experts Solutions evolved from a consulting startup into a
             nationwide technology partner empowering MSMEs through automation,
             cloud, accounting, and ERP solutions built with precision and trust.
@@ -221,10 +224,10 @@ export default function AboutPage() {
           alt="Promise"
         />
         <div className="p-8">
-          <h3 className="text-2xl text-center font-bold" style={{ color: "#191970" }}>
+          <h3 className="text-3xl text-center font-bold" style={{ color: "#191970" }}>
             Our Promise to Clients
           </h3>
-          <ul className="mt-4 text-slate-700 leading-relaxed space-y-1">
+          <ul className="mt-4 text-lg text-slate-700 leading-relaxed space-y-1">
             <li>✔ Deliver result-focused solutions</li>
             <li>✔ Prompt professional support</li>
             <li>✔ Transparent communication & ethical practices</li>
@@ -449,67 +452,7 @@ At Experts Solutions, our vision, mission, and values work together to empower b
 
 
         {/* ---------------------- SECTION 5 — TEAM & DEPARTMENTS ---------------------- */}
-    {/* ---------------------- SECTION 6 — SOFTWARE PARTNERS ---------------------- */}
-<section
-  id="section6"
-  className="py-24 px-6 md:px-12 lg:px-28 bg-[#87CEEB]"
->
-  <motion.div
-    variants={fadeUp}
-    initial="hidden"
-    whileInView="show"
-    viewport={{ once: true }}
-    className="max-w-7xl mx-auto space-y-6"
-  >
-    
-    {/* Section Title */}
-    <h2
-      className="text-center text-3xl md:text-5xl font-extrabold"
-      style={{ color: "#191970" }}
-    >
-      SOFTWARE PARTNERS
-    </h2>
-      <p className="text-gray-900 mb-10 font-bold text-lg text-center leading-relaxed">
-         We collaborate with leading software providers to offer trusted, high-performance solutions for accounting, ERP, payroll, CRM, and business automation. Our partnerships with top brands ensure reliability, accuracy, and long-term value for every client. Through these alliances, we deliver certified tools backed by expert implementation and support.
-        </p>
-
-    {/* Cards */}
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 justify-center place-items-center">
-      {[
-        ["Tally ERP", "/image10.jpg"],
-        ["Busy Accounting", "/image7.jpg"],
-        ["Zoho CRM", "/image11.jpg"],
-        ["AWS Cloud", "/image1.jpg"],
-      ].map(([name, img], i) => (
-        <motion.div
-          key={i}
-          variants={zoom}
-          className="group w-[260px] h-[320px] p-8 rounded-3xl bg-white/80 backdrop-blur-xl border border-purple-200 shadow-lg hover:shadow-xl hover:shadow-purple-300/40 hover:-translate-y-4 hover:scale-[1.04] transition-all duration-300 flex flex-col items-center justify-center text-center"
-        >
-          
-          {/* Logo */}
-          <div className="w-36 h-36 flex items-center justify-center rounded-2xl bg-white shadow-inner overflow-hidden">
-            <img
-              src={img}
-              alt={name}
-              className="w-full h-full object-contain transition-all duration-300 group-hover:scale-110"
-            />
-          </div>
-
-          {/* Title */}
-          <span
-            className="mt-6 text-lg md:text-xl font-semibold tracking-wide"
-            style={{ color: "#191970" }}
-          >
-            {name}
-          </span>
-        </motion.div>
-      ))}
-    </div>
-  </motion.div>
-</section>
-
-
+ 
 
         </motion.div>
     </div>

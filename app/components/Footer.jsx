@@ -45,7 +45,7 @@ export default function Footer() {
       </section>
 
       {/* DESKTOP FOOTER */}
-      <div className="max-w-7xl mx-auto px-6 pt-12 hidden md:grid md:grid-cols-4 gap-10 text-gray-700 text-center md:text-left">
+      <div className="max-w-7xl mx-auto px-6 pt-12 hidden md:grid md:grid-cols-5 gap-10 text-gray-700 text-center md:text-left">
 
         {/* Logo */}
         <div className="flex flex-col items-center md:items-start">
@@ -74,11 +74,13 @@ export default function Footer() {
         <div className="flex flex-col items-center md:items-start">
           <h4 className="font-semibold text-gray-100 mb-3">Solutions</h4>
           <ul className="space-y-2 text-white text-sm">
-            <li>ERP & Accounting</li>
             <li>Tally Services</li>
-            <li>Cloud Hosting</li>
-            <li>Mobile Apps</li>
+            <li>Tally Prime Add-Ons</li>
+            <li>Cloud Solutions</li>
+            <li>ERP Software</li>
+            <li>HRMS & Payroll Software</li>
             <li>CRM Solutions</li>
+            <li>Accounts & Taxation Services</li>
           </ul>
         </div>
 
@@ -86,12 +88,28 @@ export default function Footer() {
         <div className="flex flex-col items-center md:items-start">
           <h4 className="font-semibold text-gray-100 mb-3">Contact</h4>
           <ul className="space-y-2 text-white text-sm">
-            <li>Pune, Maharashtra, India</li>
-            <li>Email: info@experts.com</li>
-            <li>Phone: +91 98765 43210</li>
+            <li>Branch Office:</li>
+          <li>E/1009, Oro Avenue, Life Republic,
+Marunji, Pune – 411057</li>
+          <li>Email: sales@experts.net.in</li>
+          <li>Phone: +91 7700005316</li>
+          </ul>
+        </div>
+
+         <div className="flex flex-col items-center md:items-start">
+          <h4 className="font-semibold text-gray-100 mb-3"> </h4>
+          <ul className="space-y-2 text-white text-sm">
+            <li>Registered Office:</li>
+          <li>4/5, Laxmi Sadan Building, Ground Floor,
+Behind Patil Sainath Plaza, Zaver Road End, Station Road,
+Mulund (W), Maharashtra – 400080</li>
+          <li>Email: sales@experts.net.in</li>
+          <li>Phone: +91 9821322456</li>
           </ul>
         </div>
       </div>
+
+
 
       {/* MOBILE FOOTER */}
       <div className="md:hidden px-6 pt-12 text-center text-white space-y-6">
@@ -108,48 +126,60 @@ export default function Footer() {
         </div>
 
         {/* PAGES BUTTON */}
-        <button
-          onClick={() => setOpenPages(!openPages)}
-          className="w-full py-3 bg-[#8b1f2f] text-white rounded-md font-semibold"
-        >
-          Pages
-        </button>
+      {/* PAGES BUTTON */}
+<button
+  onClick={() => setOpenPages(!openPages)}
+  className="w-full max-w-xs mx-auto px-6 py-3 bg-[#102b55] text-white rounded-4xl font-semibold"
+>
+  Pages
+</button>
 
-        {openPages && (
-          <div className="bg-[#102b55] p-4 rounded-md space-y-3">
-            <Link href="/" className="block">Home</Link>
-            <Link href="/services" className="block">Services</Link>
-            <Link href="/about" className="block">About</Link>
-            <Link href="/blogs" className="block">Blogs</Link>
-            <Link href="/gallery" className="block">Gallery</Link>
-          </div>
-        )}
+{openPages && (
+  <div className="bg-[#102b55] p-4 rounded-md space-y-3 text-center max-w-xs mx-auto">
+    <Link href="/" className="block">Home</Link>
+    <Link href="/services" className="block">Services</Link>
+    <Link href="/about" className="block">About</Link>
+    <Link href="/blogs" className="block">Blogs</Link>
+    <Link href="/gallery" className="block">Gallery</Link>
+  </div>
+)}
 
-        {/* SOLUTIONS BUTTON */}
-        <button
-          onClick={() => setOpenSolutions(!openSolutions)}
-          className="w-full py-3 bg-[#8b1f2f] mx-w-2xl text-white rounded-md font-semibold"
-        >
-          Solutions
-        </button>
+{/* SOLUTIONS BUTTON */}
+<button
+  onClick={() => setOpenSolutions(!openSolutions)}
+  className="w-full max-w-xs mx-auto px-6 py-3 bg-[#102b55] text-white rounded-4xl font-semibold"
+>
+  Solutions
+</button>
 
-        {openSolutions && (
-          <div className="bg-[#102b55] p-4 rounded-md space-y-3">
-            <p>ERP & Accounting</p>
-            <p>Tally Services</p>
-            <p>Cloud Hosting</p>
-            <p>Mobile Apps</p>
-            <p>CRM Solutions</p>
-          </div>
-        )}
+{openSolutions && (
+  <div className="bg-[#102b55] p-4 rounded-md space-y-3 text-center max-w-xs mx-auto">
+    <p>ERP & Accounting</p>
+    <p>Tally Services</p>
+    <p>Cloud Hosting</p>
+    <p>Mobile Apps</p>
+    <p>CRM Solutions</p>
+  </div>
+)}
 
         {/* CONTACT */}
         <div className="text-center space-y-2 pt-4">
-          <p>Pune, Maharashtra, India</p>
-          <p>Email: info@experts.com</p>
-          <p>Phone: +91 98765 43210</p>
+          <p>Branch Office:</p>
+          <p>E/1009, Oro Avenue, Life Republic,
+Marunji, Pune – 411057</p>
+          <p>Email: sales@experts.net.in</p>
+          <p>Phone: +91 7700005316</p>
+        </div>
+         <div className="text-center space-y-2 pt-4">
+          <p>Registered Office:</p>
+          <p>4/5, Laxmi Sadan Building, Ground Floor,
+Behind Patil Sainath Plaza, Zaver Road End, Station Road,
+Mulund (W), Maharashtra – 400080</p>
+          <p>Email: sales@experts.net.in</p>
+          <p>Phone: +91 9821322456</p>
         </div>
       </div>
+      
 
       {/* BOTTOM BAR */}
       <div className="w-full pt-4 text-center text-sm text-gray-100">
