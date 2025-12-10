@@ -9,6 +9,7 @@ import {
   FaLinkedinIn,
   FaYoutube,
   FaWhatsapp,
+  FaGoogle,
 } from "react-icons/fa";
 
 export default function Footer() {
@@ -203,10 +204,10 @@ Mulund (W), Maharashtra – 400080</p>
             </span>
 
             <div className="flex text-white space-x-4 text-lg">
-              <Link href="https://www.facebook.com" target="_blank">
+              <Link href="https://www.facebook.com/profile.php?id=61552732301698" target="_blank">
                 <FaFacebookF />
               </Link>
-              <Link href="https://www.linkedin.com" target="_blank">
+              <Link href="https://www.linkedin.com/feed/" target="_blank">
                 <FaLinkedinIn />
               </Link>
               <Link href="https://wa.me/919049002701" target="_blank">
@@ -215,8 +216,11 @@ Mulund (W), Maharashtra – 400080</p>
               <Link href="https://www.youtube.com" target="_blank">
                 <FaYoutube />
               </Link>
-              <Link href="https://www.instagram.com" target="_blank">
+              <Link href="https://www.instagram.com/experts_solutions2011/" target="_blank">
                 <FaInstagram />
+              </Link>
+              <Link href="https://www.google.com/intl/en_in/business/" target="_blank">
+                <FaGoogle />
               </Link>
             </div>
           </div>

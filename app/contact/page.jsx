@@ -29,11 +29,15 @@ export default function Page() {
     setForm((s) => ({ ...s, [name]: value }));
   };
 
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setError("");
     setSuccess("");
+
+    
+
 
     try {
       const res = await fetch("/api/contact", {
@@ -68,6 +72,59 @@ export default function Page() {
     "Company Registrations",
     "Tax Consultancy",
   ];
+
+
+const [taxForm, setTaxForm] = useState({
+  name: "",
+  email: "",
+  contactNumber: "",
+  service: services[0],
+  message: "",
+});
+
+const [taxSuccess, setTaxSuccess] = useState("");
+const [taxError, setTaxError] = useState("");
+const [taxLoading, setTaxLoading] = useState(false);
+
+const handleTaxChange = (e) => {
+  const { name, value } = e.target;
+  setTaxForm((prev) => ({ ...prev, [name]: value }));
+};
+
+const handleTaxSubmit = async (e) => {
+  e.preventDefault();
+  setTaxLoading(true);
+  setTaxError("");
+  setTaxSuccess("");
+
+  try {
+    const res = await fetch("/api/tax-enquiry", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(taxForm),
+    });
+
+    const json = await res.json();
+    if (!res.ok) throw new Error(json?.error || "Failed to submit.");
+
+    setTaxSuccess("Your tax enquiry has been submitted successfully!");
+
+    setTaxForm({
+      name: "",
+      email: "",
+      contactNumber: "",
+      service: services[0],
+      message: "",
+    });
+  } catch (err) {
+    setTaxError(err.message || "Something went wrong. Try again.");
+  } finally {
+    setTaxLoading(false);
+  }
+};
+
+
+
 
   return (
     <div className="min-h-screen bg-white">
@@ -120,12 +177,10 @@ export default function Page() {
     {/* LEFT CARD – CONTACT FORM */}
    <div className="p-4 mx-2 md:p-10 md:mx-10">
 
-      <h2 className="text-3xl md:text-4xl text-center font-extrabold text-[#191970] mb-3">
-        Get in Touch With Us
+      <h2 className="text-3xl md:text-4xl text-center font-extrabold text-[#191970] mb-8">
+        Software & Product Enquiries
       </h2>
-      <p className="text-gray-600 text-center mb-10">
-        Fill out the form and our team will reach out to you within 24 hours.
-      </p>
+     
 
       <form onSubmit={handleSubmit} className="space-y-6" noValidate>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -250,7 +305,7 @@ export default function Page() {
             <div className="text-center md:text-left">
               <div className="text-lg font-semibold">Support Desk</div>
               <div className="font-semibold">9821322456</div>
-              <div className="font-semibold">9821322456</div>
+              <div className="font-semibold"></div>
             </div>
           </div>
         </div>
@@ -305,6 +360,7 @@ export default function Page() {
               <div className="text-xs text-slate-600">Email</div>
               <div className="mt-1 font-semibold">sales@experts.net.in</div>
             </div>
+
           </div>
         </div>
       </div>
@@ -316,30 +372,62 @@ export default function Page() {
         <div className="rounded-2xl bg-gray-200 p-4 shadow-xl">
           <h4 className="text-2xl font-bold mb-3 text-center text-red-700">Quick Tax Enquiry</h4>
 
-          <form className="space-y-3" onSubmit={(e) => e.preventDefault()}>
-            <input
-              placeholder="Your full name"
-              className="w-full px-3 py-2 border rounded-lg bg-white"
-            />
-            <input
-              placeholder="you@example.com"
-              className="w-full px-3 py-2 border rounded-lg bg-white"
-            />
-                 <input
-              placeholder="Phone Number"
-              className="w-full px-3 py-2 border rounded-lg bg-white"
-            />
+<form className="space-y-3" onSubmit={handleTaxSubmit}>
+  <input
+    name="name"
+    placeholder="Your full name"
+    value={taxForm.name}
+    onChange={handleTaxChange}
+    className="w-full px-3 py-2 border rounded-lg bg-white"
+  />
 
-            <select className="w-full px-3 py-2 border rounded-lg bg-white">
-              {services.slice(0, 4).map((s) => (
-                <option key={s}>{s}</option>
-              ))}
-            </select>
+  <input
+    name="email"
+    placeholder="you@example.com"
+    value={taxForm.email}
+    onChange={handleTaxChange}
+    className="w-full px-3 py-2 border rounded-lg bg-white"
+  />
 
-            <button className="w-full bg-red-600 text-white py-2 rounded-lg font-semibold text-sm hover:bg-red-700">
-              Submit Enquiry
-            </button>
-          </form>
+  <input
+    name="contactNumber"
+    placeholder="Phone Number"
+    value={taxForm.contactNumber}
+    onChange={handleTaxChange}
+    className="w-full px-3 py-2 border rounded-lg bg-white"
+  />
+
+  <select
+    name="service"
+    value={taxForm.service}
+    onChange={handleTaxChange}
+    className="w-full px-3 py-2 border rounded-lg bg-white"
+  >
+    {services.slice(0, 6).map((s) => (
+      <option key={s}>{s}</option>
+    ))}
+  </select>
+
+  <textarea
+    name="message"
+    placeholder="Message / Query"
+    value={taxForm.message}
+    onChange={handleTaxChange}
+    className="w-full p-3 border rounded-lg bg-white"
+  />
+
+  <button
+    type="submit"
+    className="w-full bg-red-600 text-white py-2 rounded-lg font-semibold text-sm hover:bg-red-700"
+    disabled={taxLoading}
+  >
+    {taxLoading ? "Submitting..." : "Submit Enquiry"}
+  </button>
+
+  {taxError && <p className="text-red-600 text-center">{taxError}</p>}
+  {taxSuccess && <p className="text-green-600 text-center">{taxSuccess}</p>}
+</form>
+
         </div>
 
         {/* Why Choose Us */}

@@ -29,7 +29,7 @@ export async function POST(req) {
     // Compose email
     const mailOptions = {
       from: `"Website Enquiry" <${process.env.SMTP_USER}>`,
-      to: "gavaliajay4705@gmail.com", // 👉 Your email (where you want to receive messages)
+      to: " sales@experts.net.in", // 👉 Your email (where you want to receive messages)
       subject: "New Contact Form Submission",
       html: `
         <h2>New Enquiry Received</h2>

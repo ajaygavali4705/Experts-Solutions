@@ -1,95 +1,126 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-export default function ImageSliderSection() {
-  const images = [
-    "/slider1.png",
-    "/slider2.png",
-    "/slider1.png",
-    "/slider2.png",
-  ];
+export default function Slider() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [sliderImages, setSliderImages] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  const [current, setCurrent] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
+  const API_BASE = "http://localhost:5000/api";
 
-  const nextSlide = () => {
-    setCurrent((current + 1) % images.length);
-  };
+  useEffect(() => {
+    fetchSliders();
+  }, []);
 
-  const prevSlide = () => {
-    setCurrent((current - 1 + images.length) % images.length);
+  const fetchSliders = async () => {
+    try {
+      const res = await fetch(`${API_BASE}/sliders`);
+      const data = await res.json();
+
+      if (data.success && data.data.length > 0) {
+        setSliderImages(data.data);
+      }
+    } catch (err) {
+      console.error("Failed to fetch sliders:", err);
+    } finally {
+      setLoading(false);
+    }
   };
 
   useEffect(() => {
-    if (isPaused) return;
-    const interval = setInterval(nextSlide, 2000);
-    return () => clearInterval(interval);
-  }, [current, isPaused]);
+    if (sliderImages.length === 0) return;
 
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) =>
+        prevIndex === sliderImages.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [sliderImages.length]);
+
+  const goToPrevious = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? sliderImages.length - 1 : prevIndex - 1
+    );
+  };
+
+  const goToNext = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === sliderImages.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  if (loading) {
+    return (
+      <div className="w-full h-96 bg-gray-200 flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-600"></div>
+      </div>
+    );
+  }
+
+  if (sliderImages.length === 0) {
+    return (
+      <div className="w-full h-96 bg-gray-100 flex items-center justify-center">
+        <p className="text-gray-500 text-lg">No slider images available</p>
+      </div>
+    );
+  }
 
   return (
-    <section className="w-full pb-16 bg-white overflow-x-hidden">
+    <div className="relative w-full h-96 md:h-[500px] overflow-hidden bg-gray-900">
+      {/* Slider Images */}
       <div
-        className="relative w-full max-w-7xl mx-auto overflow-hidden"
-        onMouseEnter={() => setIsPaused(true)}
-        onMouseLeave={() => setIsPaused(false)}
+        className="flex transition-transform duration-700 ease-in-out h-full"
+        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
-        {/* Slider Images */}
-        <div className="relative h-[300px] md:h-[400px] w-full overflow-hidden">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={current}
-              initial={{ opacity: 0, scale: 0.98 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.98 }}
-              transition={{ duration: 0.5 }}
-              className="absolute inset-0 w-full h-full"
-            >
-              <Image
-                src={images[current]}
-                alt="Slider Image"
-                fill
-className="
-  object-contain        /* mobile – show full image */
-  sm:object-cover       /* tablet & desktop – keep original layout */
-"                priority
-              />
-            </motion.div>
-          </AnimatePresence>
-        </div>
-
-        {/* Left Button */}
-        <button
-          onClick={prevSlide}
-          className="absolute left-3 top-1/2 -translate-y-1/2  text-black p-3 rounded-full"
-        >
-          <ChevronLeft size={24} />
-        </button>
-
-        {/* Right Button */}
-        <button
-          onClick={nextSlide}
-          className="absolute right-3 top-1/2 -translate-y-1/2 text-black p-3 rounded-full"
-        >
-          <ChevronRight size={24} />
-        </button>
-
-        {/* Indicators */}
-        <div className="absolute bottom-4 w-full flex justify-center gap-2">
-          {images.map((_, i) => (
-            <div
-              key={i}
-              className={`w-3 h-3 rounded-full ${
-                current === i ? "bg-white" : "bg-white/50"
-              }`}
-            ></div>
-          ))}
-        </div>
+        {sliderImages.map((slide) => (
+          <div key={slide._id} className="min-w-full h-full relative">
+            <img
+              src={`http://localhost:5000${slide.image}`}
+              alt={slide.name}
+              className="w-full h-full object-cover"
+            />
+            
+            {/* Optional: Image Title Overlay */}
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
+              <h3 className="text-white text-2xl font-bold">{slide.name}</h3>
+            </div>
+          </div>
+        ))}
       </div>
-    </section>
+
+      {/* Navigation Buttons */}
+      <button
+        onClick={goToPrevious}
+        className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/30 hover:bg-white/50 text-white p-3 rounded-full backdrop-blur-sm transition"
+      >
+        <ChevronLeft size={28} />
+      </button>
+
+      <button
+        onClick={goToNext}
+        className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/30 hover:bg-white/50 text-white p-3 rounded-full backdrop-blur-sm transition"
+      >
+        <ChevronRight size={28} />
+      </button>
+
+      {/* Dots Indicator */}
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
+        {sliderImages.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentIndex(index)}
+            className={`h-2 rounded-full transition-all ${
+              index === currentIndex
+                ? "w-8 bg-white"
+                : "w-2 bg-white/50 hover:bg-white/75"
+            }`}
+          />
+        ))}
+      </div>
+    </div>
   );
 }

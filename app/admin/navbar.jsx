@@ -27,13 +27,13 @@ export default function AdminNavbar({ onLogout }) {
         <div className="hidden md:flex items-center gap-8 text-gray-700 font-medium">
 
           <Link href="/admin/home">Updates</Link>
-          <Link href="/admin/partners">Partners</Link>
-          <Link href="/blogs">Blogs</Link>
-          <Link href="/gallery">Gallery</Link>
+          <Link href="/admin/blogs">Bolgs</Link>
+          <Link href="/admin/gallery">Gallery</Link>
+         
 
            <button
             onClick={onLogout}
-            className="bg-[#191970] text-white px-4 py-1 rounded hover:bg-[#191970]/90 transition"
+            className="bg-[#8B1F2F] text-white px-4 py-1 rounded hover:bg-[#8B1F2F]/90 transition"
           >
             Logout
           </button>
@@ -82,11 +82,9 @@ export default function AdminNavbar({ onLogout }) {
           <Link href="/gallery" onClick={() => setOpen(false)} className="block w-full py-2 border-b">
             Gallery
           </Link>
-          
-            <button onClick={onLogout} className="w-full bg-[#A72028] text-white px-4 py-3 rounded-md hover:bg-[#8f1c23] mt-2">
-            Logout
-            </button>
-        
+          <Link href="/admin" onClick={() => setOpen(false)} className="block w-full py-2 border-b">
+            Admin
+          </Link>
 
         </div>
       )}
