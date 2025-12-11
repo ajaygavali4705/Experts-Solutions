@@ -11,14 +11,34 @@ const getToken = () => {
 // Get all gallery items
 export const getAllGallery = async () => {
   try {
-    const res = await fetch(`${API_URL}/gallery`);
+    const token = getToken();
+
+    const res = await fetch(`${API_URL}/gallery`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+      credentials: "include",
+    });
+
     const data = await res.json();
-    return data;
+
+    if (Array.isArray(data.data)) {
+      return data.data;
+    } else if (Array.isArray(data.gallery)) {
+      return data.gallery;
+    } else if (Array.isArray(data)) {
+      return data;
+    } else {
+      console.error("Invalid gallery response format:", data);
+      return [];
+    }
   } catch (error) {
     console.error("Error fetching gallery:", error);
-    throw error;
+    return [];
   }
 };
+
+
 
 // Add gallery item (image or video)
 export const addGalleryItem = async (formData) => {

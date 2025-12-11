@@ -1,8 +1,8 @@
 // app/admin/api/blogs.js
 
-const API_URL = 'http://localhost:5000/api';
+const API_URL = "http://localhost:5000/api";
 
-// Get token from cookies (same as sliders)
+// Get token from cookies
 const getToken = () => {
   return document.cookie
     .split("; ")
@@ -15,29 +15,31 @@ export const getAllBlogs = async () => {
   try {
     const res = await fetch(`${API_URL}/blogs`);
     const data = await res.json();
-    return data;
+
+    return data.blogs || data.data || data || [];
   } catch (error) {
     console.error("Error fetching blogs:", error);
-    throw error;
+    return [];
   }
 };
+
 
 // Create Blog
 export const createBlog = async (formData) => {
   try {
     const token = getToken();
 
-const res = await fetch(`${API_URL}/blogs/add`, {
+    const res = await fetch(`${API_URL}/blogs/add`, {
       method: "POST",
       headers: {
         Authorization: `Bearer ${token}`,
       },
-      body: formData, // Do NOT add content-type
+      body: formData,
       credentials: "include",
     });
 
     const data = await res.json();
-    return data;
+    return data; // IMPORTANT FIX
   } catch (error) {
     console.error("Error creating blog:", error);
     throw error;
@@ -58,7 +60,7 @@ export const deleteBlog = async (id) => {
     });
 
     const data = await res.json();
-    return data;
+    return data; // IMPORTANT FIX
   } catch (error) {
     console.error("Error deleting blog:", error);
     throw error;
