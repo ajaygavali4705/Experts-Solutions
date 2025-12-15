@@ -116,7 +116,7 @@ export default function BlogsPage() {
       {/* ------------------------------------------------------ */}
       {/* BLOG INTRODUCTION */}
       {/* ------------------------------------------------------ */}
-      <section className="py-16 h-[500] bg-gray-50 px-6 md:px-12">
+      <section className="py-10 h-[400] bg-gray-200 px-6 md:px-12">
         <div className="max-w-6xl mt-17 mx-auto">
           <motion.h2
             className="text-2xl md:text-5xl font-bold text-center text-[#A72028]"
@@ -125,7 +125,7 @@ export default function BlogsPage() {
             Insights, Knowledge & Expert Guidance for Growing Businesses
           </motion.h2>
 
-          <p className="text-gray-600 mt-4 text-center font-bold text-sm md:text-lg max-w-3xl mx-auto">
+          <p className="text-gray-600 mt-4 text-center font-bold text-sm md:text-lg max-w-4xl mx-auto">
           Our blogs and resources are designed to help businesses stay informed, compliant, and future-ready. We share practical insights on accounting, taxation, ERP systems, cloud technology, and automation to support everyday decision-making. With expert guidance and industry-driven knowledge, we empower MSMEs to grow confidently in a fast-changing digital landscape.
           </p>
         </div>

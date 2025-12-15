@@ -2,7 +2,9 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import Image from "next/image";
+
 
 const fade = {
   hidden: { opacity: 0, y: 20 },
@@ -92,36 +94,36 @@ export default function AboutPage() {
           </motion.div>
 
           {/* BUTTON */}
-          <div
-            className="
-        mt-6 
-        flex 
-        flex-col 
-        sm:flex-row 
-        gap-4 
-        w-full sm:w-auto
-        justify-center 
-        sm:justify-start
+<div
+  className="
+    mt-6 
+    flex 
+    flex-col 
+    sm:flex-row 
+    gap-4 
+    w-full sm:w-auto
+    justify-center
+  "
+>
+  <Link href="/product">
+    <motion.button
+      whileHover={{ scale: 1.07 }}
+      className="
+        bg-[#87CEEB] 
+        text-lg 
+        text-black 
+        font-bold 
+        px-6 
+        py-3 
+        rounded-md
+        mx-auto
+        inline-flex items-center justify-center
       "
-          >
-            <motion.button
-              whileHover={{ scale: 1.07 }}
-              className="
-          bg-[#87CEEB] 
-          text-lg 
-          text-black 
-          font-bold 
-          px-6 
-          py-3 
-          rounded-md
-          mx-auto 
-          sm:mx-0
-          md:ml-130
-        "
-            >
-              Explore Our Solutions
-            </motion.button>
-          </div>
+    >
+      Products
+    </motion.button>
+  </Link>
+</div>
         </div>
       </section>
 
@@ -156,7 +158,7 @@ export default function AboutPage() {
                 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center"
                 style={{ color: "#191970" }}
               >
-                Software AMC Tally & Other Software
+                Software AMC Tally 
               </h2>
 
               <p
@@ -167,7 +169,7 @@ export default function AboutPage() {
               </p>
 
               {/* FIXED LIST — now centered on mobile */}
-              <ul className="mt-6 space-y-3 mx-auto lg:ml-26 w-fit">
+              <ul className="mt-6 space-y-3 mx-auto lg:ml-33 w-fit">
                 {[
                   "Unlimited Remote Support",
                   "License Troubleshooting",
@@ -214,7 +216,7 @@ export default function AboutPage() {
                 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center"
                 style={{ color: "#191970" }}
               >
-                Corporate Training – Tally
+                Corporate Training
               </h2>
 
               <p
@@ -280,7 +282,7 @@ export default function AboutPage() {
                 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center"
                 style={{ color: "#191970" }}
               >
-                Implementation – Tally
+                Implementation
               </h2>
 
               <p
@@ -328,7 +330,7 @@ export default function AboutPage() {
                 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center"
                 style={{ color: "#191970" }}
               >
-                Integration – Tally
+                Integration
               </h2>
               <p
                 className="mt-4 text-center text-base sm:text-lg"
@@ -385,7 +387,7 @@ export default function AboutPage() {
                 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center"
                 style={{ color: "#191970" }}
               >
-                Customisation – Tally
+                Customisation
               </h2>
               <p
                 className="mt-4 text-center text-base sm:text-lg"

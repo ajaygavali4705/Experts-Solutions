@@ -34,13 +34,12 @@ export default function AdminHome() {
     router.replace("/admin");
   };
 
-  // Fetch all sliders from backend
   const fetchSliders = async () => {
     try {
       setLoading(true);
       const res = await fetch(`${API_BASE}/sliders`);
       const data = await res.json();
-      
+
       if (data.success) {
         setSliderImages(data.data);
       }
@@ -52,7 +51,6 @@ export default function AdminHome() {
     }
   };
 
-  // Add new slider image
   const handleAddImage = async () => {
     if (!selectedFile) {
       alert("Please choose a file");
@@ -92,7 +90,7 @@ export default function AdminHome() {
         setImageName("");
         setOrder(0);
         setShowUploader(false);
-        fetchSliders(); // Refresh list
+        fetchSliders();
       } else {
         alert(data.message || "Failed to add slider");
       }
@@ -104,7 +102,6 @@ export default function AdminHome() {
     }
   };
 
-  // Delete slider
   const handleDelete = async (id) => {
     if (!confirm("Are you sure you want to delete this slider?")) return;
 
@@ -139,7 +136,6 @@ export default function AdminHome() {
     }
   };
 
-  // Toggle active status
   const handleToggleStatus = async (id) => {
     try {
       const token = document.cookie
@@ -156,10 +152,7 @@ export default function AdminHome() {
       });
 
       const data = await res.json();
-
-      if (data.success) {
-        fetchSliders();
-      }
+      if (data.success) fetchSliders();
     } catch (err) {
       console.error("Error toggling status:", err);
     }
@@ -167,38 +160,47 @@ export default function AdminHome() {
 
   return (
     <>
-    <AdminNavbar />
-      {/* Navbar */}
-   
-      <div className="p-6 bg-gray-50 min-h-screen">
-        {/* Error Display */}
+      <AdminNavbar onLogout={handleLogout} />
+
+      <div className="p-4 sm:p-6 bg-gray-50 min-h-screen">
+
         {error && (
-          <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4 w-[70%] mx-auto">
+          <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4 w-full sm:w-[70%] mx-auto">
             {error}
           </div>
         )}
 
-        {/* Title + Add Button */}
-        <div className="flex justify-between items-center mb-6 w-[70%] mx-auto">
-          <div>
-            <h1 className="text-3xl font-bold text-gray-800">Slider Image Management</h1>
-            <p className="text-gray-600 mt-1">
-              Add or remove slider images for the homepage.
-            </p>
-          </div>
+        {/* HEADER */}
+      <div
+  className="
+    flex flex-col sm:flex-row 
+    justify-between sm:items-center items-center 
+    mb-6 w-full sm:w-[70%] mx-auto gap-3
+  "
+>
+  <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 text-center sm:text-left">
+    Slider Image Management
+  </h1>
 
-          <button
-            onClick={() => setShowUploader(!showUploader)}
-            className="bg-blue-600 text-white px-5 py-2 rounded-lg shadow hover:bg-blue-700 transition"
-          >
-            + Add Image
-          </button>
-        </div>
+  <button
+    onClick={() => setShowUploader(!showUploader)}
+    className="
+      bg-blue-600 text-white px-5 py-2 rounded-lg shadow 
+      hover:bg-blue-700 transition
+      w-auto mx-auto sm:mx-0
+    "
+  >
+    + Add Image
+  </button>
+</div>
 
-        {/* Upload Section */}
+
+        {/* UPLOAD SECTION */}
         {showUploader && (
-          <div className="bg-white p-5 rounded-lg shadow mb-6 border w-[70%] mx-auto border-blue-300">
-            <h3 className="text-xl font-semibold mb-3">Upload New Slider Image</h3>
+          <div className="bg-white p-5 rounded-lg shadow mb-6 border w-full sm:w-[70%] mx-auto">
+            <h3 className="text-lg sm:text-xl font-semibold mb-3">
+              Upload New Slider Image
+            </h3>
 
             <div className="space-y-4">
               <div>
@@ -245,22 +247,22 @@ export default function AdminHome() {
           </div>
         )}
 
-        {/* Slider Table */}
-        <div className="overflow-x-auto bg-white rounded-xl shadow-xl border w-[70%] mx-auto">
+        {/* TABLE */}
+        <div className="overflow-x-auto bg-white rounded-xl shadow-xl border w-full sm:w-[70%] mx-auto">
           {loading && sliderImages.length === 0 ? (
             <div className="flex justify-center items-center py-20">
               <Loader2 className="animate-spin text-blue-600" size={40} />
             </div>
           ) : (
-            <table className="min-w-full border-collapse">
+            <table className="min-w-full text-sm border-collapse">
               <thead>
-                <tr className="bg-gradient-to-r from-blue-600 to-blue-400 text-white">
-                  <th className="px-4 py-3 text-left">ID</th>
-                  <th className="px-4 py-3 text-left">Preview</th>
-                  <th className="px-4 py-3 text-left">Image Name</th>
-                  <th className="px-4 py-3 text-left">Order</th>
-                  <th className="px-4 py-3 text-left">Status</th>
-                  <th className="px-4 py-3 text-left">Actions</th>
+                <tr className="bg-gradient-to-r from-blue-600 to-blue-400 text-white text-xs sm:text-base">
+                  <th className="px-3 sm:px-4 py-3 text-left">ID</th>
+                  <th className="px-3 sm:px-4 py-3 text-left">Preview</th>
+                  <th className="px-3 sm:px-4 py-3 text-left">Image Name</th>
+                  <th className="px-3 sm:px-4 py-3 text-left">Order</th>
+                  {/* <th className="px-3 sm:px-4 py-3 text-left">Status</th> */}
+                  <th className="px-3 sm:px-4 py-3 text-left">Actions</th>
                 </tr>
               </thead>
 
@@ -273,27 +275,24 @@ export default function AdminHome() {
                   </tr>
                 ) : (
                   sliderImages.map((img, index) => (
-                    <tr
-                      key={img._id}
-                      className="border-b hover:bg-blue-50 transition"
-                    >
-                      <td className="px-4 py-3 font-medium">{index + 1}</td>
+                    <tr key={img._id} className="border-b hover:bg-blue-50 transition">
+                      <td className="px-3 sm:px-4 py-3 font-medium">{index + 1}</td>
 
-                      <td className="px-4 py-3">
+                      <td className="px-3 sm:px-4 py-3">
                         <img
                           src={`http://localhost:5000${img.image}`}
                           alt={img.name}
-                          className="h-20 w-36 object-cover rounded-lg shadow border"
+                          className="h-16 sm:h-20 w-28 sm:w-36 object-cover rounded-lg shadow border"
                         />
                       </td>
 
-                      <td className="px-4 py-3">{img.name}</td>
-                      <td className="px-4 py-3">{img.order}</td>
-                      
-                      <td className="px-4 py-3">
+                      <td className="px-3 sm:px-4 py-3">{img.name}</td>
+                      <td className="px-3 sm:px-4 py-3">{img.order}</td>
+
+                      {/* <td className="px-3 sm:px-4 py-3">
                         <button
                           onClick={() => handleToggleStatus(img._id)}
-                          className={`px-3 py-1 rounded text-sm font-semibold ${
+                          className={`px-3 py-1 rounded text-xs sm:text-sm font-semibold ${
                             img.isActive
                               ? "bg-green-100 text-green-700"
                               : "bg-red-100 text-red-700"
@@ -301,26 +300,22 @@ export default function AdminHome() {
                         >
                           {img.isActive ? "Active" : "Inactive"}
                         </button>
-                      </td>
+                      </td> */}
 
-                      <td className="px-4 py-3 flex items-center gap-3">
-                        {/* VIEW BUTTON */}
+                      <td className="px-3 sm:px-4 py-3 flex items-center gap-3">
                         <button
-                          onClick={() =>
-                            setViewImage(`http://localhost:5000${img.image}`)
-                          }
+                          onClick={() => setViewImage(`http://localhost:5000${img.image}`)}
                           className="text-blue-600 hover:text-blue-800"
                         >
-                          <Eye size={22} />
+                          <Eye size={20} />
                         </button>
 
-                        {/* DELETE BUTTON */}
                         <button
                           onClick={() => handleDelete(img._id)}
                           disabled={loading}
                           className="text-red-600 hover:text-red-800 disabled:opacity-50"
                         >
-                          <Trash2 size={22} />
+                          <Trash2 size={20} />
                         </button>
                       </td>
                     </tr>
@@ -334,8 +329,8 @@ export default function AdminHome() {
 
       {/* IMAGE VIEW MODAL */}
       {viewImage && (
-        <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
-          <div className="bg-white p-4 rounded-lg shadow-xl relative max-w-[80%] max-h-[80%]">
+        <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 px-3">
+          <div className="bg-white p-4 rounded-lg shadow-xl relative max-w-full sm:max-w-[80%] max-h-[80%]">
             <button
               onClick={() => setViewImage(null)}
               className="absolute top-2 right-2 bg-red-600 text-white rounded-full p-1 hover:bg-red-700"
@@ -346,7 +341,7 @@ export default function AdminHome() {
             <img
               src={viewImage}
               alt="Preview"
-              className="max-w-full max-h-[75vh] object-contain rounded"
+              className="max-w-full max-h-[70vh] object-contain rounded"
             />
           </div>
         </div>

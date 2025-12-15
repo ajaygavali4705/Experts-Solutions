@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import AdminNavbar from "../navbar";
 import { getAllGallery, addGalleryItem, deleteGalleryItem } from "../api/gallery";
-import { Eye, Trash2, X, Loader2 } from "lucide-react";
+import { Eye, Trash2 } from "lucide-react";
 
 export default function AdminGalleryPage() {
   const [gallery, setGallery] = useState([]);
@@ -11,6 +11,11 @@ export default function AdminGalleryPage() {
   const [type, setType] = useState("photo");
   const [name, setName] = useState("");
   const [file, setFile] = useState(null);
+
+  const handleLogout = () => {
+    localStorage.removeItem("adminToken");
+    window.location.href = "/admin";
+  };
 
   const loadGallery = async () => {
     try {
@@ -33,7 +38,6 @@ export default function AdminGalleryPage() {
         } else if (Array.isArray(data.gallery)) {
           setGallery(data.gallery);
         } else {
-          console.error("Invalid gallery response:", data);
           setGallery([]);
         }
       } catch (err) {
@@ -85,22 +89,28 @@ export default function AdminGalleryPage() {
 
   return (
     <>
-      <AdminNavbar />
+      <AdminNavbar onLogout={handleLogout} />
 
-      <div className="w-full p-6 flex justify-center">
-        <div className="w-[70%]">
+      {/* PAGE WRAPPER */}
+      <div className="w-full p-4 sm:p-6 flex justify-center">
+        <div className="w-full sm:w-[90%] md:w-[80%] lg:w-[70%]">
 
           {/* Header */}
-          <div className="flex justify-between items-center border-b pb-3 mb-6">
-            <h1 className="text-2xl font-bold">Gallery Management</h1>
+<div className="flex flex-col sm:flex-row justify-between items-center sm:items-center pb-3 mb-6 gap-3">
+  
+  <h1 className="text-2xl font-bold text-center sm:text-left w-full sm:w-auto">
+    Gallery Management
+  </h1>
 
-            <button
-              className="bg-blue-600 text-white px-4 py-2 rounded-md"
-              onClick={() => setShowForm(true)}
-            >
-              + Add Item
-            </button>
-          </div>
+  <button
+    className="bg-blue-600 text-white px-4 py-2 rounded-md mx-auto sm:mx-0"
+    onClick={() => setShowForm(true)}
+  >
+    + Add Item
+  </button>
+
+</div>
+
 
           {/* Add Form */}
           {showForm && (
@@ -134,14 +144,14 @@ export default function AdminGalleryPage() {
                   required
                 />
 
-                <div className="flex gap-3">
-                  <button className="bg-green-600 text-white px-4 py-2 rounded-md">
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <button className="bg-green-600 text-white px-4 py-2 rounded-md w-full sm:w-auto">
                     Upload
                   </button>
 
                   <button
                     type="button"
-                    className="bg-gray-400 text-white px-4 py-2 rounded-md"
+                    className="bg-gray-400 text-white px-4 py-2 rounded-md w-full sm:w-auto"
                     onClick={() => {
                       setShowForm(false);
                       clearForm();
@@ -154,9 +164,9 @@ export default function AdminGalleryPage() {
             </div>
           )}
 
-          {/* Table */}
-          <div className="w-full mx-auto">
-            <table className="w-full border-collapse shadow-md rounded-lg overflow-hidden">
+          {/* Table Wrapper (SCROLLABLE ON MOBILE) */}
+          <div className="w-full overflow-x-auto rounded-xl shadow-xl border">
+            <table className="w-full min-w-[600px] border-collapse shadow-md rounded-lg overflow-hidden">
               <thead>
                 <tr className="bg-blue-600 text-white">
                   <th className="p-3 border-b">Preview</th>
@@ -185,14 +195,14 @@ export default function AdminGalleryPage() {
                         )}
                       </td>
 
-                      <td className="p-3 border-b font-semibold">{item.name}</td>
-                      <td className="p-3 border-b">{item.type}</td>
+                      <td className="p-3 border-b text-center font-semibold">
+                        {item.name}
+                      </td>
+
+                      <td className="p-3 text-center border-b">{item.type}</td>
 
                       <td className="p-3 border-b text-center space-x-4">
-                        <button
-                          className="text-blue-600"
-                          onClick={() => alert("Preview Coming Soon")}
-                        >
+                        <button className="text-blue-600">
                           <Eye size={20} />
                         </button>
 

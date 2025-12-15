@@ -34,14 +34,17 @@ export default function Footer() {
             and digital transformation.
           </motion.p>
 
-          <div className="flex justify-center mt-8 gap-6 flex-wrap">
-            <motion.button
-              whileHover={{ scale: 1.1, y: -3 }}
-              className="bg-[#87CEEB] text-black font-bold px-6 py-2 rounded-md"
-            >
-              Request a Demo
-            </motion.button>
-          </div>
+         <div className="flex justify-center mt-8 gap-6 flex-wrap">
+  <Link href="/contact">
+    <motion.button
+      whileHover={{ scale: 1.1, y: -3 }}
+      className="bg-[#87CEEB] text-black font-bold px-6 py-2 rounded-md"
+    >
+      Request a Demo
+    </motion.button>
+  </Link>
+</div>
+
         </div>
       </section>
 
@@ -64,16 +67,19 @@ export default function Footer() {
           <h4 className="font-semibold text-gray-100 mb-3">Pages</h4>
           <ul className="space-y-2 text-white text-sm">
             <li><Link href="/">Home</Link></li>
-            <li><Link href="/services">Services</Link></li>
             <li><Link href="/about">About</Link></li>
+            <li><Link href="/product">Product</Link></li>
+            <li><Link href="/services">Services</Link></li>
             <li><Link href="/blogs">Blog</Link></li>
             <li><Link href="/gallery">Gallery</Link></li>
+            <li><Link href="/contact">Contact</Link></li>
+
           </ul>
         </div>
 
         {/* Solutions */}
         <div className="flex flex-col items-center md:items-start">
-          <h4 className="font-semibold text-gray-100 mb-3">Solutions</h4>
+          <h4 className="font-semibold text-gray-100 mb-3">Products</h4>
           <ul className="space-y-2 text-white text-sm">
             <li>Tally Services</li>
             <li>Tally Prime Add-Ons</li>
@@ -113,73 +119,84 @@ Mulund (W), Maharashtra – 400080</li>
 
 
       {/* MOBILE FOOTER */}
-      <div className="md:hidden px-6 pt-12 text-center text-white space-y-6">
+{/* MOBILE FOOTER */}
+<div className="md:hidden px-6 pt-12 text-center text-white space-y-6">
 
-        {/* Logo */}
-        <div className="flex flex-col items-center">
-          <Image
-            src="/images/Expert_logo.jpg"
-            alt="Experts Solutions Logo"
-            width={120}
-            height={120}
-            className="mb-4 rounded-xl"
-          />
-        </div>
-
-        {/* PAGES BUTTON */}
-      {/* PAGES BUTTON */}
-<button
-  onClick={() => setOpenPages(!openPages)}
-  className="w-full max-w-xs mx-auto px-6 py-3 bg-[#102b55] text-white rounded-4xl font-semibold"
->
-  Pages
-</button>
-
-{openPages && (
-  <div className="bg-[#102b55] p-4 rounded-md space-y-3 text-center max-w-xs mx-auto">
-    <Link href="/" className="block">Home</Link>
-    <Link href="/services" className="block">Services</Link>
-    <Link href="/about" className="block">About</Link>
-    <Link href="/blogs" className="block">Blogs</Link>
-    <Link href="/gallery" className="block">Gallery</Link>
+  {/* Logo */}
+  <div className="flex flex-col items-center">
+    <Image
+      src="/images/Expert_logo.jpg"
+      alt="Experts Solutions Logo"
+      width={120}
+      height={120}
+      className="mb-4 rounded-xl"
+    />
   </div>
-)}
 
-{/* SOLUTIONS BUTTON */}
-<button
-  onClick={() => setOpenSolutions(!openSolutions)}
-  className="w-full max-w-xs mx-auto px-6 py-3 bg-[#102b55] text-white rounded-4xl font-semibold"
->
-  Solutions
-</button>
+  {/* PAGES */}
+  <button
+    onClick={() => setOpenPages(!openPages)}
+    className="w-full max-w-xs mx-auto px-6 py-3 bg-[#102b55] text-white rounded-xl font-semibold"
+  >
+    Pages
+  </button>
 
-{openSolutions && (
-  <div className="bg-[#102b55] p-4 rounded-md space-y-3 text-center max-w-xs mx-auto">
-    <p>ERP & Accounting</p>
-    <p>Tally Services</p>
-    <p>Cloud Hosting</p>
-    <p>Mobile Apps</p>
-    <p>CRM Solutions</p>
+  {openPages && (
+    <div className="bg-[#102b55] p-4 rounded-md space-y-3 max-w-xs mx-auto">
+      <Link href="/" className="block">Home</Link>
+      <Link href="/about" className="block">About</Link>
+      <Link href="/product" className="block">Product</Link>
+      <Link href="/services" className="block">Services</Link>
+      <Link href="/blogs" className="block">Blog</Link>
+      <Link href="/gallery" className="block">Gallery</Link>
+      <Link href="/contact" className="block">Contact</Link>
+    </div>
+  )}
+
+  {/* PRODUCTS (MATCH DESKTOP) */}
+  <button
+    onClick={() => setOpenSolutions(!openSolutions)}
+    className="w-full max-w-xs mx-auto px-6 py-3 bg-[#102b55] text-white rounded-xl font-semibold"
+  >
+    Products
+  </button>
+
+  {openSolutions && (
+    <div className="bg-[#102b55] p-4 rounded-md space-y-2 max-w-xs mx-auto text-sm">
+      <p>Tally Services</p>
+      <p>Tally Prime Add-Ons</p>
+      <p>Cloud Solutions</p>
+      <p>ERP Software</p>
+      <p>HRMS & Payroll Software</p>
+      <p>CRM Solutions</p>
+      <p>Accounts & Taxation Services</p>
+    </div>
+  )}
+
+  {/* CONTACT — BRANCH */}
+  <div className="space-y-2 pt-4 text-sm">
+    <p className="font-semibold">Branch Office:</p>
+    <p>
+      E/1009, Oro Avenue, Life Republic,<br />
+      Marunji, Pune – 411057
+    </p>
+    <p>Email: sales@experts.net.in</p>
+    <p>Phone: +91 7700005316</p>
   </div>
-)}
 
-        {/* CONTACT */}
-        <div className="text-center space-y-2 pt-4">
-          <p>Branch Office:</p>
-          <p>E/1009, Oro Avenue, Life Republic,
-Marunji, Pune – 411057</p>
-          <p>Email: sales@experts.net.in</p>
-          <p>Phone: +91 7700005316</p>
-        </div>
-         <div className="text-center space-y-2 pt-4">
-          <p>Registered Office:</p>
-          <p>4/5, Laxmi Sadan Building, Ground Floor,
-Behind Patil Sainath Plaza, Zaver Road End, Station Road,
-Mulund (W), Maharashtra – 400080</p>
-          <p>Email: sales@experts.net.in</p>
-          <p>Phone: +91 9821322456</p>
-        </div>
-      </div>
+  {/* CONTACT — REGISTERED */}
+  <div className="space-y-2 pt-4 text-sm">
+    <p className="font-semibold">Registered Office:</p>
+    <p>
+      4/5, Laxmi Sadan Building, Ground Floor,<br />
+      Behind Patil Sainath Plaza, Zaver Road End,<br />
+      Station Road, Mulund (W), Maharashtra – 400080
+    </p>
+    <p>Email: sales@experts.net.in</p>
+    <p>Phone: +91 9821322456</p>
+  </div>
+</div>
+
       
 
       {/* BOTTOM BAR */}
@@ -210,7 +227,7 @@ Mulund (W), Maharashtra – 400080</p>
               <Link href="https://www.linkedin.com/feed/" target="_blank">
                 <FaLinkedinIn />
               </Link>
-              <Link href="https://wa.me/919049002701" target="_blank">
+              <Link href="https://wa.me/917700005314" target="_blank">
                 <FaWhatsapp />
               </Link>
               <Link href="https://www.youtube.com" target="_blank">

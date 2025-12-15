@@ -2,6 +2,7 @@
 "use client";
 
 import React, { useEffect } from "react";
+import Link from "next/link";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { motion } from "framer-motion";
@@ -81,32 +82,35 @@ export default function AboutPage() {
       </motion.p>
     </motion.div>
 
-    <div
+   <div
+  className="
+    mt-6 
+    flex flex-col sm:flex-row 
+    gap-4 
+    w-full
+    justify-center
+  "
+>
+  <Link href="/gallery">
+    <motion.button
+      whileHover={{ scale: 1.07 }}
       className="
-        mt-6 
-        flex flex-col sm:flex-row 
-        gap-4 
-        w-full sm:w-auto
-        justify-center sm:justify-start
+        bg-[#87CEEB] text-lg text-black font-bold
+        px-6 py-3 mb-5
+        rounded-md
+        inline-flex items-center justify-center
       "
     >
-      <motion.button
-        whileHover={{ scale: 1.07 }}
-        className="
-          bg-[#87CEEB] text-lg text-black font-bold px-5 mb-5 py-2.5 rounded-md
-          w-auto
-          mx-auto sm:mx-0
-          md:ml-140
-        "
-      >
-        Learn More
-      </motion.button>
-    </div>
+      Moments
+    </motion.button>
+  </Link>
+</div>
+
   </div>
 </section>
 
 
-      {/* <EmployeeSlider /> */}
+      <EmployeeSlider />
 
 
         {/* ---------------------- ABOUT US INFO SECTION ---------------------- */}
@@ -263,13 +267,14 @@ export default function AboutPage() {
   {/* CENTER CONNECTING LINE — ONLY BETWEEN CIRCLES */}
   <div className="hidden md:block absolute top-[270px] left-1/2 transform -translate-x-1/2 w-[80%] h-[4px] bg-[#8B1F2F]/40 z-0"></div>
 
-  <div className="grid grid-cols-1 font-bold md:grid-cols-5 gap-5 place-items-center relative z-10">
+  <div className="grid grid-cols-1 font-bold md:grid-cols-6 gap-5 place-items-center relative z-10">
     {[
-      ["2011", "Company founded & ERP services launched"],
-      ["2015", "Expanded to Cloud Hosting & Accounting"],
-      ["2018", "Introduced Mobile Apps & CRM solutions"],
-      ["2021", "Achieved ISO certification & 500+ clients"],
-      ["2023", "Received national recognition for excellence"],
+      ["2011", "Established Partnership"],
+      ["2017", "Associates Partner of Tally"],
+      ["2018", "Partner of Biz Analyas"],
+      ["2021", "Partner of Credflow"],
+      ["2022", "Partner of Udyog ERP"],
+      ["2025", "continue..."],
     ].map(([year, desc], i) => (
       <motion.div
         key={i}
@@ -293,7 +298,7 @@ export default function AboutPage() {
 </section>
         {/* ---------------------- SECTION 3 — SERVICES ---------------------- */}
        
-       
+{/*        
    <section
   id="section3"
   className="w-full py-16 px-6 md:px-12 lg:px-28 bg-[#87CEEB]"
@@ -312,15 +317,15 @@ export default function AboutPage() {
       Our Services
     </h2>
     <p className="text-slate-700 text-center font-bold max-w-6xl mx-auto mb-12 text-lg">
-Our services are designed to simplify, automate, and strengthen every part of your business operations. From ERP and Tally solutions to cloud hosting, mobile applications, CRM systems, and taxation services, we offer everything under one trusted platform. We help businesses work smarter, stay compliant, and achieve sustainable growth.    </p>
+Our services are designed to simplify, automate, and strengthen every part of your business operations. From ERP and Tally solutions to cloud hosting, mobile applications, CRM systems, and taxation services, we offer everything under one trusted platform. We help businesses work smarter, stay compliant, and achieve sustainable growth.    </p> */}
 
     {/* GRID FOR 4 BOXES */}
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+    {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
       {[
-        ["ERP & Accounting", "/image4.jpg", "TEZ ERP, Inventory, Billing, MIS & audit-ready reporting."],
-        ["Tally Services", "/image2.jpg", "Tally license, customization, data migration, Tally on Cloud."],
-        ["Cloud Hosting", "/image1.jpg", "Office on Cloud, Tally on AWS, backups & security."],
-        ["CRM & Mobile", "/image3.jpg", "CRM, Biz App, ERP app, live sync & mobile dashboards."],
+        ["Software AMC", "/AMC.png", "Ensure uninterrupted business performance."],
+        ["Corporate Training ", "/Training.png", "Empower your team with expert-led training."],
+        ["Implementation", "/Implementation.png", "Seamless deployment tailored to your business."],
+        ["Integration", "/Integration.png", "Connect your systems for smarter workflows."],
       ].map(([title, img, desc], i) => (
         <motion.div
           key={i}
@@ -349,12 +354,12 @@ Our services are designed to simplify, automate, and strengthen every part of yo
       ))}
     </div>
   </motion.div>
-</section>
+</section> */}
 
    {/* ---------------------- SECTION 4 — VISION & MISSION ---------------------- */}
 <section
   id="section4"
-  className="py-24 px-6 md:px-12 lg:px-32 bg-gray-100"
+  className="py-24 px-6 md:px-12 lg:px-32 bg-[#87CEEB]"
 >
   <motion.div
     variants={fadeUp}

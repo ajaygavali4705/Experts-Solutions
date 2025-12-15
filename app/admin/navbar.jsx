@@ -66,26 +66,22 @@ export default function AdminNavbar({ onLogout }) {
   >
 
 
-          <Link href="/" onClick={() => setOpen(false)} className="block w-full py-2 border-b">
-            Home
+          <Link href="/admin/home" onClick={() => setOpen(false)} className="block w-full py-2 border-b">
+            Update
           </Link>
 
-          <Link href="/about" onClick={() => setOpen(false)} className="block w-full py-2 border-b">
-            About
-          </Link>
-
-      
-
-          <Link href="/blogs" onClick={() => setOpen(false)} className="block w-full py-2 border-b">
+          <Link href="/admin/blogs" onClick={() => setOpen(false)} className="block w-full py-2 border-b">
             Blogs
           </Link>
-          <Link href="/gallery" onClick={() => setOpen(false)} className="block w-full py-2 border-b">
+          <Link href="/admin/gallery" onClick={() => setOpen(false)} className="block w-full py-2 border-b">
             Gallery
           </Link>
-          <Link href="/admin" onClick={() => setOpen(false)} className="block w-full py-2 border-b">
-            Admin
-          </Link>
-
+              <button
+            onClick={onLogout}
+            className="bg-[#8B1F2F] text-white px-4 py-1 rounded hover:bg-[#8B1F2F]/90 transition"
+          >
+            Logout
+          </button>
         </div>
       )}
     </nav>

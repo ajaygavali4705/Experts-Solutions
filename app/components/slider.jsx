@@ -86,7 +86,7 @@ export default function Slider() {
             
             {/* Optional: Image Title Overlay */}
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
-              <h3 className="text-white text-2xl font-bold">{slide.name}</h3>
+              
             </div>
           </div>
         ))}
@@ -95,14 +95,14 @@ export default function Slider() {
       {/* Navigation Buttons */}
       <button
         onClick={goToPrevious}
-        className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/30 hover:bg-white/50 text-white p-3 rounded-full backdrop-blur-sm transition"
+        className="absolute left-4 top-1/2 -translate-y-1/2 text-white p-3 rounded-full backdrop-blur-sm transition"
       >
         <ChevronLeft size={28} />
       </button>
 
       <button
         onClick={goToNext}
-        className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/30 hover:bg-white/50 text-white p-3 rounded-full backdrop-blur-sm transition"
+        className="absolute right-4 top-1/2 -translate-y-1/2  text-white p-3 rounded-full backdrop-blur-sm transition"
       >
         <ChevronRight size={28} />
       </button>

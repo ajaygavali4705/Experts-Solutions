@@ -14,7 +14,6 @@ export default function AdminBlogsPage() {
   const [description, setDescription] = useState("");
   const [image, setImage] = useState(null);
 
-  // Load blogs
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
@@ -33,14 +32,12 @@ export default function AdminBlogsPage() {
     setBlogs(data || []);
   };
 
-  // Clear form
   const clearForm = () => {
     setTitle("");
     setDescription("");
     setImage(null);
   };
 
-  // Add blog
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -75,7 +72,6 @@ export default function AdminBlogsPage() {
     }
   };
 
-  // Delete
   const handleDelete = async (id) => {
     if (confirm("Are you sure to delete?")) {
       await deleteBlog(id);
@@ -83,19 +79,24 @@ export default function AdminBlogsPage() {
     }
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem("adminToken");
+    window.location.href = "/admin";
+  };
+
   return (
     <>
-      <AdminNavbar />
+      <AdminNavbar onLogout={handleLogout} />
 
-      <div className="w-full flex justify-center p-6">
-        <div className="w-[70%]">
+      <div className="w-full flex justify-center p-3 md:p-6 mt-5 md:mt-2">
+        <div className="w-full md:w-[70%]">
 
           {/* HEADER */}
-          <div className="flex justify-between items-center pb-3 mb-6">
-            <h1 className="text-2xl font-bold">Blog Management</h1>
+<div className="flex flex-col sm:flex-row justify-between items-center sm:items-center pb-3 mb-6 gap-3">
+           <h1 className="text-2xl font-bold text-center sm:text-left w-full sm:w-auto">Blog Management</h1>
 
             <button
-              className="bg-blue-600 text-white px-4 py-2 rounded-md"
+    className="bg-blue-600 text-white px-4 py-2 rounded-md mx-auto sm:mx-0"
               onClick={() => setShowForm(true)}
             >
               + Add Blog
@@ -136,13 +137,13 @@ export default function AdminBlogsPage() {
                   />
                 </div>
 
-                <div className="flex gap-3">
-                  <button className="bg-green-600 text-white px-4 py-2 rounded-md">
+                <div className="flex flex-col md:flex-row gap-3">
+                  <button className="bg-green-600 text-white px-4 py-2 rounded-md w-full md:w-auto">
                     Add Blog
                   </button>
 
                   <button
-                    className="bg-gray-400 text-white px-4 py-2 rounded-md"
+                    className="bg-gray-400 text-white px-4 py-2 rounded-md w-full md:w-auto"
                     onClick={() => {
                       setShowForm(false);
                       clearForm();
@@ -158,8 +159,8 @@ export default function AdminBlogsPage() {
           )}
 
           {/* BLOG TABLE */}
-          <div className="w-full">
-            <table className="w-full border-collapse shadow-md rounded-lg overflow-hidden">
+          <div className="w-full overflow-x-auto rounded-xl shadow-xl border">
+            <table className="w-full border-collapse shadow-md rounded-lg overflow-hidden min-w-[700px] md:min-w-0">
               <thead>
                 <tr className="bg-blue-600 text-white">
                   <th className="p-3 border-b">Image</th>
@@ -180,11 +181,11 @@ export default function AdminBlogsPage() {
                       />
                     </td>
 
-                    <td className="p-3 border-b font-semibold">
+                    <td className="p-3 border-b text-center font-semibold">
                       {blog.title}
                     </td>
 
-                    <td className="p-3 border-b text-gray-700">
+                    <td className="p-3 border-b text-center text-gray-700">
                       {blog.description.slice(0, 60)}...
                     </td>
 
@@ -213,8 +214,8 @@ export default function AdminBlogsPage() {
 
           {/* VIEW MODAL */}
           {previewBlog && (
-            <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex justify-center items-center">
-              <div className="bg-white w-[450px] rounded-lg shadow-lg p-5">
+            <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex justify-center items-center p-4">
+              <div className="bg-white w-full max-w-[450px] rounded-lg shadow-lg p-5">
                 <h2 className="text-xl font-bold mb-3">{previewBlog.title}</h2>
 
                 <img
@@ -227,7 +228,7 @@ export default function AdminBlogsPage() {
                 </p>
 
                 <button
-                  className="bg-black text-white px-4 py-2 rounded-md mt-4"
+                  className="bg-black text-white px-4 py-2 rounded-md mt-4 w-full"
                   onClick={() => setPreviewBlog(null)}
                 >
                   Close

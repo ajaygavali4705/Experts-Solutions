@@ -1,13 +1,20 @@
 import nodemailer from "nodemailer";
-  export const runtime = "nodejs";
+export const runtime = "nodejs";
+
 export async function POST(req) {
   try {
-  
-
     const body = await req.json();
-    const { name, email, contactNumber, service, message } = body;
 
-    // Check required fields
+    const {
+      name,
+      email,
+      contactNumber,
+      companyname,
+      location,
+      service,
+      message,
+    } = body;
+
     if (!name || !email || !message) {
       return Response.json(
         { error: "Name, Email & Message are required!" },
@@ -15,7 +22,6 @@ export async function POST(req) {
       );
     }
 
-    // Create transporter
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
       port: Number(process.env.SMTP_PORT),
@@ -26,32 +32,30 @@ export async function POST(req) {
       },
     });
 
-    // Compose email
-    const mailOptions = {
+    await transporter.sendMail({
       from: `"Website Enquiry" <${process.env.SMTP_USER}>`,
-      to: " sales@experts.net.in", // 👉 Your email (where you want to receive messages)
-      subject: "New Contact Form Submission",
+      to: "sales@experts.net.in",
+      subject: "New Product / Software Enquiry",
       html: `
-        <h2>New Enquiry Received</h2>
+        <h2>New Product Enquiry</h2>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Phone:</strong> ${contactNumber}</p>
+        <p><strong>Company:</strong> ${companyname}</p>
+        <p><strong>Location:</strong> ${location}</p>
         <p><strong>Service Interested:</strong> ${service}</p>
-        <p><strong>Message:</strong><br/> ${message}</p>
+        <p><strong>Message:</strong><br/>${message}</p>
       `,
-    };
-
-    // Send email
-    await transporter.sendMail(mailOptions);
+    });
 
     return Response.json(
-      { message: "Your enquiry has been submitted successfully!" },
+      { message: "Product enquiry submitted successfully!" },
       { status: 200 }
     );
   } catch (err) {
-    console.error("Email Send Error:", err);
+    console.error(err);
     return Response.json(
-      { error: "Failed to send email. Please try again later." },
+      { error: "Failed to send email." },
       { status: 500 }
     );
   }

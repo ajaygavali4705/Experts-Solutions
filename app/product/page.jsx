@@ -2,6 +2,8 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function ProductPage() {
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -74,7 +76,7 @@ export default function ProductPage() {
         "Grow your business by getting insights on Top and Inactive customers",
         "Supercharge your Team Productivity with field tracking and attendance management"
       ],
-      image: "/CredFlow.png",
+      image: "/about8.jpg",
     },
 
 
@@ -90,7 +92,7 @@ export default function ProductPage() {
         "Platform Agnostic (Windows, Mac and Linux)",
         
       ],
-      image: "/CredFlow.png",
+      image: "/about7.jpg",
     },
 
 
@@ -110,7 +112,7 @@ export default function ProductPage() {
         "Scalable for Future Growth",
         
       ],
-      image: "/CredFlow.png",
+      image: "/about1.jpg",
     },
 
 
@@ -133,7 +135,7 @@ export default function ProductPage() {
         "Project Resource Management (Project Management)",
         
       ],
-      image: "/CredFlow.png",
+      image: "/about2.jpg",
     },
 
 
@@ -157,7 +159,7 @@ export default function ProductPage() {
         "Recruitment Software Module",
         
       ],
-      image: "/CredFlow.png",
+      image: "/about3.jpg",
     },
 
 
@@ -178,7 +180,7 @@ export default function ProductPage() {
         "Payments",
         "Events",
       ],
-      image: "/CredFlow.png",
+      image: "/about4.jpg",
     },
 
 
@@ -195,7 +197,7 @@ export default function ProductPage() {
         "GST, TDS, PT, IT Return Filings",
 
       ],
-      image: "/CredFlow.png",
+      image: "/about5.jpg",
     },
 
 
@@ -219,6 +221,36 @@ export default function ProductPage() {
           <p className="text-base sm:text-lg md:text-xl mt-5 font-semibold text-gray-100">
             Explore our product solutions designed to empower businesses with smarter automation, cloud integration, and scalable digital growth.
           </p>
+          <div
+  className="
+    mt-6 
+    flex 
+    flex-col 
+    sm:flex-row 
+    gap-4 
+    w-full sm:w-auto
+    justify-center
+  "
+>
+  <Link href="/Services">
+    <motion.button
+      whileHover={{ scale: 1.07 }}
+      className="
+        bg-[#87CEEB] 
+        text-lg 
+        text-black 
+        font-bold 
+        px-6 
+        py-3 
+        rounded-md
+        mx-auto
+        inline-flex items-center justify-center
+      "
+    >
+      Services
+    </motion.button>
+  </Link>
+</div>
         </div>
       </section>
 
@@ -229,12 +261,26 @@ export default function ProductPage() {
         const titleColor = isBlueBg ? "text-[#191970]" : "text-[#8b1f2f]";
 
         return (
-          <section
-            key={index}
-            className={`py-20 px-4 md:px-16 lg:px-24 space-y-12 ${
-              isBlueBg ? "bg-[#87CEEB]" : "bg-white"
-            }`}
-          >
+         <section
+  key={index}
+  id={
+    product.title === "Tally Capital" ? "tally" :
+    product.title === "Tally On Mobile" ? "mobile" :
+    product.title === "CredFlow" ? "credflow" :
+    product.title === "Tally Prime Add-Ons" ? "prime" :
+    product.title === "Tally On Cloud" ? "cloud" :
+    product.title === "Office On Cloud" ? "office" :
+    product.title === "ERP Software" ? "erp" :
+    product.title === "HRMS & Payroll Software" ? "hrms" :
+    product.title.startsWith("OTTO") ? "otto" :
+    product.title === "Accounts & Taxation" ? "taxation" :
+    undefined
+  }
+  className={`py-20 px-4 md:px-16 lg:px-24 space-y-12 ${
+    isBlueBg ? "bg-[#87CEEB]" : "bg-white"
+  }`}
+>
+
             <div
               className={`flex flex-col md:flex-row items-center gap-10 ${
                 index % 2 === 0 ? "md:flex-row-reverse" : "md:flex-row"
