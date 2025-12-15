@@ -29,6 +29,8 @@ export default function AdminNavbar({ onLogout }) {
           <Link href="/admin/home">Updates</Link>
           <Link href="/admin/blogs">Bolgs</Link>
           <Link href="/admin/gallery">Gallery</Link>
+          <Link href="/admin/testomonial">Testomonials</Link>
+
          
 
            <button
@@ -75,6 +77,9 @@ export default function AdminNavbar({ onLogout }) {
           </Link>
           <Link href="/admin/gallery" onClick={() => setOpen(false)} className="block w-full py-2 border-b">
             Gallery
+          </Link>
+           <Link href="/admin/testomonial" onClick={() => setOpen(false)} className="block w-full py-2 border-b">
+            Testionials
           </Link>
               <button
             onClick={onLogout}

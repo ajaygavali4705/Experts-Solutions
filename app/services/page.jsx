@@ -94,6 +94,7 @@ export default function AboutPage() {
           </motion.div>
 
           {/* BUTTON */}
+{/* BUTTON */}
 <div
   className="
     mt-6 
@@ -103,6 +104,7 @@ export default function AboutPage() {
     gap-4 
     w-full sm:w-auto
     justify-center
+    items-center    /* Ensure center alignment for mobile */
   "
 >
   <Link href="/product">
@@ -116,14 +118,16 @@ export default function AboutPage() {
         px-6 
         py-3 
         rounded-md
-        mx-auto
-        inline-flex items-center justify-center
+        w-full sm:w-auto   /* Full width on mobile, auto on desktop */
+        max-w-xs           /* Optional: limit mobile width */
+        text-center
       "
     >
       Products
     </motion.button>
   </Link>
 </div>
+
         </div>
       </section>
 
@@ -413,6 +417,143 @@ export default function AboutPage() {
           </motion.div>
         </div>
       </section>
+
+  {/* -------------------------------------------------------- */}
+      {/* SECTION 5 – Mobile Apps */}
+      {/* -------------------------------------------------------- */}
+      <section
+        id="mobile"
+        className="min-h-screen flex items-center py-10 bg-[#f2f4f7]"
+      >
+        <div className="container mx-auto px-4 sm:px-6 lg:px-20">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            className="bg-white/90 backdrop-blur-lg border border-[#19197026] rounded-3xl shadow-2xl 
+              p-6 sm:p-10 
+              flex flex-col lg:flex-row items-center gap-10"
+          >
+            {/* IMAGE */}
+            <motion.img
+              src="/about5.jpg"
+              className="
+                w-full lg:w-1/2 
+                h-52 sm:h-60 md:h-72 lg:h-[450px] 
+                rounded-3xl shadow-xl object-cover 
+              "
+            />
+
+            {/* CONTENT */}
+            <motion.div className="lg:w-1/2">
+              <h2
+                className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center"
+                style={{ color: "#191970" }}
+              >
+                Customisation
+              </h2>
+              <p
+                className="mt-4 text-center text-base sm:text-lg"
+                style={{ color: "#191970" }}
+              >
+                Software that works exactly the way you do.
+              </p>
+              {/* FIXED LIST — now centered on mobile */}
+              <ul className="mt-6 space-y-3 mx-auto lg:ml-20 w-fit">
+                {[
+                  "From invoice formats to workflow modifications and custom modules—get tailor-made enhancements that fit your business processes perfectly.",
+                ].map((item, index) => (
+                  <motion.li
+                    key={index}
+                    className="flex items-center gap-3 text-base sm:text-lg font-medium"
+                    style={{ color: "#191970" }}
+                  >
+                    <span className="text-xl">✔</span> {item}
+                  </motion.li>
+                ))}
+              </ul>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* -------------------------------------------------------- */}
+{/* SECTION – Accounts & Taxation (LAST SECTION) */}
+{/* -------------------------------------------------------- */}
+<section
+  id="account"
+  className="min-h-screen flex items-center py-10 bg-[#87CEEB]"
+>
+  <div className="container mx-auto px-4 sm:px-6 lg:px-20">
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7 }}
+      className="bg-white/90 backdrop-blur-lg rounded-3xl shadow-2xl 
+        p-6 sm:p-10 
+        flex flex-col lg:flex-row items-center gap-10"
+    >
+      {/* IMAGE */}
+      <motion.img
+        src="/blog5.jpg"
+        className="
+          w-full lg:w-1/2 
+          h-52 sm:h-60 md:h-72 lg:h-[450px] 
+          rounded-3xl shadow-xl object-cover
+        "
+        alt="Accounts and Taxation Services"
+      />
+
+      {/* CONTENT */}
+      <motion.div className="lg:w-1/2">
+        <h2
+          className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center"
+          style={{ color: "#191970" }}
+        >
+          Accounts & Taxation
+        </h2>
+
+        <p
+          className="mt-4 text-center text-base sm:text-lg font-semibold"
+          style={{ color: "#191970" }}
+        >
+          End-to-end accounting and taxation services to keep your business
+          compliant, accurate, and growth-ready.
+        </p>
+
+        <ul className="mt-6 space-y-3 mx-auto lg:ml-24 w-fit">
+          {[
+            "Book Keeping & Accountancy",
+            "Finalization of Books",
+            "Tax Audit",
+            "GST, TDS, PT, IT, PAN, Exim, Udyam Registrations",
+            "Proprietorship, Partnership, Pvt Ltd, LLP, Trust & NGO Registrations",
+            "Business Process Automation",
+            "GST, TDS, PT, IT Return Filings",
+          ].map((item, index) => (
+            <motion.li
+              key={index}
+              className="flex items-center gap-3 text-base sm:text-lg font-medium"
+              style={{ color: "#191970" }}
+            >
+              <span className="text-xl">✔</span> {item}
+            </motion.li>
+          ))}
+        </ul>
+      </motion.div>
+    </motion.div>
+  </div>
+</section>
+
+
     </main>
   );
 }
+
+
+
+
+
+
+
+  

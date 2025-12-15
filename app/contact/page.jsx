@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect  } from "react";
 import { motion } from "framer-motion";
 import {
   Phone,
@@ -19,19 +19,52 @@ const [productForm, setProductForm] = useState({
   contactNumber: "",
   companyname: "",
   location: "",
-  service: "",
+  service: [],
   message: "",
 });
+
+
+const [serviceOpen, setServiceOpen] = useState(false);
+
+const toggleService = (value) => {
+  setProductForm((prev) => {
+    const exists = prev.service.includes(value);
+    return {
+      ...prev,
+      service: exists
+        ? prev.service.filter((s) => s !== value)
+        : [...prev.service, value],
+    };
+  });
+};
+
 
 const [productLoading, setProductLoading] = useState(false);
 const [productSuccess, setProductSuccess] = useState("");
 const [productError, setProductError] = useState("");
+const serviceDropdownRef = useRef(null);
+
+
 
 const handleProductChange = (e) => {
   const { name, value } = e.target;
   setProductForm((prev) => ({ ...prev, [name]: value }));
 };
 
+
+useEffect(() => {
+  const handleClickOutside = (event) => {
+    if (
+      serviceDropdownRef.current &&
+      !serviceDropdownRef.current.contains(event.target)
+    ) {
+      setServiceOpen(false);
+    }
+  };
+
+  document.addEventListener("mousedown", handleClickOutside);
+  return () => document.removeEventListener("mousedown", handleClickOutside);
+}, []);
 
 
 
@@ -74,6 +107,33 @@ const handleProductChange = (e) => {
 
   };
 
+  const [taxServiceOpen, setTaxServiceOpen] = useState(false);
+const taxServiceRef = useRef(null);
+useEffect(() => {
+  const handleClickOutside = (e) => {
+    if (
+      taxServiceRef.current &&
+      !taxServiceRef.current.contains(e.target)
+    ) {
+      setTaxServiceOpen(false);
+    }
+  };
+
+  document.addEventListener("mousedown", handleClickOutside);
+  return () =>
+    document.removeEventListener("mousedown", handleClickOutside);
+}, []);
+const toggleTaxService = (service) => {
+  setTaxForm((prev) => ({
+    ...prev,
+    service: prev.service.includes(service)
+      ? prev.service.filter((s) => s !== service)
+      : [...prev.service, service],
+  }));
+};
+
+
+
   const services = [
     "GST Filing",
     "TDS / PT / IT Filing",
@@ -83,6 +143,41 @@ const handleProductChange = (e) => {
     "Tax Consultancy",
   ];
 
+  const taxServiceOptions = [
+  "GST Filing",
+  "TDS / PT / IT Filing",
+  "Bookkeeping",
+  "Audit Support",
+  "Company Registrations",
+  "Tax Consultancy",
+  "Other",
+];
+
+  const productServices = [
+  "Tally Prime",
+  "Software AMC",
+  "ERP Software",
+  "Implementation",
+  "Cloud Solution",
+  "Customization",
+];
+
+const productServiceOptions = [
+  "Software AMC",
+  "Corporate Training",
+  "Implementation",
+  "Integration",
+  "Customization",
+  "Accounts & Taxation",
+  "Tally Prime",
+  "ERP Software",
+  "Cloud Solution",
+  "HRMS & Payroll Software",
+  "OTTO - Conversational AI Business Bot",
+  "Other",
+];
+
+
 
 const [taxForm, setTaxForm] = useState({
   name: "",
@@ -90,7 +185,7 @@ const [taxForm, setTaxForm] = useState({
   contactNumber: "",
   companyname: "",
   location: "",
-  service: services[0],
+  service: [],
   message: "",
 });
 
@@ -189,9 +284,10 @@ const handleTaxSubmit = async (e) => {
           <div className="flex items-center gap-3 bg-gray-200 px-4 py-2 rounded-2xl justify-center md:justify-start">
             <Phone size={18} />
             <div className="text-center md:text-left">
-              <div className="text-lg font-semibold">Sales Desk</div>
-              <div className="font-semibold">7700006257</div>
-               <div className="font-semibold">7700005314</div>
+              <div className="text-lg font-semibold">Support Desk</div>
+              <div className="font-semibold">8104918476</div>
+               <div className="font-semibold">9892575903</div>
+               <div className="font-semibold">9987575903</div>
               <div className="font-semibold"></div>
             </div>
           </div>
@@ -253,13 +349,37 @@ const handleTaxSubmit = async (e) => {
     className="w-full px-3 py-2 border rounded-lg bg-white"
   />
 
-  <input
-    name="service"
-    placeholder="Service Interested In"
-    value={productForm.service}
-    onChange={handleProductChange}
-    className="w-full px-3 py-2 border rounded-lg bg-white"
-  />
+<div className="relative" ref={serviceDropdownRef}>
+  <button
+    type="button"
+    onClick={() => setServiceOpen(!serviceOpen)}
+    className="w-full px-3 py-2 border  text-gray-700 rounded-lg bg-white text-left"
+  >
+    {productForm.service.length > 0
+      ? productForm.service.join(", ")
+      : "Service Interested In"}
+  </button>
+
+  {serviceOpen && (
+    <div className="absolute z-10 mt-1 w-full bg-white border rounded-lg shadow-lg max-h-60 overflow-y-auto">
+      {productServiceOptions.map((option) => (
+        <label
+          key={option}
+          className="flex items-center gap-2 px-3 py-2 hover:bg-gray-100 cursor-pointer"
+        >
+          <input
+            type="checkbox"
+            checked={productForm.service.includes(option)}
+            onChange={() => toggleService(option)}
+          />
+          <span className="text-sm">{option}</span>
+        </label>
+      ))}
+    </div>
+  )}
+</div>
+
+
 
   <textarea
     name="message"
@@ -293,24 +413,25 @@ const handleTaxSubmit = async (e) => {
         <FileText /> Our Products
       </h3>
 
-      <ul className="grid sm:grid-cols-2 gap-3">
-        {services.map((s) => (
-          <li
-            key={s}
-            className="flex items-start gap-3 p-3 border rounded-lg bg-gray-200"
-          >
-            <span className="mt-1 text-green-600">
-              <CheckCircle size={18} />
-            </span>
-            <div>
-              <div className="font-semibold text-sm">{s}</div>
-              <div className="text-xs text-slate-600">
-                Handled with precision.
-              </div>
-            </div>
-          </li>
-        ))}
-      </ul>
+<ul className="grid sm:grid-cols-2 gap-3">
+  {productServices.map((s) => (
+    <li
+      key={s}
+      className="flex items-start gap-3 p-3 border rounded-lg bg-gray-200"
+    >
+      <span className="mt-1 text-green-600">
+        <CheckCircle size={18} />
+      </span>
+      <div>
+        <div className="font-semibold text-sm">{s}</div>
+        <div className="text-xs text-slate-600">
+          Handled with precision.
+        </div>
+      </div>
+    </li>
+  ))}
+</ul>
+
     </div>
 
     {/* Contact Details */}
@@ -321,13 +442,13 @@ const handleTaxSubmit = async (e) => {
 
       <div className="grid sm:grid-cols-2 gap-3">
         <div className="p-3 border rounded-lg bg-gray-200">
-          <div className="text-xs text-slate-600">Phone (Primary)</div>
-          <div className="mt-1 font-semibold">9821322456</div>
+          <div className="text-xs text-slate-600">Phone (Sales)</div>
+          <div className="mt-1 font-semibold">9821322456 | 7700005317 | 7700006257</div>
         </div>
 
         <div className="p-3 border rounded-lg bg-gray-200">
           <div className="text-xs text-slate-600">Phone (Support)</div>
-          <div className="mt-1 font-semibold">7700005317</div>
+          <div className="mt-1 font-semibold">7700005316 | 7700006256 |7700006281 </div>
         </div>
 
         <div className="p-3 border rounded-lg bg-gray-200 col-span-full">
@@ -368,7 +489,7 @@ const handleTaxSubmit = async (e) => {
             <Phone size={18} />
             <div className="text-center md:text-left">
               <div className="text-lg font-semibold">Support Desk</div>
-              <div className="font-semibold">7700005316</div>
+              <div className="font-semibold">7700005315</div>
               <div className="font-semibold"></div>
             </div>
           </div>
@@ -411,13 +532,13 @@ const handleTaxSubmit = async (e) => {
 
           <div className="grid sm:grid-cols-2 gap-3">
             <div className="p-3 border rounded-lg bg-gray-200">
-              <div className="text-xs text-slate-600">Phone (Primary)</div>
-              <div className="mt-1 font-semibold">9821322456 | 9892575903 | 9987575903</div>
+              <div className="text-xs text-slate-600">Phone (Sales)</div>
+              <div className="mt-1 font-semibold">9821322456 | 7700005315</div>
             </div>
 
             <div className="p-3 border rounded-lg bg-gray-200">
               <div className="text-xs text-slate-600">Phone (Support)</div>
-              <div className="mt-1 font-semibold">7700006256 | 7700006281 | 8104918476</div>
+              <div className="mt-1 font-semibold">7700005315</div>
             </div>
 
             <div className="p-3 border rounded-lg bg-gray-200 col-span-full">
@@ -447,7 +568,7 @@ const handleTaxSubmit = async (e) => {
 
   <input
     name="email"
-    placeholder="you@example.com"
+    placeholder="Email ID"
     value={taxForm.email}
     onChange={handleTaxChange}
     className="w-full px-3 py-2 border rounded-lg bg-white"
@@ -474,16 +595,36 @@ const handleTaxSubmit = async (e) => {
     onChange={handleTaxChange}
     className="w-full px-3 py-2 border rounded-lg bg-white"
   />
-  <select
-    name="service"
-    value={taxForm.service}
-    onChange={handleTaxChange}
-    className="w-full px-3 py-2 border rounded-lg bg-white"
+<div className="relative" ref={taxServiceRef}>
+  <button
+    type="button"
+    onClick={() => setTaxServiceOpen(!taxServiceOpen)}
+    className="w-full px-3 py-2 border text-gray-700 rounded-lg bg-white text-left"
   >
-    {services.slice(0, 6).map((s) => (
-      <option key={s}>{s}</option>
-    ))}
-  </select>
+    {taxForm.service.length > 0
+      ? taxForm.service.join(", ")
+      : "Select Services"}
+  </button>
+
+  {taxServiceOpen && (
+    <div className="absolute z-10 mt-1 w-full bg-white border rounded-lg shadow-lg max-h-60 overflow-y-auto">
+      {taxServiceOptions.map((option) => (
+        <label
+          key={option}
+          className="flex items-center gap-2 px-3 py-2 hover:bg-gray-100 cursor-pointer"
+        >
+          <input
+            type="checkbox"
+            checked={taxForm.service.includes(option)}
+            onChange={() => toggleTaxService(option)}
+          />
+          <span className="text-sm">{option}</span>
+        </label>
+      ))}
+    </div>
+  )}
+</div>
+
 
   <textarea
     name="message"

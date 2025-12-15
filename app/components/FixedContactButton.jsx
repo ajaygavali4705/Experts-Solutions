@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
@@ -11,23 +12,30 @@ import {
 } from "react-icons/fa";
 import { BiSupport } from "react-icons/bi";
 
-
 export default function ConnectWithUs() {
-  const [hover, setHover] = useState(false);
-  const [open, setOpen] = useState(true); // 🔥 Always open initially
+  const [open, setOpen] = useState(true); // ✅ OPEN on load
+  const [showSupportBox, setShowSupportBox] = useState(false);
 
   const popupRef = useRef(null);
+  const supportRef = useRef(null);
 
-  // 🔥 Close popup when clicking outside
+  // ✅ Close ALL buttons on first touch/click anywhere
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (popupRef.current && !popupRef.current.contains(event.target)) {
-        setOpen(false); // close popup
-      }
+    const handleFirstInteraction = () => {
+      setOpen(false);
+      setShowSupportBox(false);
+
+      document.removeEventListener("mousedown", handleFirstInteraction);
+      document.removeEventListener("touchstart", handleFirstInteraction);
     };
 
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+    document.addEventListener("mousedown", handleFirstInteraction);
+    document.addEventListener("touchstart", handleFirstInteraction);
+
+    return () => {
+      document.removeEventListener("mousedown", handleFirstInteraction);
+      document.removeEventListener("touchstart", handleFirstInteraction);
+    };
   }, []);
 
   const socialLinks = [
@@ -36,75 +44,83 @@ export default function ConnectWithUs() {
     { icon: <FaFacebookF size={25} />, url: "https://www.facebook.com/profile.php?id=61552732301698" },
     { icon: <FaLinkedinIn size={25} />, url: "https://www.linkedin.com/feed/" },
     { icon: <FaGoogle size={25} />, url: "https://www.google.com/intl/en_in/business/" },
-    { icon: <BiSupport size={25} />, url: "/contact" },
   ];
 
   return (
     <>
-      {/* Floating Button */}
       <div
         className="fixed bottom-5 right-5 z-50 flex items-center"
         ref={popupRef}
-        onMouseEnter={() => setHover(true)}
-        onMouseLeave={() => setHover(false)}
       >
-        {/* Main Button */}
+        {/* Main Chat Button */}
         <button
-          onClick={() => setOpen(!open)} // clicking chat icon also closes
-          className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 bg-[#8B1F2F] 
-               hover:bg-[#751925] text-white p-3 sm:p-4 rounded-full 
-               shadow-xl z-40 transition-all"
+          onClick={() => setOpen(!open)}
+          className="bg-[#8B1F2F] hover:bg-[#751925] text-white p-4 rounded-full shadow-xl transition"
         >
-          <IoMdChatbubbles size={24} className="sm:size-[26px]" />
+          <IoMdChatbubbles size={26} />
         </button>
 
-        {/* Popup Icons */}
+        {/* Social Icons */}
         {open && (
-  <div
-    className="
-      absolute 
-      bottom-16 
-      right-1/2 
-      translate-x-1/2
-      
-      sm:right-2 sm:translate-x-0
-      
-      /* Mobile adjustments */
-      max-sm:right-[20%] 
-      max-sm:translate-x-0
-
-      flex flex-col items-center gap-3
-    "
-  >           {socialLinks.map((item, index) => (
+          <div className="absolute bottom-16 right-0 flex flex-col items-center gap-3">
+            {socialLinks.map((item, index) => (
               <div
                 key={index}
                 onClick={() => window.open(item.url, "_blank")}
                 className="w-12 h-12 bg-[#8B1F2F] rounded-full flex items-center justify-center 
-                           text-white shadow-md hover:bg-[#751925] transition cursor-pointer
-                           animate-icon"
-                style={{
-                  animationDelay: `${index * 0.12}s`,
-                }}
+                           text-white shadow-md hover:bg-[#751925] transition cursor-pointer"
               >
                 {item.icon}
               </div>
             ))}
+
+            {/* SUPPORT ICON */}
+            <div className="relative" ref={supportRef}>
+              <div
+                onClick={(e) => {
+                  e.stopPropagation(); // ✅ prevent auto close
+                  setShowSupportBox(!showSupportBox);
+                }}
+                className="w-12 h-12 bg-[#8B1F2F] rounded-full flex items-center justify-center 
+                           text-white shadow-md hover:bg-[#751925] transition cursor-pointer"
+              >
+                <BiSupport size={25} />
+              </div>
+
+              {/* SUPPORT INFO BOX */}
+              {showSupportBox && (
+                <div
+                  className="
+                    absolute right-14 top-2 -translate-y-1/2
+                    w-80 bg-white rounded-xl shadow-xl p-4
+                    border border-gray-200 text-sm text-gray-700 
+                  "
+                >
+
+                  <h4 className="font-bold text-[#8B1F2F] mb-2">
+                    Software & Solutions
+                  </h4>
+                  <p>Email: <b>sales@experts.net.in</b></p>
+                  <p>Contact: <b>9821322456</b></p>
+                  <p>Support: <b>9892575903, 9987575903</b></p>
+
+                  <hr className="my-3" />
+
+                  <h4 className="font-bold text-[#8B1F2F] mb-2">
+                    Taxation & Accounts
+                  </h4>
+                  <p>Email: <b>ajay@experts.net.in</b></p>
+                  <p>Contact: <b>7700005315</b></p>
+                  <p>Support: <b>9821322456, 7700005315</b></p>
+
+
+                  
+                </div>
+              )}
+            </div>
           </div>
         )}
       </div>
-
-      {/* Animations */}
-      <style>
-        {`
-          .animate-icon {
-            animation: slideUpFade 0.35s ease-out;
-          }
-          @keyframes slideUpFade {
-            from { opacity: 0; transform: translateY(10px) scale(0.8); }
-            to { opacity: 1; transform: translateY(0) scale(1); }
-          }
-        `}
-      </style>
     </>
   );
 }

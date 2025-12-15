@@ -82,15 +82,7 @@ export default function AboutPage() {
       </motion.p>
     </motion.div>
 
-   <div
-  className="
-    mt-6 
-    flex flex-col sm:flex-row 
-    gap-4 
-    w-full
-    justify-center
-  "
->
+<div className="mt-4 w-full flex justify-center">
   <Link href="/gallery">
     <motion.button
       whileHover={{ scale: 1.07 }}
@@ -98,7 +90,6 @@ export default function AboutPage() {
         bg-[#87CEEB] text-lg text-black font-bold
         px-6 py-3 mb-5
         rounded-md
-        inline-flex items-center justify-center
       "
     >
       Moments
@@ -139,7 +130,7 @@ export default function AboutPage() {
 
 <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-3">
   {[
-    { title: "Trusted Expertise", desc: "Over 13 years of experience delivering ERP, accounting, and taxation solutions.", icon: <FaCheckCircle />, gradient: "from-pink-500 to-purple-500" },
+    { title: "Trusted Expertise", desc: "Over 16 years of experience delivering ERP, accounting, and taxation solutions.", icon: <FaCheckCircle />, gradient: "from-pink-500 to-purple-500" },
     { title: "All-in-One Solutions", desc: "ERP, Tally, Cloud, CRM, and mobile apps — everything your business needs under one roof.", icon: <FaTools />, gradient: "from-purple-500 to-indigo-500" },
     { title: "Client-Focused", desc: "3000+ satisfied clients with tailored solutions and dedicated support.", icon: <FaHandshake />, gradient: "from-indigo-500 to-pink-500" },
     { title: "Innovation Driven", desc: "Continuously improving products & services to stay ahead in technology.", icon: <FaRocket />, gradient: "from-pink-500 to-orange-400" },
@@ -270,7 +261,7 @@ export default function AboutPage() {
   <div className="grid grid-cols-1 font-bold md:grid-cols-6 gap-5 place-items-center relative z-10">
     {[
       ["2011", "Established Partnership"],
-      ["2017", "Associates Partner of Tally"],
+      ["2017", "Tally 3 Star Partner"],
       ["2018", "Partner of Biz Analyas"],
       ["2021", "Partner of Credflow"],
       ["2022", "Partner of Udyog ERP"],

@@ -90,23 +90,22 @@ export default function HomePage() {
         inline-flex items-center justify-center
       "
     >
-      Explore Our Solutions
+      Explore Our Services
     </motion.button>
   </Link>
 
   {/* PRODUCT (NO BACKGROUND) */}
-  <Link href="/products">
+  <Link href="/product">
     <motion.button
       whileHover={{ scale: 1.07 }}
       className="
-        text-lg text-white font-bold
+         bg-[#87CEEB] text-lg text-black font-bold
         px-6 py-3
         rounded-md
-        border-2 border-white
         inline-flex items-center justify-center
       "
     >
-      Product
+       Explore Our Product
     </motion.button>
   </Link>
 </div>
@@ -264,75 +263,145 @@ export default function HomePage() {
       {/* ------------------------------------------------------ */}
       {/* CORE SOLUTIONS */}
       {/* ------------------------------------------------------ */}
-      <section className="w-full bg-[#87CEEB] py-14 px-4 sm:px-6">
-        <div className="max-w-7xl mx-auto text-center">
-          <motion.h2
-            className="text-3xl sm:text-5xl font-bold text-[#8b1f2f]"
-            whileHover={{ scale: 1.03 }}
-          >
-            Our Core Solutions for Business Automation
-          </motion.h2>
-          <p className="text-gray-600 mt-6 leading-relaxed mb-6 text-lg sm:text-xl font-bold">
-            Exports solution is a technology and innovation company offering
-            complete business automation ERP software taxation consulting cloud
-            hosting and mobile app solutions{" "}
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
-            {[
-              {
-                icon: (
-                  <FaFileInvoiceDollar className="text-[#A72028] text-4xl" />
-                ),
-                title: "ERP & Accounting",
-                desc: "Our ERP and accounting systems automate billing, inventory, finance, and reporting to reduce manual work and improve business accuracy. With real-time insights, MSMEs can manage operations smarter and make informed financial decisions.",
-              },
-              {
-                icon: <FaCogs className="text-[#A72028] text-4xl" />,
-                title: "Tally Services",
-                desc: "As a Tally 3-Star Partner, we offer licensing, customisation, integration, TSS renewal, and expert support. Our team ensures smooth Tally operations with quick issue resolution and business-friendly configurations.",
-              },
-              {
-                icon: <FaCloud className="text-[#A72028] text-4xl" />,
-                title: "Cloud Solutions",
-                desc: "Access your software and data anytime, anywhere with our secure cloud hosting services. From Tally on AWS to ERP on Cloud, we deliver fast, reliable, and maintenance-free cloud infrastructure for modern businesses.",
-              },
-              {
-                icon: <FaChartLine className="text-[#A72028] text-4xl" />,
-                title: "Mobile Applications",
-                desc: "Our mobile apps bring your business to your fingertips with real-time access to accounts, sales, attendance, and operations. Seamlessly integrated with ERP or Tally, they help teams stay productive on the go.",
-              },
-              {
-                icon: <FaChartLine className="text-[#A72028] text-4xl" />,
-                title: "CRM Solutions",
-                desc: "Our CRM platforms simplify lead management, follow-ups, client tracking, and sales pipelines. With automation and reminders, your team stays organised and improves customer conversions effortlessly.",
-              },
-              {
-                icon: <FaBuffer className="text-[#A72028] text-4xl" />,
-                title: "Accounts & Taxation Services",
-                desc: "We handle end-to-end accounting, GST/TDS/PT/IT filings, audits, and registrations to keep your business compliant and stress-free. Our experts ensure accurate financial management with timely support.",
-              },
-            ].map((card, i) => (
-              <motion.div
-                key={i}
-                whileHover={{
-                  scale: 1.07,
-                  y: -5,
-                  boxShadow: "0px 10px 30px rgba(0,0,0,0.15)",
-                }}
-                className="bg-white p-5 sm:p-6 border rounded-2xl shadow-sm flex flex-col items-center text-center"
-              >
-                <div className="flex justify-center mb-3">{card.icon}</div>
-                <h3 className="text-xl sm:text-3xl font-bold text-[#A72028]">
-                  {card.title}
-                </h3>
-                <p className="text-gray-500 p-6 text-lg font-semibold mt-2">
-                  {card.desc}
-                </p>
-              </motion.div>
+  <section className="w-full bg-[#87CEEB] py-14 px-4 sm:px-6">
+  <div className="max-w-7xl mx-auto text-center">
+    <motion.h2
+      className="text-3xl sm:text-5xl font-bold text-[#8b1f2f]"
+      whileHover={{ scale: 1.03 }}
+    >
+      Our Core Solutions for Business Automation
+    </motion.h2>
+    <p className="text-gray-600 mt-6 leading-relaxed mb-6 text-lg sm:text-xl font-bold">
+      Exports solution is a technology and innovation company offering
+      complete business automation ERP software taxation consulting cloud
+      hosting and mobile app solutions
+    </p>
+
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+      {[
+        {
+          img: "/solution1.png",
+          title: "Tally Services",
+          desc: "We deliver complete Tally lifecycle services.",
+          points: [
+            "Tally Prime New License",
+            "TSS Renewal",
+            "Migration",
+            "Upgradation",
+            "Customization",
+            "Tally Prime with What’s app",
+            "Tally on Mobile App",
+            "Tally Prime Add-Ons",
+          ],
+        },
+        {
+          img: "/solution2.png",
+          title: "ERP Software",
+          desc: "Transforming Businesses Through Intelligent ERP.",
+          points: [
+            "Unified Business Platform",
+            "Real-Time Data Visibility",
+            "Streamlined Processes & Automation",
+            "Customizable & Scalable",
+            "Better Control & Governance",
+            "Enhanced Productivity",
+            "Powerful Reporting & Analytics",
+            "Inventory & Supply Chain Optimization",
+            "Seamless Integration",
+          
+          ],
+        },
+        {
+          img: "/solution3.png",
+          title: "Cloud Solutions",
+          desc: "Flexible and secure cloud environments.",
+          points: [
+            "Access your Tally Prime anytime, anywhere",
+            "24*7 Secure Access",
+            "Unlimited Usage",
+            "Flexibility & Scalability",
+            "Auto Backup on Cloud",
+            "Platform Agnostic (Windows, Mac and Linux)",
+          ],
+        },
+        {
+          img: "/solution4.png",
+          title: "HRMS & Payroll Software",
+          desc: "Empower Your People, Effortlessly.",
+          points: [
+            "Centralized HR Management",
+            "Automated Payroll",
+            "Leave & Attendance Tracking",
+            "Employee Self-Service",
+            "Performance & Appraisal",
+            "Compliance-Ready",
+            "Real-Time Analytics",
+            "Cloud & Mobile Access",
+          ],
+        },
+        {
+          img: "/solution5.png",
+          title: "CRM Solutions",
+          desc: "Your WhatsApp-Powered AI Sales Assistant.",
+          points: [
+            "WhatsApp Integration",
+            "Conversational AI",
+            "Automated Lead Management",
+            "24/7 Customer Engagement",
+            "Seamless CRM Integration",
+            "Smart Analytics",
+            "Personalized Responses",
+            "Time & Cost Efficiency",
+            "Scalable Solution",
+          ],
+        },
+        {
+          img: "/solution6.png",
+          title: "Accounts & Taxation Services",
+          desc: "Simplifying Accounts, Maximizing Compliance.",
+          points: [
+            "Expertise & Accuracy",
+            "Compliance Assurance",
+            "Time-Saving Automation",
+            "Personalized Solutions",
+            "Financial Insights",
+            "End-to-End Support",
+            "Secure & Confidential",
+          ],
+        },
+      ].map((card, i) => (
+        <motion.div
+          key={i}
+          whileHover={{
+            scale: 1.07,
+            y: -5,
+            boxShadow: "0px 10px 30px rgba(0,0,0,0.15)",
+          }}
+          className="bg-white p-5 sm:p-6 border rounded-2xl shadow-sm flex flex-col items-center text-center"
+        >
+         <div className="flex justify-center mb-3">
+  <Image
+    src={card.img}
+    alt={card.title}
+    width={260}
+    height={150}
+    className="object-contain"
+  />
+</div>
+          <h3 className="text-xl sm:text-3xl font-bold text-[#A72028]">
+            {card.title}
+          </h3>
+          <p className="text-gray-500 p-2 text-lg font-semibold mt-2">{card.desc}</p>
+          <ul className="text-gray-600 text-left mt-3 space-y-1 list-disc list-inside text-lg">
+            {card.points.map((point, idx) => (
+              <li key={idx}>{point}</li>
             ))}
-          </div>
-        </div>
-      </section>
+          </ul>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* ------------------------------------------------------ */}
       {/* COMPANY SNAPSHOT */}
@@ -367,7 +436,7 @@ export default function HomePage() {
                 className={`${item.bg} p-6 rounded-xl text-center hover:bg-white hover:text-black`}
               >
                 <p className="text-lg sm:text-3xl font-bold">{item.num}</p>
-                <p className="text-xs sm:text-lg">{item.text}</p>
+                <p className="text-xs pr-1 sm:text-lg">{item.text}</p>
               </motion.div>
             ))}
           </div>
@@ -405,8 +474,8 @@ export default function HomePage() {
           {/* Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 justify-center place-items-center">
             {[
-              ["Tally Prime 3 star", "/image10.png"],
-              ["tresatech", "/image71.jpg"],
+              ["Tally Prime", "/Tallypartner.png"],
+              ["Udyog ERP", "/tracet.png"],
               ["Biz Analyst", "/image11.png"],
               ["Cred Flow", "/image1.jpeg"],
             ].map(([name, img], i) => (
