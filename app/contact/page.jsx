@@ -277,7 +277,7 @@ const handleTaxSubmit = async (e) => {
     <div className="md:flex md:items-center md:justify-between gap-4 space-y-6 md:space-y-0">
       <div>
         <h2 className="text-2xl md:text-5xl font-extrabold text-center md:text-left">
-        Software & Product Enquiries
+        Software & Product Enquiry
         </h2>
 
       </div>
@@ -308,7 +308,7 @@ const handleTaxSubmit = async (e) => {
     {/* Enquiry Card */}
     <div className="rounded-2xl bg-gray-200 p-4 shadow-xl">
       <h4 className="text-2xl font-bold mb-3 text-center text-red-700">
-        Sales Enquiries
+        Sales Enquiry
       </h4>
 
 <form className="space-y-3" onSubmit={handleProductSubmit}>
@@ -479,7 +479,7 @@ const handleTaxSubmit = async (e) => {
     <div className="md:flex md:items-center md:justify-between gap-4 space-y-6 md:space-y-0">
       <div>
         <h2 className="text-2xl md:text-5xl font-extrabold text-center md:text-left">
-          Taxation & Accounting Services
+          Taxation & Accounting Enquiry
         </h2>
         <p className="mt-3 text-slate-700 text-center md:text-left max-w-xl text-sm md:text-base">
           Reliable GST, TDS, bookkeeping, audit support & tax advisory.
@@ -680,7 +680,7 @@ const handleTaxSubmit = async (e) => {
                 <h4 className="text-xl font-semibold text-gray-700 mb-3">📍 Mumbai Office Location</h4>
 
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3772.487199564445!2d72.951!3d19.172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b90fd764b0c7%3A0xe1df6ebadc177a64!2sMulund%20West!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3772.291590846997!2d72.9527321!3d19.1713644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b9aadc677ad1%3A0xce05e5613b40a524!2sExperts%20Solutions!5e0!3m2!1sen!2sin!4v1734330000001"
                   width="100%"
                   height="300"
                   className="rounded-xl border"
@@ -709,7 +709,7 @@ Marunji, Pune – 411057
                 <h4 className="text-xl font-semibold text-gray-700 mb-3">📍 Pune Office Location</h4>
 
                 <iframe
-      src="https://www.google.com/maps?q=Oro+Avenue+Life+Republic+Marunji+Pune+411057&output=embed"
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3779.500749566693!2d73.7100306!3d18.625846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bb00658f59fb%3A0x25b9dde12dda1de6!2sOro%20avenue%20-%20E%20building!5e0!3m2!1sen!2sin!4v1734330000003"
                   width="100%"
                   height="300"
                   className="rounded-xl border"

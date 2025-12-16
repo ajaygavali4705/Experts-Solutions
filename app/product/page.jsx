@@ -192,25 +192,7 @@ export default function ProductPage() {
       image: "/about4.jpg",
     },
 
-    /* ---------- EXTRA (EXISTING) ---------- */
-    {
-      title: "CredFlow",
-      description:
-        "Impact of Credflow’s Powerful Busy and Tally ERP Automation & Analytics Suite",
-      points: [
-        "Boost Revenue, with Faster Collection Period",
-        "Reduce Payment Collection Cycle",
-        "Recover payments faster via automated reminders (SMS, Email, IVR)",
-        "Seamlessly share your invoice on WhatsApp",
-        "Easy access to Busy / Tally Mobile App",
-        "View receivables, ledgers, invoices anytime anywhere",
-        "Business Analytics with Tally Automation",
-        "Automatically get performance reports of your business on WhatsApp",
-        "Grow your business by getting insights on Top and Inactive customers",
-        "Supercharge your Team Productivity with field tracking and attendance management",
-      ],
-      image: "/CredFlow.png",
-    },
+
   
   ];
 
@@ -407,7 +389,7 @@ const tssPlans = [
                 )}
                 {/* ACTION BUTTON */}
 <div className="flex justify-left mt-5">
-  <Link href="/contact#tax">
+  <Link href="/contact#products">
     <motion.button
       whileHover={{ scale: 1.08 }}
       className={`px-8 py-3 text-lg font-bold rounded-md shadow-md

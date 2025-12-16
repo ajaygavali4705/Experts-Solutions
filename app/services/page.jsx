@@ -215,7 +215,7 @@ export default function AboutPage() {
         shadow-md
       "
     >
-      Request a Demo
+      Get A Quote
     </motion.button>
   </Link>
 </div>
@@ -286,7 +286,7 @@ export default function AboutPage() {
         shadow-md
       "
     >
-      Request a Demo
+     Get A Quote
     </motion.button>
   </Link>
 </div>
@@ -366,7 +366,7 @@ export default function AboutPage() {
         shadow-md
       "
     >
-      Request a Demo
+      Get A Quote
     </motion.button>
   </Link>
 </div>
@@ -429,7 +429,7 @@ export default function AboutPage() {
         shadow-md
       "
     >
-      Request a Demo
+      Get A Quote
     </motion.button>
   </Link>
 </div>
@@ -507,7 +507,7 @@ export default function AboutPage() {
         shadow-md
       "
     >
-      Request a Demo
+      Get A Quote
     </motion.button>
   </Link>
 </div>
@@ -585,7 +585,7 @@ export default function AboutPage() {
         shadow-md
       "
     >
-      Request a Demo
+      Get A Quote
     </motion.button>
   </Link>
 </div>
@@ -658,7 +658,7 @@ export default function AboutPage() {
           ))}
         </ul>
         <div className="flex justify-center mt-10">
-  <Link href="/contact#products">
+  <Link href="/contact#tax">
     <motion.button
       whileHover={{ scale: 1.08 }}
       className="
@@ -672,7 +672,7 @@ export default function AboutPage() {
         shadow-md
       "
     >
-      Request a Demo
+      Get A Quote
     </motion.button>
   </Link>
 </div>
