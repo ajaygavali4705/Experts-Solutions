@@ -197,7 +197,29 @@ export default function AboutPage() {
                     <span className="text-xl">✔</span> {item}
                   </motion.li>
                 ))}
+                
               </ul>
+              {/* REQUEST DEMO BUTTON */}
+<div className="flex justify-center mt-10">
+  <Link href="/contact#products">
+    <motion.button
+      whileHover={{ scale: 1.08 }}
+      className="
+        bg-[#191970]
+        text-white
+        text-lg
+        font-bold
+        px-8
+        py-3
+        rounded-md
+        shadow-md
+      "
+    >
+      Request a Demo
+    </motion.button>
+  </Link>
+</div>
+
             </motion.div>
           </motion.div>
         </div>
@@ -249,6 +271,25 @@ export default function AboutPage() {
                   </li>
                 ))}
               </ul>
+              <div className="flex justify-center mt-10">
+  <Link href="/contact#products">
+    <motion.button
+      whileHover={{ scale: 1.08 }}
+      className="
+        bg-[#191970]
+        text-white
+        text-lg
+        font-bold
+        px-8
+        py-3
+        rounded-md
+        shadow-md
+      "
+    >
+      Request a Demo
+    </motion.button>
+  </Link>
+</div>
             </div>
           </motion.div>
         </div>
@@ -310,6 +351,25 @@ export default function AboutPage() {
                   </motion.li>
                 ))}
               </ul>
+              <div className="flex justify-center mt-10">
+  <Link href="/contact#products">
+    <motion.button
+      whileHover={{ scale: 1.08 }}
+      className="
+        bg-[#191970]
+        text-white
+        text-lg
+        font-bold
+        px-8
+        py-3
+        rounded-md
+        shadow-md
+      "
+    >
+      Request a Demo
+    </motion.button>
+  </Link>
+</div>
             </motion.div>
           </motion.div>
         </div>
@@ -354,6 +414,25 @@ export default function AboutPage() {
                   </li>
                 ))}
               </ul>
+              <div className="flex justify-center mt-10">
+  <Link href="/contact#products">
+    <motion.button
+      whileHover={{ scale: 1.08 }}
+      className="
+        bg-[#191970]
+        text-white
+        text-lg
+        font-bold
+        px-8
+        py-3
+        rounded-md
+        shadow-md
+      "
+    >
+      Request a Demo
+    </motion.button>
+  </Link>
+</div>
             </div>
           </motion.div>
         </div>
@@ -413,6 +492,25 @@ export default function AboutPage() {
                   </motion.li>
                 ))}
               </ul>
+              <div className="flex justify-center mt-10">
+  <Link href="/contact#products">
+    <motion.button
+      whileHover={{ scale: 1.08 }}
+      className="
+        bg-[#191970]
+        text-white
+        text-lg
+        font-bold
+        px-8
+        py-3
+        rounded-md
+        shadow-md
+      "
+    >
+      Request a Demo
+    </motion.button>
+  </Link>
+</div>
             </motion.div>
           </motion.div>
         </div>
@@ -472,6 +570,25 @@ export default function AboutPage() {
                   </motion.li>
                 ))}
               </ul>
+              <div className="flex justify-center mt-10">
+  <Link href="/contact#products">
+    <motion.button
+      whileHover={{ scale: 1.08 }}
+      className="
+        bg-[#191970]
+        text-white
+        text-lg
+        font-bold
+        px-8
+        py-3
+        rounded-md
+        shadow-md
+      "
+    >
+      Request a Demo
+    </motion.button>
+  </Link>
+</div>
             </motion.div>
           </motion.div>
         </div>
@@ -540,6 +657,25 @@ export default function AboutPage() {
             </motion.li>
           ))}
         </ul>
+        <div className="flex justify-center mt-10">
+  <Link href="/contact#products">
+    <motion.button
+      whileHover={{ scale: 1.08 }}
+      className="
+        bg-[#191970]
+        text-white
+        text-lg
+        font-bold
+        px-8
+        py-3
+        rounded-md
+        shadow-md
+      "
+    >
+      Request a Demo
+    </motion.button>
+  </Link>
+</div>
       </motion.div>
     </motion.div>
   </div>

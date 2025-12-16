@@ -182,7 +182,7 @@ export default function BlogsPage() {
                 onClick={() => toggleText(index)}
                 className="mt-3 text-blue-600 font-semibold flex items-center gap-2"
               >
-                {openIndex[index] ? "Read Less" : "Read More"}
+                {openIndex[index] ? "Read Less" : "Know More"}
                 <FaArrowRight size={14} />
               </button>
             </motion.div>

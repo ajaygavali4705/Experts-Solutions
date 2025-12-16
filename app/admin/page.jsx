@@ -66,10 +66,10 @@ export default function AdminLogin() {
 
         {/* Title */}
         <h1 className="text-3xl font-bold text-center text-gray-800 mb-2">
-          Admin Login
+         Login
         </h1>
         <p className="text-center text-gray-600 mb-8">
-          Sign in to access the admin panel
+         Office Use Only
         </p>
 
         {/* Login Form */}

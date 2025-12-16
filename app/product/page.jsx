@@ -283,10 +283,56 @@ const tallyPrimePlans = [
   },
 ];
 
+const tssPlans = [
+  {
+    name: "Silver",
+    price: "₹ 4,500",
+    gst: "₹ 18% GST (₹ 810)",
+    badge: "1 month FREE",
+    features: [
+      "Free upgrades to all major release",
+      "Connected Services for GST, Banking and WhatsApp Business",
+      "Anytime, Anywhere Access to reports and TallyPrime",
+      "Online Data Sync and consolidation",
+      "EMI Available",
+    ],
+  },
+  {
+    name: "Gold",
+    price: "₹ 13,500",
+    gst: "₹ 18% GST (₹ 2,430)",
+    badge: "1 month FREE",
+    features: [
+      "Free upgrades to all major release",
+      "Connected Services for GST, Banking and WhatsApp Business",
+      "Anytime, Anywhere Access to reports and TallyPrime",
+      "Online Data Sync and consolidation",
+      "EMI Available",
+    ],
+  },
+  {
+    name: "Auditor",
+    price: "₹ 6,750",
+    gst: "₹ 18% GST (₹ 1,215)",
+    badge: "1 month FREE",
+    features: [
+      "Free upgrades to all major release",
+      "Connected Services for GST, Banking and WhatsApp Business",
+      "Anytime, Anywhere Access to reports and TallyPrime",
+      "Online Data Sync and consolidation",
+      "EMI Available",
+    ],
+  },
+];
+
 
 
   const imageWidth = 450;
   const imageHeight = 300;
+
+  const isDemoProduct = (title) =>
+  title === "Tally Prime – New License" ||
+  title === "Tally Software Services (TSS)";
 
   return (
     <>
@@ -304,7 +350,7 @@ const tallyPrimePlans = [
             Explore our product solutions designed to empower businesses with smarter automation, cloud integration, and scalable digital growth.
           </p>
           <div className="mt-6 flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center">
-            <Link href="/Services">
+            <Link href="/services">
               <motion.button
                 whileHover={{ scale: 1.07 }}
                 className="bg-[#87CEEB] text-lg text-black font-bold px-6 py-3 rounded-md mx-auto inline-flex items-center justify-center"
@@ -353,12 +399,32 @@ const tallyPrimePlans = [
                   {product.points.slice(0, 6).map((point, i) => (<li key={i}>{point}</li>))}
                 </ul>
 {(product.points.length > 6 ||
-  product.title === "Tally Prime – New License") && (
+  product.title === "Tally Prime – New License" ||
+  product.title === "Tally Software Services (TSS)") && (
                   <button onClick={() => setSelectedProduct(product)} className={`mt-4 font-bold underline ${textColor} hover:text-red-700`}>
-                    Read More
+                    Know More
                   </button>
                 )}
+                {/* ACTION BUTTON */}
+<div className="flex justify-left mt-5">
+  <Link href="/contact#tax">
+    <motion.button
+      whileHover={{ scale: 1.08 }}
+      className={`px-8 py-3 text-lg font-bold rounded-md shadow-md
+        ${isDemoProduct(product.title)
+          ? "bg-[#191970] text-white"
+          : "bg-[#191970] text-white"
+        }`}
+    >
+      {isDemoProduct(product.title)
+        ? "Request For Demo"
+        : "Get a Quote"}
+    </motion.button>
+  </Link>
+</div>
+
               </div>
+              
             </div>
           </section>
         );
@@ -366,14 +432,17 @@ const tallyPrimePlans = [
 
       {/* MODAL */}
       {selectedProduct && (
-        <div className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto py-20 bg-black/50">
-          <div className="bg-white rounded-2xl p-6 md:p-12 max-w-4xl w-full relative shadow-lg overflow-y-auto max-h-[80vh]">
+        <div className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto py-20 bg-black/50"
+        onClick={() => setSelectedProduct(null)}   >
+          <div className="bg-white rounded-2xl p-6 md:p-12 max-w-4xl w-full relative shadow-lg overflow-y-auto max-h-[80vh]"
+          onClick={(e) => e.stopPropagation()} >
             <button onClick={() => setSelectedProduct(null)} className="absolute top-4 right-4 text-gray-500 hover:text-gray-900 font-bold text-2xl">&times;</button>
             <div className="flex justify-center mb-6">
               <Image src={selectedProduct.image} alt={selectedProduct.title} width={imageWidth} height={imageHeight} className="rounded-xl shadow-md object-cover" />
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-[#8b1f2f] mb-6">{selectedProduct.title}</h2>
             <p className="text-lg md:text-xl font-semibold mb-4 text-gray-700">{selectedProduct.description}</p>
+            
           {/* SPECIAL CASE: TALLY PRIME PLANS */}
 {selectedProduct.title === "Tally Prime – New License" ? (
   <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
@@ -382,37 +451,58 @@ const tallyPrimePlans = [
         key={i}
         className="border rounded-xl p-6 shadow-md hover:shadow-lg transition text-center"
       >
-      <h3 className="text-xl font-bold text-[#8b1f2f]">
-  {plan.name}
-</h3>
+        <h3 className="text-xl font-bold text-[#8b1f2f]">{plan.name}</h3>
+        <p className="text-2xl font-extrabold text-black mt-2">{plan.price}</p>
+        <p className="text-sm font-semibold text-gray-500">{plan.gst}</p>
 
-<p className="text-2xl font-extrabold text-black mt-2">
-  {plan.price}
-</p>
+        {plan.tag && (
+          <p className="text-sm font-bold text-green-700 my-2">{plan.tag}</p>
+        )}
 
-<p className="text-sm font-semibold text-gray-500 mb-2">
-  {plan.gst}
-</p>
-
-{plan.tag && (
-  <p className="text-sm font-bold text-green-700 mb-2">
-    {plan.tag}
-  </p>
-)}
-
-
-        <p className="font-semibold text-gray-600 mb-3">
-          {plan.users}
-        </p>
-
-        <ul className="list-disc list-inside space-y-2 text-gray-700 text-left">
-          {plan.features.map((feature, idx) => (
-            <li key={idx}>{feature}</li>
+        <ul className="list-disc list-inside space-y-2 text-gray-700 text-left mt-3">
+          {plan.features.map((f, idx) => (
+            <li key={idx}>{f}</li>
           ))}
         </ul>
       </div>
     ))}
   </div>
+
+) : selectedProduct.title === "Tally Software Services (TSS)" ? (
+<div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+  {tssPlans.map((plan, i) => (
+    <div
+      key={i}
+      className="border rounded-xl p-6 shadow-md hover:shadow-lg transition bg-white"
+    >
+      {/* HEADER */}
+      <div className="flex justify-between items-center mb-2">
+        <h3 className="text-xl font-bold text-blue-600">{plan.name}</h3>
+        <span className="bg-blue-500 text-white text-xs px-2 py-1 rounded">
+          {plan.badge}
+        </span>
+      </div>
+
+      {/* PRICE */}
+      <p className="text-2xl font-extrabold text-black">{plan.price}</p>
+      <p className="text-sm text-gray-600 mb-4">{plan.gst}</p>
+
+      {/* FEATURES */}
+      <p className="font-semibold mb-2">What you get :</p>
+      <ul className="space-y-2 text-sm text-gray-700">
+        {plan.features.map((f, idx) => (
+          <li key={idx} className="flex gap-2">
+            <span className="text-green-600 font-bold">✓</span>
+            {f}
+          </li>
+        ))}
+      </ul>
+    </div>
+  ))}
+</div>
+
+
+
 ) : (
   <ul className="list-disc list-inside space-y-3 text-gray-700 text-lg md:text-xl">
     {selectedProduct.points.map((point, i) => (

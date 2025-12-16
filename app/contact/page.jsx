@@ -217,13 +217,16 @@ const handleTaxSubmit = async (e) => {
 
     setTaxSuccess("Your tax enquiry has been submitted successfully!");
 
-    setTaxForm({
-      name: "",
-      email: "",
-      contactNumber: "",
-      service: services[0],
-      message: "",
-    });
+  setTaxForm({
+  name: "",
+  email: "",
+  contactNumber: "",
+  companyname: "",
+  location: "",
+  service: [],
+  message: "",
+});
+
   } catch (err) {
     setTaxError(err.message || "Something went wrong. Try again.");
   } finally {

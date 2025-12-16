@@ -42,7 +42,7 @@ export default function Footer() {
       whileHover={{ scale: 1.1, y: -3 }}
       className="bg-[#87CEEB] text-black font-bold px-6 py-2 rounded-md"
     >
-      Request a Demo
+      Get A Free Trial
     </motion.button>
   </Link>
 </div>

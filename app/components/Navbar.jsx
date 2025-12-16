@@ -93,7 +93,7 @@ export default function Navbar() {
 
           <Link href="/blogs">Blogs</Link>
           <Link href="/gallery">Gallery</Link>
-          <Link href="/admin">Admin</Link>
+          <Link href="/admin">Login</Link>
 
           <Link href="/contact">
             <button className="bg-[#191970] text-white px-4 py-2 rounded-md hover:bg-[#191970]">Contact</button>
@@ -191,7 +191,7 @@ export default function Navbar() {
 
           <Link href="/blogs" onClick={() => setOpen(false)} className="block w-full py-2 border-b">Blogs</Link>
           <Link href="/gallery" onClick={() => setOpen(false)} className="block w-full py-2 border-b">Gallery</Link>
-          <Link href="/admin" onClick={() => setOpen(false)} className="block w-full py-2 border-b">Admin</Link>
+          <Link href="/admin" onClick={() => setOpen(false)} className="block w-full py-2 border-b">Login</Link>
 
           <Link href="/contact" onClick={() => setOpen(false)}>
             <button className="w-full bg-[#A72028] text-white px-4 py-3 rounded-md mt-2">Contact</button>

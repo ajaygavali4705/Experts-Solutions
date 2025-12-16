@@ -281,17 +281,18 @@ export default function HomePage() {
       {[
         {
           img: "/solution1.png",
-          title: "Tally Services",
+          title: "Tally Prime",
           desc: "We deliver complete Tally lifecycle services.",
           points: [
             "Tally Prime New License",
             "TSS Renewal",
-            "Migration",
-            "Upgradation",
-            "Customization",
+            "Tally On Cloud",
             "Tally Prime with What’s app",
             "Tally on Mobile App",
             "Tally Prime Add-Ons",
+            "Migration",
+            "Upgradation",
+            "Customization",
           ],
         },
         {
@@ -316,7 +317,9 @@ export default function HomePage() {
           title: "Cloud Solutions",
           desc: "Flexible and secure cloud environments.",
           points: [
-            "Access your Tally Prime anytime, anywhere",
+            "Tally Prime On Cloud",
+            "Office On Cloud",
+            "Access your Tally Prime / Office anytime, anywhere",
             "24*7 Secure Access",
             "Unlimited Usage",
             "Flexibility & Scalability",

@@ -55,7 +55,8 @@ export default function Testimonial() {
 
   return (
   <section className="w-full bg-white py-20">
-    <div className="max-w-6xl mx-auto text-center mb-10">
+    {/* HEADING */}
+    <div className="max-w-6xl mx-auto text-center mb-12">
       <h2 className="text-5xl font-bold text-gray-800">
         What Our Clients Say
       </h2>
@@ -65,72 +66,74 @@ export default function Testimonial() {
       </p>
     </div>
 
-    <div className="relative flex items-center justify-center">
-      {/* PREV */}
-      <button
-  onClick={() =>
-    setIndex(index === 0 ? testimonials.length - 1 : index - 1)
-  }
-  className="
-    absolute 
-    left-2 sm:left-10 
-    text-gray-400 hover:text-gray-600
-    z-10
-  "
->
-  <FaChevronLeft size={20} className="sm:w-6 sm:h-6" />
-</button>
+    {/* MAIN LAYOUT */}
+    <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-8 px-4">
 
-      {/* CARD */}
-      <div className="w-[80%] max-w-4xl bg-[#faddca] border border-blue-200 rounded-xl px-12 py-10 text-center relative">
-
-        {/* ⭐ STARS FIRST */}
-        <div className="flex justify-center mb-4 text-yellow-400">
-          {Array.from({ length: rating || 5 }).map((_, i) => (
-            <FaStar key={i} size={16} />
-          ))}
-        </div>
-
-        {/* OPEN QUOTE */}
-        <span className="absolute left-10 top-8 text-5xl text-blue-500 font-serif">
-          “
-        </span>
-
-        {/* FEEDBACK */}
-        <p className="text-gray-700 text-xl font-bold leading-relaxed px-6">
-          {message}
-        </p>
-
-        {/* CLOSE QUOTE */}
-        <span className="absolute right-6 bottom-6 text-5xl text-blue-500 font-serif">
-          ”
-        </span>
-
-        {/* NAME LAST */}
-        <p className="mt-6 text-lg font-semibold text-gray-800">
-          — {name}
-        </p>
+      {/* LEFT – 30% IMAGE */}
+      <div className="w-full md:w-[20%] flex justify-center">
+        <a
+          href="https://g.page/r/CSSlQDth5QXOEBM/review"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="cursor-pointer"
+        >
+          <img
+            src="/solution1.png"   // 🔁 change image path if needed
+            alt="Google Review"
+            className="rounded-xl shadow-lg hover:scale-105 transition duration-300"
+          />
+        </a>
       </div>
 
-      {/* NEXT */}
- <button
-  onClick={() =>
-    setIndex((index + 1) % testimonials.length)
-  }
-  className="
-    absolute 
-    right-2 sm:right-10 
-    text-gray-400 hover:text-gray-600
-    z-10
-  "
->
-  <FaChevronRight size={20} className="sm:w-6 sm:h-6" />
-</button>
+      {/* RIGHT – 70% SLIDER */}
+      <div className="relative w-full md:w-[80%] flex items-center justify-center">
 
+        {/* PREV */}
+        <button
+          onClick={() =>
+            setIndex(index === 0 ? testimonials.length - 1 : index - 1)
+          }
+          className="absolute left-0 text-gray-400 hover:text-gray-600 z-10"
+        >
+          <FaChevronLeft size={22} />
+        </button>
+
+        {/* CARD */}
+        <div className="w-[90%] bg-[#faddca] border border-blue-200 rounded-xl px-12 py-10 text-center relative">
+
+          {/* STARS */}
+          <div className="flex justify-center mb-4 text-yellow-400">
+            {Array.from({ length: rating || 5 }).map((_, i) => (
+              <FaStar key={i} size={16} />
+            ))}
+          </div>
+
+          {/* QUOTES */}
+          <span className="absolute left-6 top-6 text-5xl text-blue-500 font-serif">“</span>
+
+          <p className="text-gray-700 text-xl font-bold leading-relaxed px-6">
+            {message}
+          </p>
+
+          <span className="absolute right-6 bottom-6 text-5xl text-blue-500 font-serif">”</span>
+
+          <p className="mt-6 text-lg font-semibold text-gray-800">
+            — {name}
+          </p>
+        </div>
+
+        {/* NEXT */}
+        <button
+          onClick={() => setIndex((index + 1) % testimonials.length)}
+          className="absolute right-0 text-gray-400 hover:text-gray-600 z-10"
+        >
+          <FaChevronRight size={22} />
+        </button>
+      </div>
     </div>
 
-    {/* DOT INDICATORS */}
-    <div className="flex justify-center gap-2 mt-6">
+    {/* DOTS */}
+    <div className="flex justify-center gap-2 mt-8">
       {testimonials.map((_, i) => (
         <span
           key={i}
@@ -140,27 +143,6 @@ export default function Testimonial() {
         ></span>
       ))}
     </div>
-    {/* REVIEW BUTTON */}
-{/* REVIEW BUTTON */}
-<div className="flex justify-center mt-8">
-  <a
-    href="https://g.page/r/CSSlQDth5QXOEBM/review"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="inline-block bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg
-               hover:bg-blue-700 transition duration-300 shadow-md text-center leading-tight"
-  >
-    <span className="block">
-      Provide us your Valuable
-    </span>
-    <span className="block">
-      Feedback / Review
-    </span>
-  </a>
-</div>
-
   </section>
-  
 );
-
 }
