@@ -52,10 +52,10 @@ export default function Footer() {
 
       {/* DESKTOP FOOTER */}
 {/* DESKTOP FOOTER */}
-<div className="max-w-7xl mx-auto px-6 pt-12 hidden md:grid md:grid-cols-6 gap-10 text-gray-700 text-center md:text-left">
+<div className="max-w-7xl mx-auto px-6 pt-12 hidden md:grid md:grid-cols-6 gap-6 text-gray-700 text-center md:text-left">
 
   {/* Logo */}
-  <div className="flex flex-col items-center md:items-start">
+<div className="flex flex-col items-center justify-center md:items-center md:justify-center">
     <Image
       src="/images/Expert_logo.jpg"
       alt="Experts Solutions Logo"
@@ -66,7 +66,7 @@ export default function Footer() {
   </div>
 
   {/* Pages */}
-  <div className="flex flex-col items-center md:items-start">
+<div className="flex flex-col items-center md:items-start md:ml-19">
     <h4 className="font-semibold text-gray-100 mb-3">Pages</h4>
     <ul className="space-y-2 text-white text-sm">
       <li><Link href="/">Home</Link></li>
@@ -235,7 +235,7 @@ export default function Footer() {
 
       {/* BOTTOM BAR */}
       <div className="w-full pt-4 text-center text-sm text-gray-100">
-        <div className="max-w-7xl mx-auto mb-5 mt-2 flex flex-col md:flex-row items-center justify-between gap-4 text-center">
+        <div className="max-w-6xl mx-auto mb-5 mt-2 flex flex-col md:flex-row items-center justify-between gap-4 text-center">
 
           <p className="text-sm text-white">
             Developed by{" "}
@@ -249,7 +249,7 @@ export default function Footer() {
           </p>
 
           {/* Social Icons */}
-          <div className="flex flex-col items-center gap-2 md:flex-row">
+<div className="flex flex-col items-center gap-2 md:flex-row md:-ml-18">
             <span className="text-gray-100 font-semibold text-sm">
               Lets connect
             </span>

@@ -148,7 +148,7 @@ export default function AboutPage() {
           >
             {/* IMAGE */}
             <motion.img
-              src="/about1.jpg"
+              src="/AMC.png"
               className="
                 w-full lg:w-1/2 
                 h-52 sm:h-60 md:h-72 lg:h-[450px] 
@@ -233,7 +233,7 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-20">
           <motion.div className="bg-white/90 backdrop-blur-lg rounded-3xl p-6 sm:p-10 flex flex-col lg:flex-row items-center gap-10">
             <motion.img
-              src="/about2.jpg"
+              src="/Training.png"
               className="w-full lg:w-1/2 h-52 sm:h-60 md:h-72 lg:h-[450px] rounded-3xl object-cover"
             />
 
@@ -313,7 +313,7 @@ export default function AboutPage() {
           >
             {/* IMAGE */}
             <motion.img
-              src="/about3.jpg"
+              src="/Implementation.png"
               className="
                 w-full lg:w-1/2 
                 h-52 sm:h-60 md:h-72 lg:h-[450px] 
@@ -385,7 +385,7 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-20">
           <motion.div className="bg-white/90 backdrop-blur-lg rounded-3xl p-6 sm:p-10 flex flex-col lg:flex-row items-center gap-10">
             <motion.img
-              src="/about4.jpg"
+              src="/Integration.png"
               className="w-full lg:w-1/2 h-52 sm:h-60 md:h-72 lg:h-[450px] rounded-3xl object-cover"
             />
 
@@ -456,85 +456,7 @@ export default function AboutPage() {
           >
             {/* IMAGE */}
             <motion.img
-              src="/about5.jpg"
-              className="
-                w-full lg:w-1/2 
-                h-52 sm:h-60 md:h-72 lg:h-[450px] 
-                rounded-3xl shadow-xl object-cover 
-              "
-            />
-
-            {/* CONTENT */}
-            <motion.div className="lg:w-1/2">
-              <h2
-                className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center"
-                style={{ color: "#191970" }}
-              >
-                Customisation
-              </h2>
-              <p
-                className="mt-4 text-center text-base sm:text-lg"
-                style={{ color: "#191970" }}
-              >
-                Software that works exactly the way you do.
-              </p>
-              {/* FIXED LIST — now centered on mobile */}
-              <ul className="mt-6 space-y-3 mx-auto lg:ml-20 w-fit">
-                {[
-                  "From invoice formats to workflow modifications and custom modules—get tailor-made enhancements that fit your business processes perfectly.",
-                ].map((item, index) => (
-                  <motion.li
-                    key={index}
-                    className="flex items-center gap-3 text-base sm:text-lg font-medium"
-                    style={{ color: "#191970" }}
-                  >
-                    <span className="text-xl">✔</span> {item}
-                  </motion.li>
-                ))}
-              </ul>
-              <div className="flex justify-center mt-10">
-  <Link href="/contact#products">
-    <motion.button
-      whileHover={{ scale: 1.08 }}
-      className="
-        bg-[#191970]
-        text-white
-        text-lg
-        font-bold
-        px-8
-        py-3
-        rounded-md
-        shadow-md
-      "
-    >
-      Get A Quote
-    </motion.button>
-  </Link>
-</div>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
-
-  {/* -------------------------------------------------------- */}
-      {/* SECTION 5 – Mobile Apps */}
-      {/* -------------------------------------------------------- */}
-      <section
-        id="mobile"
-        className="min-h-screen flex items-center py-10 bg-[#f2f4f7]"
-      >
-        <div className="container mx-auto px-4 sm:px-6 lg:px-20">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="bg-white/90 backdrop-blur-lg border border-[#19197026] rounded-3xl shadow-2xl 
-              p-6 sm:p-10 
-              flex flex-col lg:flex-row items-center gap-10"
-          >
-            {/* IMAGE */}
-            <motion.img
-              src="/about5.jpg"
+              src="/Services5.png"
               className="
                 w-full lg:w-1/2 
                 h-52 sm:h-60 md:h-72 lg:h-[450px] 
@@ -612,7 +534,7 @@ export default function AboutPage() {
     >
       {/* IMAGE */}
       <motion.img
-        src="/blog5.jpg"
+        src="/Services6.png"
         className="
           w-full lg:w-1/2 
           h-52 sm:h-60 md:h-72 lg:h-[450px] 

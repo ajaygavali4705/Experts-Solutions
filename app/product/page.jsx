@@ -16,14 +16,15 @@ export default function ProductPage() {
       description:
         "India’s leading business management software for accounting, compliance, and growth.",
       points: [
-        "Complete business accounting",
-        "GST, TDS, TCS compliance",
-        "Inventory & payroll management",
-        "Banking & reconciliation",
-        "Multi-user & multi-location support",
-        "Scalable for all business sizes",
+        "Direct Filing & Uploads",
+        "Auto GST Reconciliation",
+        "WhatsApp for Business",
+        "Connected Banking",
+        "Online Report Access",
+        "Online Data Consolidation",
+        "Cloud Access to TallyPrime",
       ],
-      image: "/about8.jpg",
+      image: "/Product1.avif",
     },
     {
       title: "Tally Software Services (TSS)",
@@ -36,7 +37,7 @@ export default function ProductPage() {
         "Data synchronization",
         "Security & performance improvements",
       ],
-      image: "/about7.jpg",
+      image: "/Product2.jpg",
     },
     {
       title: "Tally Prime Add-Ons",
@@ -54,7 +55,7 @@ export default function ProductPage() {
         "Grow your business by getting insights on Top and Inactive customers",
         "Supercharge your Team Productivity with field tracking and attendance management",
       ],
-      image: "/latest2.jpg",
+      image: "/Product3.webp",
     },
     {
       title: "Tally Capital",
@@ -88,7 +89,7 @@ export default function ProductPage() {
         "Share instantly via WhatsApp, Email, SMS and more",
         "Set follow-up reminders and receive notifications for tasks",
       ],
-      image: "/TallyOn_Mobile.png",
+      image: "/Product5.jpg",
     },
 
     /* ---------- ERP ---------- */
@@ -110,7 +111,7 @@ export default function ProductPage() {
         "Customer Relationship Management (CRM)",
         "Project Resource Management (Project Management)",
       ],
-      image: "/about2.jpg",
+      image: "/Product6.webp",
     },
 
     /* ---------- CLOUD ---------- */
@@ -126,7 +127,7 @@ export default function ProductPage() {
         "Auto Backup on Cloud",
         "Platform Agnostic (Windows, Mac and Linux)",
       ],
-      image: "/latest3.jpg",
+      image: "/Product7.png",
     },
     {
       title: "Office On Cloud",
@@ -144,7 +145,7 @@ export default function ProductPage() {
         "High Reliability & Consistent Performance",
         "Scalable for Future Growth",
       ],
-      image: "/about1.jpg",
+      image: "/Product8.png",
     },
 
     /* ---------- HRMS ---------- */
@@ -168,7 +169,7 @@ export default function ProductPage() {
         "Mobile App Module",
         "Recruitment Software Module",
       ],
-      image: "/about3.jpg",
+      image: "/Product9.png",
     },
 
     /* ---------- OTTO ---------- */
@@ -189,7 +190,7 @@ export default function ProductPage() {
         "Payments",
         "Events",
       ],
-      image: "/about4.jpg",
+      image: "/Product10.png",
     },
 
 
@@ -266,8 +267,10 @@ const tallyPrimePlans = [
 ];
 
 const tssPlans = [
+  /* ================= 1 YEAR PLANS ================= */
   {
     name: "Silver",
+    year: "1 Year",
     price: "₹ 4,500",
     gst: "₹ 18% GST (₹ 810)",
     badge: "1 month FREE",
@@ -281,6 +284,7 @@ const tssPlans = [
   },
   {
     name: "Gold",
+    year: "1 Year",
     price: "₹ 13,500",
     gst: "₹ 18% GST (₹ 2,430)",
     badge: "1 month FREE",
@@ -294,6 +298,7 @@ const tssPlans = [
   },
   {
     name: "Auditor",
+    year: "1 Year",
     price: "₹ 6,750",
     gst: "₹ 18% GST (₹ 1,215)",
     badge: "1 month FREE",
@@ -305,7 +310,52 @@ const tssPlans = [
       "EMI Available",
     ],
   },
+
+  /* ================= 2 YEAR PLANS ================= */
+  {
+    name: "Silver",
+    year: "2 Year",
+    price: "₹ 8,100",
+    gst: "₹ 18% GST (₹ 1,458)",
+    badge: "1 month FREE",
+    features: [
+      "Free upgrades to all major release",
+      "Connected Services for GST, Banking and WhatsApp Business",
+      "Anytime, Anywhere Access to reports and TallyPrime",
+      "Online Data Sync and consolidation",
+      "EMI Available",
+    ],
+  },
+  {
+    name: "Gold",
+    year: "2 Year",
+    price: "₹ 24,300",
+    gst: "₹ 18% GST (₹ 4,374)",
+    badge: "1 month FREE",
+    features: [
+      "Free upgrades to all major release",
+      "Connected Services for GST, Banking and WhatsApp Business",
+      "Anytime, Anywhere Access to reports and TallyPrime",
+      "Online Data Sync and consolidation",
+      "EMI Available",
+    ],
+  },
+  {
+    name: "Auditor",
+    year: "2 Year",
+    price: "₹ 12,150",
+    gst: "₹ 18% GST (₹ 2,187)",
+    badge: "1 month FREE",
+    features: [
+      "Free upgrades to all major release",
+      "Connected Services for GST, Banking and WhatsApp Business",
+      "Anytime, Anywhere Access to reports and TallyPrime",
+      "Online Data Sync and consolidation",
+      "EMI Available",
+    ],
+  },
 ];
+
 
 
 
@@ -447,8 +497,48 @@ const tssPlans = [
           ))}
         </ul>
       </div>
+      
     ))}
+      <div>
+      <h3 className="text-2xl font-bold text-[#191970] mb-2">
+        Simplify GST & banking with connected solution
+      </h3>
+      <p className="text-lg leading-relaxed">
+        Streamline your GST with TallyPrimes easy-to-use connected solution.
+        Enjoy direct uploading of GSTR-1 and GSTR-3B, filing and signing GSTR-1,
+        auto GST reconciliation, and generating e-invoices / e-way bills—all in
+        one place. Additionally, leverage the connected solution for faster
+        payment, simplify your banking records, and auto bank reconciliation.
+      </p>
+    </div>
+
+    <div>
+      <h3 className="text-2xl font-bold text-[#191970] mb-2">
+        Manage your business from anywhere, anytime
+      </h3>
+      <p className="text-lg leading-relaxed">
+        Stay connected to your business anytime, anywhere. Access your business
+        reports online from any device, keeping you informed and in control, no
+        matter where you are. Thinking about moving to the cloud? We’ve got you
+        covered with affordable subscription options and flexible plans tailored
+        to fit your business needs seamlessly.
+      </p>
+    </div>
+
+    <div>
+      <h3 className="text-2xl font-bold text-[#191970] mb-2">
+        GST compliance made easy
+      </h3>
+      <p className="text-lg leading-relaxed">
+        Stay effortlessly compliant and focus on growing your business. Keep
+        your business aligned with the latest regulations, ensuring accurate
+        return filing and seamless tax compliance with TallyPrime’s built-in
+        prevention, detection, and correction technology. In addition, you can
+        effortlessly manage your TDS and TCS needs for your business.
+      </p>
+    </div>
   </div>
+  
 
 ) : selectedProduct.title === "Tally Software Services (TSS)" ? (
 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
@@ -459,7 +549,10 @@ const tssPlans = [
     >
       {/* HEADER */}
       <div className="flex justify-between items-center mb-2">
-        <h3 className="text-xl font-bold text-blue-600">{plan.name}</h3>
+<div>
+  <h3 className="text-xl font-bold text-blue-600">{plan.name}</h3>
+  <p className="text-sm font-semibold text-gray-500">{plan.year}</p>
+</div>
         <span className="bg-blue-500 text-white text-xs px-2 py-1 rounded">
           {plan.badge}
         </span>
