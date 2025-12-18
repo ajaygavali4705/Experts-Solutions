@@ -1,6 +1,6 @@
 // app/admin/api/blogs.js
 
-const API_URL = "http://localhost:5000/api";
+const API_URL = "https://expert-solution-website-backend.onrender.com/api";
 
 // Get token from cookies
 const getToken = () => {

@@ -8,7 +8,7 @@ export default function Slider() {
   const [sliderImages, setSliderImages] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const API_BASE = "http://localhost:5000/api";
+  const API_BASE = "https://expert-solution-website-backend.onrender.com/api";
 
   useEffect(() => {
     fetchSliders();

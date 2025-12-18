@@ -16,7 +16,7 @@ export default function AdminHome() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  const API_BASE = "http://localhost:5000/api";
+  const API_BASE = "https://expert-solution-website-backend.onrender.com/api";
 
   useEffect(() => {
     const isCookie = document.cookie.includes("adminLoggedIn=true");

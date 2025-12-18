@@ -13,7 +13,7 @@ export default function Testimonial() {
   useEffect(() => {
     const fetchTestimonials = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/testimonials");
+        const res = await fetch("https://expert-solution-website-backend.onrender.com/api/testimonials");
         const data = await res.json();
 
         let items = [];
@@ -78,7 +78,7 @@ export default function Testimonial() {
           className="cursor-pointer"
         >
           <img
-            src="/solution1.png"   // 🔁 change image path if needed
+            src="/review.png"   // 🔁 change image path if needed
             alt="Google Review"
             className="rounded-xl shadow-lg hover:scale-105 transition duration-300"
           />

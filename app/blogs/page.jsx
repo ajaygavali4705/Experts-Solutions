@@ -19,7 +19,7 @@ export default function BlogsPage() {
         const formatted = data.map((blog) => ({
           title: blog.title,
           desc: blog.description,
-          image: `http://localhost:5000/uploads/blogs/${blog.image.fileName || blog.image}`,
+          image: `https://expert-solution-website-backend.onrender.com/uploads/blogs/${blog.image.fileName || blog.image}`,
         }));
 
         setArticles(formatted);

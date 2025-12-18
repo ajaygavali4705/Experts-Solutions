@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:5000/api";
+const API_URL = "https://expert-solution-website-backend.onrender.com/api";
 
 // Get token from cookies
 const getToken = () => {
@@ -21,7 +21,7 @@ export const getAllGallery = async () => {
     });
 
     const data = await res.json();
-
+     console.log("Gallery data fetched:", data);
     if (Array.isArray(data.data)) {
       return data.data;
     } else if (Array.isArray(data.gallery)) {

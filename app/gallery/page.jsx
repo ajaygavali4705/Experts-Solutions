@@ -21,7 +21,7 @@ export default function GalleryPage() {
           .find((row) => row.startsWith("token="))
           ?.split("=")[1];
 
-        const res = await fetch("http://localhost:5000/api/gallery", {
+        const res = await fetch("https://expert-solution-website-backend.onrender.com/api/gallery", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
